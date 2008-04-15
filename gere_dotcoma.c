@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:42:30 2008 laurent lefebvre
-** Last update Tue Apr  1 12:54:26 2008 laurent lefebvre
+** Last update Tue Apr 15 17:38:57 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -16,5 +16,4 @@
 
 void	gere_dotcoma()
 {
-  my_putstr("---gere_dotcoma\n");
 }

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:43:44 2008 laurent lefebvre
-** Last update Tue Apr  1 12:54:10 2008 laurent lefebvre
+** Last update Tue Apr 15 17:39:28 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -16,5 +16,4 @@
 
 void	gere_right()
 {
-  my_putstr("---gere_right\n");
 }

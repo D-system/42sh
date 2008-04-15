@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Sat Apr 12 15:50:02 2008 thomas brennetot
+## Last update Tue Apr 15 18:16:07 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -47,7 +47,13 @@ SRC_ERR		=	./err/xmalloc.c			\
 			./err/xread.c			\
 			./err/xfree.c
 
-SRC_PRT		=	./prompt/prompt.c
+SRC_PRT		=	./prompt/prompt.c		\
+			./prompt/launch_fct.c		\
+			./prompt/full_hostname.c	\
+			./prompt/pourcent.c		\
+			./prompt/tild.c			\
+			./prompt/hostname_to_dot.c	\
+			./prompt/user_name.c
 
 OBJ_SH		=	$(SRC_SH:.c=.o)
 OBJ_LIB		=	$(SRC_LIB:.c=.o)

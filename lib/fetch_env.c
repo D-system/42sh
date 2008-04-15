@@ -5,11 +5,15 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr  7 18:55:39 2008 thomas brennetot
-** Last update Thu Apr 10 15:23:51 2008 thomas brennetot
+** Last update Tue Apr 15 15:56:36 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include "../42.h"
+
+/*
+** donne un pointeur sur l'environement demande 
+*/
 
 char	*fetch_env(char **env, char *str)
 {

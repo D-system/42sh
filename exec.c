@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:49:16 2008 laurent lefebvre
-** Last update Tue Apr  1 12:54:51 2008 laurent lefebvre
+** Last update Tue Apr 15 17:38:48 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -16,5 +16,4 @@
 
 void	exec()
 {
-  my_putstr("-----exec\n");
 }

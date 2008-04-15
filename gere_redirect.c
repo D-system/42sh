@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Tue Apr  1 12:53:51 2008 laurent lefebvre
+** Last update Tue Apr 15 17:39:17 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -21,7 +21,6 @@
 
 void	gere_redirect()
 {
-  my_putstr("--gere_redirect\n");
   gere_dotcoma();
   gere_left();
   gere_pipe();

@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Sat Apr 12 15:45:58 2008 thomas brennetot
+** Last update Tue Apr 15 18:14:35 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -19,7 +19,7 @@ int		main(void)
 
   if (init(environ, &info) == EXIT_FAILURE)
     return (EXIT_FAILURE);
-  info.prompt = "Laurent est un pedophile @ $(HOST)>";
+  info.prompt = "%n@%m>";
   if (loop(&info) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   /*freeall();*/

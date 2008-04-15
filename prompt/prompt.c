@@ -5,10 +5,11 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 17:28:39 2008 laurent lefebvre
-** Last update Tue Apr 15 15:07:38 2008 aymeric derazey
+** Last update Tue Apr 15 17:46:14 2008 thomas brennetot
 */
 
 #include <stdlib.h>
+#include <unistd.h>
 #include "../42.h"
 
 /*
@@ -30,10 +31,11 @@ int	prompt(t_info *info)
 	  var = 0;
 	  while (info->prompt[i + var] != '%' && info->prompt[i + var] != '\0')
 	    var++;
-	  write(1, &info->promtp[i], var);
-	  i += (var + 1);
+	  if (var > 0)
+	    write(1, &info->prompt[i], var);
+	  i += var;
 	  if (info->prompt[i] == '%')
-	    if (launch_fct(info, i) == EXIT_SUCCESS)
+	    if (launch_fct(info, ++i) == EXIT_SUCCESS)
 	      i++;
 	}
     }

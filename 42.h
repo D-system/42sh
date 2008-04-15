@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Tue Apr 15 14:16:14 2008 thomas brennetot
+** Last update Tue Apr 15 18:15:55 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -15,23 +15,25 @@
 #define BUFF_SIZE 2048
 
 /* STRUCT */
+/* structure principale */
 typedef struct	s_info
 {
   char		**env;
   char		*prompt;
 }		t_info;
 
+/* ? */
 typedef struct		s_mal
 {
   void			*addr;
   struct	s_mal	*next;
 }			t_mal;
 
+/* structure pour le prompt */
 typedef struct	s_prompt
 {
   char		c;
   void		(*func)();
-  int		flag;
 }		t_prompt;
 
 /* INIT */
@@ -44,6 +46,12 @@ int		loop();
 
 /* PROMPT */
 int		prompt(t_info *info);
+int		launch_fct(t_info *info, int i);
+void		full_hostname(t_info *info);
+void		hostname_to_dot(t_info *info);
+void		pourcent(t_info *info);
+void		tild(t_info *info);
+void		user_name(t_info *info);
 
 /* GERE_REDIRECT */
 void		gere_redirect();
