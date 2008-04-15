@@ -5,23 +5,15 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 17:28:39 2008 laurent lefebvre
-** Last update Fri Apr 11 16:27:58 2008 thomas brennetot
+** Last update Tue Apr 15 14:23:21 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include "../42.h"
-#define BUFF_PROMPT 1024
 
 /*
 ** Affiche le prompt, gestion de l'isatty
 */
-
-typedef struct	s_prompt
-{
-  char		c;
-  void		(*func)();
-  int		flag;
-}		t_prompt;
 
 t_prompt gl_prompt[] =
   {
@@ -55,13 +47,42 @@ t_prompt gl_prompt[] =
   };
 
 
+int	prompt_func(t_info *info, int i)
+{
+  int	gl;
+
+  gl = 0;
+  while (info->prompt[i] != gl_prompt[gl].c && gl_prompt[gl].c != 0)
+    gl++;
+  if (info->prompt[i] = gl_prompt[gl].c)
+    {
+      gl_prompt[gl].func(info);
+      return (EXIT_SUCCESS);
+    }
+  return (EXIT_FAILURE);
+}
+
 int	prompt(t_info *info)
 {
+  int	i;
+  int	var;
+
   if (info->prompt == NULL)
     my_putchar('>');
   else
     {
-      my_putstr(info->prompt);
+      i = 0;
+      while (info->prompt[i] != '\0')
+	{
+	  var = o;
+	  while (info->prompt[i + var] != '%' && info->prompt[i + var] != '\0')
+	    var++;
+	  write(1, &info->promtp[i], var);
+	  i += (var + 1);
+	  if (info->prompt[i] == '%')
+	    if (prompt_func(info, i) == EXIT_SUCCESS)
+	      i++);
+	}
     }
   return (EXIT_SUCCESS);
 }

@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Fri Apr 11 16:11:31 2008 aymeric derazey
+** Last update Tue Apr 15 14:16:14 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -26,6 +26,13 @@ typedef struct		s_mal
   void			*addr;
   struct	s_mal	*next;
 }			t_mal;
+
+typedef struct	s_prompt
+{
+  char		c;
+  void		(*func)();
+  int		flag;
+}		t_prompt;
 
 /* INIT */
 int		init(char **environ, t_info *info);
