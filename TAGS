@@ -1,0 +1,132 @@
+
+42.h,145
+# define __42_H__12,275
+#define BUFF_SIZE 15,308
+typedef struct	s_info18,345
+}		t_info;22,401
+typedef struct		s_mal24,413
+}			t_mal;28,475
+
+command.c,21
+void	command(17,385
+
+exec.c,18
+void	exec(17,338
+
+gere_dotcoma.c,26
+void	gere_dotcoma(17,325
+
+gere_left.c,23
+void	gere_left(17,338
+
+gere_pipe.c,23
+void	gere_pipe(17,324
+
+gere_redirect.c,27
+void	gere_redirect(22,458
+
+gere_right.c,24
+void	gere_right(17,340
+
+get_env.c,20
+int	get_env(14,302
+
+init.c,17
+int	init(18,376
+
+loop.c,17
+int	loop(18,382
+
+main.c,18
+int		main(14,292
+
+err/xfree.c,42
+void		xfree(14,283
+void		freeall(39,635
+
+err/xmalloc.c,124
+void		*xmalloc(xmalloc18,395
+void		*mem_add(mem_add36,666
+void		my_put_in_list(47,803
+void		*x_malloc(x_malloc57,990
+
+err/xopen.c,18
+int	xopen(14,307
+
+err/xread.c,18
+int	xread(16,353
+
+err/xwrite.c,20
+int		xwrite(17,365
+
+lib/epurstr.c,88
+void	notabu(15,342
+char		*decal_word(decal_word28,478
+char		*epurstr(epurstr39,677
+
+lib/fetch_env.c,34
+char	*fetch_env(fetch_env14,297
+
+lib/free_tab.c,22
+void	free_tab(14,306
+
+lib/get_next_line.c,78
+char		*get_next_line(get_next_line17,367
+char		*my_concat(my_concat44,935
+
+lib/get_next_line.h,105
+#define _GET_NEXT_LINE_H_12,294
+#define BUFF_GNL 14,321
+typedef struct	t_stat16,343
+}		t_stat;20,391
+
+lib/my_getnbr.c,42
+int	get_int(13,284
+int	my_getnbr(35,631
+
+lib/my_getnbr_base.c,48
+int	find_pos(13,289
+int	my_getnbr_base(27,444
+
+lib/my_gettab.c,35
+char	**my_gettab(my_gettab14,320
+
+lib/my_memset.c,34
+void	*my_memset(my_memset13,280
+
+lib/my_put_nbr.c,24
+void	my_put_nbr(13,285
+
+lib/my_putchar.c,23
+int	my_putchar(15,325
+
+lib/my_putstr.c,22
+int	my_putstr(15,324
+
+lib/my_strcat.c,34
+char	*my_strcat(my_strcat14,313
+
+lib/my_strcmp.c,22
+int	my_strcmp(13,284
+
+lib/my_strcpy.c,34
+char	*my_strcpy(my_strcpy11,264
+
+lib/my_strdup.c,34
+char	*my_strdup(my_strdup14,304
+
+lib/my_strlen.c,26
+int     my_strlen(11,264
+
+lib/my_strncmp.c,23
+int	my_strncmp(11,265
+
+lib/my_strncpy.c,36
+char	*my_strncpy(my_strncpy11,265
+
+prompt/prompt.c,136
+#define BUFF_PROMPT 13,302
+typedef struct	s_prompt19,377
+}		t_prompt;24,446
+t_prompt gl_prompt[gl_prompt26,460
+int	prompt(58,1737
