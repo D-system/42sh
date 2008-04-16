@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Tue Apr 15 18:16:07 2008 thomas brennetot
+## Last update Wed Apr 16 14:54:01 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -34,8 +34,8 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_strcpy.c		\
 			./lib/my_strncpy.c		\
 			./lib/my_strdup.c		\
+			./lib/my_putnbr_base.c		\
 			./lib/my_memset.c		\
-			./lib/my_gettab.c		\
 			./lib/epurstr.c			\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
@@ -55,10 +55,23 @@ SRC_PRT		=	./prompt/prompt.c		\
 			./prompt/hostname_to_dot.c	\
 			./prompt/user_name.c
 
+SRC_PTF		=	./lib/my_printf/my_printf.c	\
+			./lib/my_printf/my_c.c		\
+			./lib/my_printf/my_d.c		\
+			./lib/my_printf/my_modu.c	\
+			./lib/my_printf/my_p_P.c	\
+			./lib/my_printf/my_s.c		\
+			./lib/my_printf/my_u.c		\
+			./lib/my_printf/my_o_x_X.c	\
+			./lib/my_printf/my_S.c		\
+			./lib/my_printf/my_E.c
+
+
 OBJ_SH		=	$(SRC_SH:.c=.o)
 OBJ_LIB		=	$(SRC_LIB:.c=.o)
 OBJ_ERR		=	$(SRC_ERR:.c=.o)
 OBJ_PRT		=	$(SRC_PRT:.c=.o)
+OBJ_PTF		=	$(SRC_PTF:.c=.o)
 
 CFLAGS		+=	-W -Wall -pedantic -ansi -g -D${OSTYPE} -I.
 
@@ -72,8 +85,8 @@ LIB_solaris	=
 LIB_linux	=	-Lefence -l/usr/lib/
 LIB		=	$(LIB_${OSTYPE})
 
-$(NAME)		:	$(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT)
-			$(CC) -o $(NAME) $(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(CFLAGS)
+$(NAME)		:	$(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF)
+			$(CC) -o $(NAME) $(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(CFLAGS)
 
 all		:	$(NAME)
 

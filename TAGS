@@ -1,13 +1,13 @@
 
 42.h,196
-# define __42_H__12,275
-#define BUFF_SIZE 15,308
-typedef struct	s_info19,372
-}		t_info;23,428
-typedef struct		s_mal26,448
-}			t_mal;30,510
-typedef struct	s_prompt33,553
-}		t_prompt;37,609
+# define __42_H__12,276
+#define BUFF_SIZE 15,309
+typedef struct	s_info19,373
+}		t_info;23,429
+typedef struct		s_mal26,449
+}			t_mal;30,511
+typedef struct	s_prompt33,554
+}		t_prompt;37,610
 
 command.c,21
 void	command(17,385
@@ -129,17 +129,21 @@ char	*my_strncpy(my_strncpy11,265
 prompt/full_hostname.c,27
 void	full_hostname(14,307
 
-prompt/launch_fct.c,65
-t_prompt gl_prompt[gl_prompt13,292
-int     launch_fct(48,1592
+prompt/hostname_to_dot.c,29
+void	hostname_to_dot(15,339
+
+prompt/launch_fct.c,61
+t_prompt gl_prompt[gl_prompt18,373
+int	launch_fct(49,1782
 
 prompt/pourcent.c,22
 void	pourcent(13,283
 
 prompt/prompt.c,19
-int	prompt(18,352
+int	prompt(19,373
 
-prompt/tild.c,19
-void	tilde(11,267
+prompt/tild.c,18
+void	tild(13,288
 
-prompt/hostname_to_dot.c,0
+prompt/user_name.c,23
+void	user_name(14,296
