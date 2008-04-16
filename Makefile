@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Wed Apr 16 15:24:34 2008 nicolas mondange
+## Last update Wed Apr 16 16:41:14 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -81,13 +81,13 @@ CC_solaris	=	/usr/sfw/bin/gcc
 CC_linux	=	gcc
 CC		=	$(CC_${OSTYPE})
 
-LIB_FreeBSD	=	-Lefence -l/usr/pkg/lib/
+LIB_FreeBSD	=	-lefence -L/usr/local/lib/
 LIB_solaris	=
-LIB_linux	=	-Lefence -l/usr/lib/
+LIB_linux	=	-lefence -L/usr/lib/
 LIB		=	$(LIB_${OSTYPE})
 
 $(NAME)		:	$(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF)
-			$(CC) -o $(NAME) $(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(CFLAGS)
+			$(CC) -o $(NAME) $(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(CFLAGS) $(LIB)
 
 all		:	$(NAME)
 
@@ -99,6 +99,7 @@ clean		:
 			rm -f $(OBJ_LIB)
 			rm -f $(OBJ_ERR)
 			rm -f $(OBJ_PRT)
+			rm -f $(OBJ_PTF)
 			rm -f *~
 			rm -f */*~
 

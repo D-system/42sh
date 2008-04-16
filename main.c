@@ -5,11 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-<<<<<<< .mine
-** Last update Wed Apr 16 15:29:22 2008 thomas brennetot
-=======
-** Last update Wed Apr 16 15:27:44 2008 nicolas mondange
->>>>>>> .r12
+** Last update Wed Apr 16 16:40:53 2008 thomas brennetot
 */
 
 #include <stdlib.h>
