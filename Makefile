@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Wed Apr 16 14:54:01 2008 thomas brennetot
+## Last update Wed Apr 16 15:24:34 2008 nicolas mondange
 ##
 
 NAME		=	42sh
@@ -37,6 +37,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_putnbr_base.c		\
 			./lib/my_memset.c		\
 			./lib/epurstr.c			\
+			./lib/my_str_to_wordtab.c	\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
 			./lib/get_next_line.c
