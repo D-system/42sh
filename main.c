@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Tue Apr 15 18:14:35 2008 thomas brennetot
+** Last update Wed Apr 16 15:09:23 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -15,7 +15,6 @@ int		main(void)
 {
   extern char	**environ;
   t_info	info;
-
 
   if (init(environ, &info) == EXIT_FAILURE)
     return (EXIT_FAILURE);
