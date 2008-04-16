@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Wed Apr 16 15:09:23 2008 thomas brennetot
+** Last update Wed Apr 16 15:27:44 2008 nicolas mondange
 */
 
 #include <stdlib.h>
@@ -18,7 +18,7 @@ int		main(void)
 
   if (init(environ, &info) == EXIT_FAILURE)
     return (EXIT_FAILURE);
-  info.prompt = "%n@%m>";
+  info.prompt = "toto42%n@%m>";
   if (loop(&info) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   /*freeall();*/
