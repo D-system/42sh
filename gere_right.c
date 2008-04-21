@@ -5,15 +5,17 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:43:44 2008 laurent lefebvre
-** Last update Tue Apr 15 17:39:28 2008 thomas brennetot
+** Last update Mon Apr 21 17:44:32 2008 thomas brennetot
 */
 
+#include <stdlib.h>
 #include "42.h"
 
 /*
 ** gestion en recursif des redirections droites
 */
 
-void	gere_right()
+int	gere_right()
 {
+  return (EXIT_SUCCESS);
 }

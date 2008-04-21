@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Tue Apr 15 18:15:55 2008 thomas brennetot
+** Last update Mon Apr 21 17:47:14 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -22,12 +22,20 @@ typedef struct	s_info
   char		*prompt;
 }		t_info;
 
-/* ? */
-typedef struct		s_mal
+/* xmalloc */
+typedef struct	s_mal
 {
-  void			*addr;
-  struct	s_mal	*next;
-}			t_mal;
+  void		*addr;
+  struct s_mal	*next;
+}		t_mal;
+
+/* structure pour gere_redirect */
+typedef struct	s_gere
+{
+  char		*str;
+  int		(*func)();
+  int		size_str;
+}		t_gere;
 
 /* structure pour le prompt */
 typedef struct	s_prompt
@@ -54,17 +62,22 @@ void		tild(t_info *info);
 void		user_name(t_info *info);
 
 /* GERE_REDIRECT */
-void		gere_redirect();
-void		gere_dotcoma();
-void		gere_left();
-void		gere_pipe();
-void		gere_right();
+int		gere_redirect();
+int		gere_dotcoma();
+int		gere_left();
+int		gere_pipe();
+int		gere_right();
+int		gere_bracket();
+int		gere_or();
+int		gere_and();
+int		gere_double_left();
+int		gere_double_right();
 
 /* COMMAND */
-void		command();
+int		command();
 
 /* EXEC */
-void		exec();
+int		exec();
 
 /* LIB */
 int		my_getnbr(char *str);
@@ -74,6 +87,7 @@ void		my_put_nbr(int n);
 int		my_putchar(char c);
 int		my_putstr(char *str);
 char		**my_str_to_wordtab(char *str);
+char		**my_str_to_wordtab_mode(char *src, char *delim);
 int		my_strcmp(char *s1, char *s2);
 char		*my_strcpy(char *dest, char *src);
 char		*my_strdup(char *str);
@@ -84,6 +98,8 @@ char		*epurstr(char *str);
 void		free_tab(char **tab);
 char		*fetch_env(char **env, char *str);
 char		*get_next_line(const int fd);
+int		my_putnbr_base(int n, char *base);
+int		my_getnbr_base(char *str, char* base);
 
 /* ERR */
 void		*xmalloc(int size);

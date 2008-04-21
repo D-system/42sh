@@ -5,15 +5,17 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:42:30 2008 laurent lefebvre
-** Last update Tue Apr 15 17:38:57 2008 thomas brennetot
+** Last update Mon Apr 21 17:44:00 2008 thomas brennetot
 */
 
+#include <stdlib.h>
 #include "42.h"
 
 /*
 ** gestion en recursif des ";"
 */
 
-void	gere_dotcoma()
+int	gere_dotcoma()
 {
+  return (EXIT_SUCCESS);
 }

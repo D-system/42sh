@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Wed Apr 16 16:41:14 2008 thomas brennetot
+## Last update Mon Apr 21 17:57:00 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -19,6 +19,11 @@ SRC_SH		=	main.c				\
 			gere_left.c			\
 			gere_pipe.c			\
 			gere_right.c			\
+			gere_or.c			\
+			gere_and.c			\
+			gere_double_left.c		\
+			gere_double_right.c		\
+			gere_bracket.c			\
 			command.c			\
 			exec.c
 
@@ -38,6 +43,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_memset.c		\
 			./lib/epurstr.c			\
 			./lib/my_str_to_wordtab.c	\
+			./lib/my_str_to_wordtab_mode.c	\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
 			./lib/get_next_line.c

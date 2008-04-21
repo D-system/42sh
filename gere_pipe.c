@@ -5,15 +5,17 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:48:08 2008 laurent lefebvre
-** Last update Tue Apr 15 17:39:06 2008 thomas brennetot
+** Last update Mon Apr 21 17:44:15 2008 thomas brennetot
 */
 
+#include <stdlib.h>
 #include "42.h"
 
 /*
 ** Gestion des pipes en recursif
 */
 
-void	gere_pipe()
+int	gere_pipe()
 {
+  return (EXIT_SUCCESS);
 }

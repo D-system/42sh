@@ -5,16 +5,18 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:40:36 2008 laurent lefebvre
-** Last update Tue Apr 15 17:40:20 2008 thomas brennetot
+** Last update Mon Apr 21 17:43:50 2008 thomas brennetot
 */
 
+#include <stdlib.h>
 #include "42.h"
 
 /*
 ** Recoie la commande, cherche le path, verifie les access, et fais appel a exec pour execution
 */
 
-void	command()
+int	command()
 {
   exec();
+  return (EXIT_SUCCESS);
 }

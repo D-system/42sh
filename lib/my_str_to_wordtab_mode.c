@@ -5,11 +5,11 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Mon Apr  7 16:19:25 2008 laurent lefebvre
-** Last update Wed Apr 16 15:22:51 2008 nicolas mondange
+** Last update Mon Apr 21 17:39:56 2008 thomas brennetot
 */
 
-#include "../42.h"
 #include <stdio.h>
+#include "../42.h"
 
 void	my_inhib(char *str, int *i)
 {
@@ -91,7 +91,7 @@ char	*strdup_inhib(char *str)
   
   j = 0;
   if (str[0] != '\'' && str[0] != '\"' && str[0] != '`')
-    mem = strdup(str);
+    mem = my_strdup(str);
   else
     {
       mem = xmalloc(sizeof(char) * (my_strlen(str) - 2 + 1));
@@ -111,7 +111,7 @@ char	*strdup_inhib(char *str)
   return (mem);
 }
 
-char	**my_str_to_word_tab(char *src, char *delim)
+char	**my_str_to_wordtab_mode(char *src, char *delim)
 {
   int	i;
   int	n;
@@ -119,10 +119,10 @@ char	**my_str_to_word_tab(char *src, char *delim)
   char	*str;
   
   i = 0;
-  str = strdup(src); /***/
+  str = my_strdup(src);
   n = get_word(str, delim);
-  printf("I have %d arguments\n", n); /***/
-  tab = malloc(sizeof(*tab) * (n + 1)); /***/
+  if ((tab = xmalloc(sizeof(*tab) * (n + 1))) == NULL)
+    return (NULL);
   while (i < n)
     {
       tab[i] = strdup_inhib(str);
@@ -132,26 +132,6 @@ char	**my_str_to_word_tab(char *src, char *delim)
 	str++;
       i++;
     }
-  tab[i] = '\0';
+  tab[i] = NULL;
   return (tab);
 }
-
-
-/*
-int	main()
-{
-  int	i;
-  char	**tab;
-  char	buffer[2048];
-  
-  i = 0;
-  read(1, buffer, 2048);
-  tab = my_str_to_word_tab(buffer, " \t");
-  while (tab[i] != 0)
-    {
-      my_putstr(tab[i]);
-      my_putchar('\n');
-      i++;
-    }
-  return (0);
-  }*/
