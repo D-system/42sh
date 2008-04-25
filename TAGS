@@ -1,34 +1,55 @@
 
-42.h,196
+42.h,241
 # define __42_H__12,276
-#define BUFF_SIZE 15,309
-typedef struct	s_info19,373
-}		t_info;23,429
-typedef struct		s_mal26,449
-}			t_mal;30,511
-typedef struct	s_prompt33,554
-}		t_prompt;37,610
+#define BUFF_SIZE 17,347
+typedef struct	s_info21,411
+}		t_info;26,483
+typedef struct	s_mal29,509
+}		t_mal;33,569
+typedef struct	s_gere36,615
+}		t_gere;41,688
+typedef struct	s_prompt44,731
+}		t_prompt;48,787
 
-command.c,21
-void	command(17,385
+builtins.c,21
+int	builtins(14,292
 
-exec.c,18
-void	exec(17,338
+command.c,20
+int	command(18,405
 
-gere_dotcoma.c,26
-void	gere_dotcoma(17,325
+exec.c,17
+int	exec(18,358
 
-gere_left.c,23
-void	gere_left(17,338
+gere_and.c,21
+int	gere_and(14,292
 
-gere_pipe.c,23
-void	gere_pipe(17,324
+gere_bracket.c,25
+int	gere_bracket(14,296
 
-gere_redirect.c,27
-void	gere_redirect(22,458
+gere_dotcoma.c,25
+int	gere_dotcoma(18,345
 
-gere_right.c,24
-void	gere_right(17,340
+gere_double_left.c,29
+int	gere_double_left(14,300
+
+gere_double_right.c,30
+int	gere_double_right(14,301
+
+gere_left.c,22
+int	gere_left(18,358
+
+gere_or.c,20
+int	gere_or(14,291
+
+gere_pipe.c,22
+int	gere_pipe(18,344
+
+gere_redirect.c,57
+t_gere	gl_gere[gl_gere23,478
+int	gere_redirect(37,762
+
+gere_right.c,23
+int	gere_right(18,360
 
 get_env.c,20
 int	get_env(14,302
@@ -41,6 +62,21 @@ int	loop(18,382
 
 main.c,18
 int		main(14,292
+
+my_access.c,103
+#define CONCAT_SIZE 15,332
+void	my_strcat_mode(17,357
+int	my_access_wd(35,655
+int	my_access(49,946
+
+parse_str.c,22
+int	parse_str(18,351
+
+path_to_tab.c,123
+#define BUFF_PATH 13,293
+int	how_many_path(15,316
+void	path_to_tab_cut_cp(31,501
+char	**path_to_tab(path_to_tab54,941
 
 err/xfree.c,42
 void		xfree(14,283
@@ -90,9 +126,6 @@ lib/my_getnbr_base.c,48
 int	find_pos(13,289
 int	my_getnbr_base(27,444
 
-lib/my_gettab.c,35
-char	**my_gettab(my_gettab14,320
-
 lib/my_memset.c,34
 void	*my_memset(my_memset13,280
 
@@ -102,8 +135,21 @@ void	my_put_nbr(13,285
 lib/my_putchar.c,23
 int	my_putchar(15,325
 
+lib/my_putnbr_base.c,27
+int	my_putnbr_base(13,277
+
 lib/my_putstr.c,22
 int	my_putstr(15,324
+
+lib/my_str_to_wordtab.c,51
+char	**my_str_to_wordtab(my_str_to_wordtab13,288
+
+lib/my_str_to_wordtab_mode.c,170
+void	my_inhib(14,310
+void	my_delim(44,748
+int	get_word(70,1061
+char	*strdup_inhib(strdup_inhib86,1263
+char	**my_str_to_wordtab_mode(my_str_to_wordtab_mode114,1681
 
 lib/my_strcat.c,34
 char	*my_strcat(my_strcat14,313
@@ -139,8 +185,8 @@ int	launch_fct(49,1782
 prompt/pourcent.c,22
 void	pourcent(13,283
 
-prompt/prompt.c,19
-int	prompt(19,373
+prompt/prompt.c,20
+void	prompt(19,373
 
 prompt/tild.c,18
 void	tild(13,288

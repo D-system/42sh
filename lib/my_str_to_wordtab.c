@@ -5,12 +5,14 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:24:58 2008 thomas brennetot
-** Last update Mon Apr 21 17:27:11 2008 thomas brennetot
+** Last update Thu Apr 24 15:57:41 2008 thomas brennetot
 */
 
 #include "../42.h"
 
+
 char	**my_str_to_wordtab(char *str)
 {
+  my_printf("17\n");
   return (my_str_to_wordtab_mode(str, " \t"));
 }

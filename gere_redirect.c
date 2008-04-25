@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Mon Apr 21 17:44:26 2008 thomas brennetot
+** Last update Thu Apr 24 15:32:06 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -31,15 +31,29 @@ t_gere	gl_gere[] =
   {"<", gere_left, 1},
   {">", gere_right, 1},
   {"|", gere_pipe, 1},
-/*   {"??", command, ??}, */
+  {0, 0, 0},
 };
 
-int	gere_redirect()
+int	gere_redirect(t_info *info, char *str)
 {
   int	igl;
+  int	result;
 
   igl = 0;
-  while (my_strncmp(get_next_line(0), gl_gere[igl].str, gl_gere[igl].size_str) != 0)
+  while (my_strncmp(str, gl_gere[igl].str, gl_gere[igl].size_str) != 0 &&  gl_gere[igl].size_str != 0)
     igl++;
+  if (my_strncmp(str, gl_gere[igl].str, gl_gere[igl].size_str) == 0)
+    gl_gere[igl].func();
+  my_printf("3\n");
+  if (builtins(info, str) == EXIT_FAILURE)
+    {
+      my_printf("4\n");
+      if (exec(info, str) == EXIT_FAILURE)
+	{
+	  my_printf("12\n");
+	  return (EXIT_FAILURE);
+	}
+    }
+  my_printf("11\n");
   return (EXIT_SUCCESS);
 }

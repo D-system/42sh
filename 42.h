@@ -5,14 +5,16 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Mon Apr 21 17:47:14 2008 thomas brennetot
+** Last update Thu Apr 24 20:06:07 2008 aymeric derazey
 */
 
 #ifndef __42_H__
 # define __42_H__
 
+#include "lib/my_printf/my_printf.h"
+
 /* DEFINES */
-#define BUFF_SIZE 2048
+#define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
 
 /* STRUCT */
 /* structure principale */
@@ -20,6 +22,8 @@ typedef struct	s_info
 {
   char		**env;
   char		*prompt;
+  char		**path;
+  int		status; /* valeur de retour du wait */
 }		t_info;
 
 /* xmalloc */
@@ -48,12 +52,17 @@ typedef struct	s_prompt
 int		init(char **environ, t_info *info);
 int		get_env(char **environ, t_info *info);
 int		get_cfg(t_info *info);
+int		set_default_var(t_info *info);
+char		**path_to_tab(char *str);
 
 /* LOOP */
-int		loop();
+int		loop(t_info *info);
+
+/* PARSEUR DU BUFFER*/
+int		parse_str(t_info *info, char *str);
 
 /* PROMPT */
-int		prompt(t_info *info);
+void		prompt(t_info *info);
 int		launch_fct(t_info *info, int i);
 void		full_hostname(t_info *info);
 void		hostname_to_dot(t_info *info);
@@ -62,7 +71,7 @@ void		tild(t_info *info);
 void		user_name(t_info *info);
 
 /* GERE_REDIRECT */
-int		gere_redirect();
+int		gere_redirect(t_info *info, char *str);
 int		gere_dotcoma();
 int		gere_left();
 int		gere_pipe();
@@ -73,11 +82,15 @@ int		gere_and();
 int		gere_double_left();
 int		gere_double_right();
 
+/* BUILTINS */
+int		builtins(t_info *info, char *str);
+
 /* COMMAND */
 int		command();
 
 /* EXEC */
-int		exec();
+int		exec(t_info *info, char *str);
+int		my_access(t_info *info, char **tab);
 
 /* LIB */
 int		my_getnbr(char *str);

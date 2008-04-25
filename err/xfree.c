@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr  4 18:50:31 2008 thomas brennetot
-** Last update Fri Apr  4 18:51:30 2008 thomas brennetot
+** Last update Thu Apr 24 14:40:03 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -18,6 +18,8 @@ void		xfree(void *add)
   t_mal		*next;
   int		ch;
   
+  if (add == NULL)
+    return ;
   ch = 0;
   list = mem_add(0, 0);
   prev = 0;

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 17:28:39 2008 laurent lefebvre
-** Last update Tue Apr 15 17:46:14 2008 thomas brennetot
+** Last update Wed Apr 23 16:02:35 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -16,7 +16,7 @@
 ** Affiche le prompt, gestion de l'isatty
 */
 
-int	prompt(t_info *info)
+void	prompt(t_info *info)
 {
   int	i;
   int	var;
@@ -39,5 +39,4 @@ int	prompt(t_info *info)
 	      i++;
 	}
     }
-  return (EXIT_SUCCESS);
 }

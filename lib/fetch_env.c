@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr  7 18:55:39 2008 thomas brennetot
-** Last update Tue Apr 15 15:56:36 2008 aymeric derazey
+** Last update Thu Apr 24 14:26:43 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -22,6 +22,8 @@ char	*fetch_env(char **env, char *str)
   char	*str_cat;
 
   i = 0;
+  if (env == NULL)
+    return (NULL);
   if (env[i] == NULL)
     return (NULL);
   if ((str_cat = my_strcat(str, "=")) == NULL)

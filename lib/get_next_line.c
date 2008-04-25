@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Dec 10 15:12:23 2007 thomas brennetot
-** Last update Tue Apr  8 12:00:22 2008 thomas brennetot
+** Last update Wed Apr 23 16:00:10 2008 thomas brennetot
 */
 
 #include <unistd.h>
@@ -61,11 +61,7 @@ char		*my_concat(char *buffer, char *str, int start, int i)
   else
     temp = xmalloc(sizeof(*str) * ((i - start) + 1));
   while (start < i)
-    {
-      temp[block] = buffer[start];
-      start++;
-      block++;
-    }
+    temp[block++] = buffer[start++];
   temp[block] = '\0';
   return (temp);
 }

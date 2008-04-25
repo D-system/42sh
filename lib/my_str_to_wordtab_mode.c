@@ -5,10 +5,11 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Mon Apr  7 16:19:25 2008 laurent lefebvre
-** Last update Mon Apr 21 17:39:56 2008 thomas brennetot
+** Last update Fri Apr 25 11:53:22 2008 thomas brennetot
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "../42.h"
 
 void	my_inhib(char *str, int *i)
@@ -28,11 +29,7 @@ void	my_inhib(char *str, int *i)
 	  while (str[(*i)] != '\0' && str[(*i)] != str[f])
 	    (*i)++;
 	  if (str[(*i)] == '\0')
-	    {
-	      my_putstr("Unmatched ");
-	      my_putchar(str[f]);
-	      my_putstr(".\n");
-	    }
+	    my_printf("Unmatched %c.\n", str[f]);
 	  else
 	    (*i)++;
 	  return ;
@@ -94,13 +91,13 @@ char	*strdup_inhib(char *str)
     mem = my_strdup(str);
   else
     {
-      mem = xmalloc(sizeof(char) * (my_strlen(str) - 2 + 1));
+      mem = xmalloc(sizeof(*mem) * (my_strlen(str) - 2 + 1));
       i = 0;
-      while (str[i+j])
+      while (str[i + j])
 	{
-	  if (str[i+j] != str[0])
+	  if (str[i + j] != str[0])
 	    {
-	      mem[i] = str[i+j];
+	      mem[i] = str[i + j];
 	      i++;
 	    }
 	  else
@@ -133,5 +130,6 @@ char	**my_str_to_wordtab_mode(char *src, char *delim)
       i++;
     }
   tab[i] = NULL;
+  free(str);
   return (tab);
 }

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:40:36 2008 laurent lefebvre
-** Last update Mon Apr 21 17:43:50 2008 thomas brennetot
+** Last update Wed Apr 23 18:19:19 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -17,6 +17,5 @@
 
 int	command()
 {
-  exec();
   return (EXIT_SUCCESS);
 }
