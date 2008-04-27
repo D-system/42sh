@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Thu Apr 24 15:32:06 2008 thomas brennetot
+** Last update Sun Apr 27 12:50:30 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -22,10 +22,10 @@
 
 t_gere	gl_gere[] =
 {
-  {"(", gere_bracket, 1},
   {"||", gere_or, 2},
   {"&&", gere_and, 2},
   {";", gere_dotcoma, 1},
+  {"(", gere_bracket, 1},
   {"<<", gere_double_left, 2},
   {">>", gere_double_right, 2},
   {"<", gere_left, 1},
@@ -34,26 +34,45 @@ t_gere	gl_gere[] =
   {0, 0, 0},
 };
 
-int	gere_redirect(t_info *info, char *str)
+int	gere_redirect_next(t_info *info, char *str)
 {
   int	igl;
-  int	result;
+  int	istr;
+  int	bracket;
 
   igl = 0;
-  while (my_strncmp(str, gl_gere[igl].str, gl_gere[igl].size_str) != 0 &&  gl_gere[igl].size_str != 0)
-    igl++;
-  if (my_strncmp(str, gl_gere[igl].str, gl_gere[igl].size_str) == 0)
-    gl_gere[igl].func();
-  my_printf("3\n");
-  if (builtins(info, str) == EXIT_FAILURE)
+  bracket = 0;
+  while (gl_gere[igl].size_str != 0)
     {
-      my_printf("4\n");
-      if (exec(info, str) == EXIT_FAILURE)
+      istr = 0;
+      while (str[istr] != '\0')
 	{
-	  my_printf("12\n");
-	  return (EXIT_FAILURE);
+	  if (str[istr] == '(')
+	    bracket++;
+	  if (bracket == 0 || gl_gere[igl].str[0] == '(')
+	    if (my_strncmp(&str[istr], gl_gere[igl].str, gl_gere[igl].size_str) == 0)
+	      return (gl_gere[igl].func(info, str));
+	  if (str[istr] == ')')
+	    bracket--;
+	  istr++;
 	}
+      igl++;
     }
-  my_printf("11\n");
+  return (NO_REDIR);
+}
+
+int	gere_redirect(t_info *info, char *str)
+{
+  int	value;
+
+  value = gere_redirect_next(info, str);
+  if (value == EXIT_FAILURE)
+    return (EXIT_FAILURE);
+  if (value == EXIT_SUCCESS)
+    return (EXIT_SUCCESS);
+  debug("*************** %s\n", str);
+  if (builtins(info, str) == EXIT_FAILURE)
+    if (exec(info, str) == EXIT_FAILURE)
+      return (EXIT_FAILURE);
   return (EXIT_SUCCESS);
 }

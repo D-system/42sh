@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Thu Apr 24 15:02:10 2008 thomas brennetot
+## Last update Fri Apr 25 16:35:57 2008 aymeric derazey
 ##
 
 NAME		=	42sh
@@ -14,6 +14,7 @@ SRC_SH		=	main.c				\
 			init.c				\
 			get_env.c			\
 			loop.c				\
+			get_cfg.c			\
 			gere_redirect.c			\
 			gere_dotcoma.c			\
 			gere_left.c			\
@@ -56,7 +57,8 @@ SRC_ERR		=	./err/xmalloc.c			\
 			./err/xopen.c			\
 			./err/xwrite.c			\
 			./err/xread.c			\
-			./err/xfree.c
+			./err/xfree.c			\
+			./err/xwait.c
 
 SRC_PRT		=	./prompt/prompt.c		\
 			./prompt/launch_fct.c		\

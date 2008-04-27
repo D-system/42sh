@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:49:16 2008 laurent lefebvre
-** Last update Thu Apr 24 18:37:17 2008 aymeric derazey
+** Last update Fri Apr 25 16:08:29 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -19,20 +19,26 @@
 int	exec(t_info *info, char *str)
 {
   char	**tab;
+  int	value_fork;
+  int	status;
 
-  my_printf("16\n");
   if ((tab = my_str_to_wordtab(str)) == NULL)
     return (EXIT_FAILURE);
-  my_printf("13\n");
+  if (tab[0] == NULL)
+    return (EXIT_SUCCESS);
   if (my_access(info, tab) == EXIT_FAILURE)
     {
       free_tab(tab);
+      return (EXIT_FAILURE);
+    }
+  value_fork = fork();
+  if (value_fork == 0)
+    {
+      execve(tab[0], tab, info->env);
       exit(EXIT_FAILURE);
     }
-  my_printf("14\n");
-  execve(tab[0], tab, info->env);
-  my_printf("15\n");
+  else
+    xwait(&status);
   free_tab(tab);
-  exit(EXIT_FAILURE);
   return (EXIT_FAILURE);
 }

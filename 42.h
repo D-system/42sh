@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Thu Apr 24 20:06:07 2008 aymeric derazey
+** Last update Sun Apr 27 12:54:01 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -15,6 +15,9 @@
 
 /* DEFINES */
 #define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
+#define NO_REDIR 2 /* Pour que gere_redirect s'arrete s'il y a "();<>&&||" puisque que gere_redirect est rappeller les fonctions gere_* */
+#define printf_debug my_printf
+#define debug my_printf
 
 /* STRUCT */
 /* structure principale */
@@ -61,6 +64,9 @@ int		loop(t_info *info);
 /* PARSEUR DU BUFFER*/
 int		parse_str(t_info *info, char *str);
 
+/* COMPLETION */
+int		completion(t_info *info, char *str);
+
 /* PROMPT */
 void		prompt(t_info *info);
 int		launch_fct(t_info *info, int i);
@@ -72,15 +78,15 @@ void		user_name(t_info *info);
 
 /* GERE_REDIRECT */
 int		gere_redirect(t_info *info, char *str);
-int		gere_dotcoma();
-int		gere_left();
-int		gere_pipe();
-int		gere_right();
-int		gere_bracket();
-int		gere_or();
-int		gere_and();
-int		gere_double_left();
-int		gere_double_right();
+int		gere_dotcoma(t_info *info, char *str);
+int		gere_left(t_info *info, char *str);
+int		gere_pipe(t_info *info, char *str);
+int		gere_right(t_info *info, char *str);
+int		gere_bracket(t_info *info, char *str);
+int		gere_or(t_info *info, char *str);
+int		gere_and(t_info *info, char *str);
+int		gere_double_left(t_info *info, char *str);
+int		gere_double_right(t_info *info, char *str);
 
 /* BUILTINS */
 int		builtins(t_info *info, char *str);
@@ -123,5 +129,7 @@ int		xopen(char *file);
 int		xread(int fd, char *buf, int size);
 int		xwrite(int fd, char *str, int size);
 void		xfree(void *ptr);
+void		freeall(void);
+int		xwait(int *status);
 
 #endif /* !__42_H__ */

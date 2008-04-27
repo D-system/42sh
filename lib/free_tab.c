@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Feb 27 11:52:06 2008 thomas brennetot
-** Last update Thu Apr  3 11:53:37 2008 thomas brennetot
+** Last update Fri Apr 25 16:00:10 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -15,9 +15,9 @@ void	free_tab(char **tab)
 {
   int	i;
 
-  i = 0;
   if (tab == NULL)
     return ;
+  i = 0;
   while (tab[i] != NULL)
     {
       xfree(tab[i]);

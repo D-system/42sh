@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:47:38 2008 thomas brennetot
-** Last update Tue Apr  1 10:46:33 2008 thomas brennetot
+** Last update Fri Apr 25 13:02:24 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -17,6 +17,8 @@ char	*my_strdup(char *str)
   int	i;
 
   i = 0;
+  if (str == NULL)
+    return (NULL);
   if ((addr = xmalloc((sizeof(*addr) * my_strlen(str)) + 1)) == NULL)
     return (NULL);
   while (str[i] != '\0')
