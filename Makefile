@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Fri Apr 25 16:35:57 2008 aymeric derazey
+## Last update Sun Apr 27 18:54:05 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -58,7 +58,11 @@ SRC_ERR		=	./err/xmalloc.c			\
 			./err/xwrite.c			\
 			./err/xread.c			\
 			./err/xfree.c			\
-			./err/xwait.c
+			./err/xwait.c			\
+			./err/xpipe.c			\
+			./err/xfork.c			\
+			./err/xclose.c			\
+			./err/xdup2.c
 
 SRC_PRT		=	./prompt/prompt.c		\
 			./prompt/launch_fct.c		\

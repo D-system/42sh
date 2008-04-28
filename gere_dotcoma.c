@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:42:30 2008 laurent lefebvre
-** Last update Sun Apr 27 12:46:27 2008 thomas brennetot
+** Last update Mon Apr 28 10:53:25 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -15,7 +15,7 @@
 ** gestion en recursif des ";"
 */
 
-int	gere_dotcoma_bracket(char *str)
+int	gere_dotcoma_put_zero(char *str)
 {
   int	bracket;
   int	i;
@@ -27,23 +27,25 @@ int	gere_dotcoma_bracket(char *str)
       if (str[i] == '(')
 	bracket++;
       if (bracket == 0 && str[i] == ';')
-	return (i);
+	{
+	  str[i] = '\0';
+	  return (i);
+	}
       if (str[i] == ')')
 	bracket--;
       i++;
     }
-  return (i);
+  return (-1); /* pas de EXIT_FAILURE car il vaut 1 donc une longeur */
 }
 
-int	gere_dotcoma(t_info *info, char *str)
+int	gere_dotcoma(t_info *info, char *str, int flag)
 {
   int	i;
 
-  i = gere_dotcoma_bracket(str);
-  if (str[i] != ';')
+  debug("c'est quoi le prob %s\n", str);
+  if ((i = gere_dotcoma_put_zero(str)) == -1)
     return (EXIT_FAILURE);
-  str[i] = '\0';
-  gere_redirect(info, str);
-  gere_redirect(info, str + i + 1);
+  gere_redirect(info, str, flag);
+  gere_redirect(info, str + i + 1, flag);
   return (EXIT_SUCCESS);
 }

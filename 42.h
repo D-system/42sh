@@ -5,17 +5,29 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Sun Apr 27 12:54:01 2008 thomas brennetot
+** Last update Mon Apr 28 12:33:40 2008 thomas brennetot
 */
 
 #ifndef __42_H__
 # define __42_H__
 
+#include <stdlib.h>
 #include "lib/my_printf/my_printf.h"
 
 /* DEFINES */
 #define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
-#define NO_REDIR 2 /* Pour que gere_redirect s'arrete s'il y a "();<>&&||" puisque que gere_redirect est rappeller les fonctions gere_* */
+#define NO_REDIRECTION 2 /* gere_redirect */
+#define FATHER 0
+#define CHILD 1
+#define EXIT_EXIT 42
+
+#ifndef __EXIT_FAILURE__
+# define EXIT_FAILURE 1
+#endif
+#ifndef __EXIT_SUCCESS__
+# define EXIT_SUCCESS 0
+#endif
+
 #define printf_debug my_printf
 #define debug my_printf
 
@@ -77,16 +89,16 @@ void		tild(t_info *info);
 void		user_name(t_info *info);
 
 /* GERE_REDIRECT */
-int		gere_redirect(t_info *info, char *str);
-int		gere_dotcoma(t_info *info, char *str);
-int		gere_left(t_info *info, char *str);
-int		gere_pipe(t_info *info, char *str);
-int		gere_right(t_info *info, char *str);
-int		gere_bracket(t_info *info, char *str);
-int		gere_or(t_info *info, char *str);
-int		gere_and(t_info *info, char *str);
-int		gere_double_left(t_info *info, char *str);
-int		gere_double_right(t_info *info, char *str);
+int		gere_redirect(t_info *info, char *str, int flag);
+int		gere_dotcoma(t_info *info, char *str, int flag);
+int		gere_left(t_info *info, char *str, int flag);
+int		gere_pipe(t_info *info, char *str, int flag);
+int		gere_right(t_info *info, char *str, int flag);
+int		gere_bracket(t_info *info, char *str, int flag);
+int		gere_or(t_info *info, char *str, int flag);
+int		gere_and(t_info *info, char *str, int flag);
+int		gere_double_left(t_info *info, char *str, int flag);
+int		gere_double_right(t_info *info, char *str, int flag);
 
 /* BUILTINS */
 int		builtins(t_info *info, char *str);
@@ -95,7 +107,7 @@ int		builtins(t_info *info, char *str);
 int		command();
 
 /* EXEC */
-int		exec(t_info *info, char *str);
+void		exec(t_info *info, char *str, int flag);
 int		my_access(t_info *info, char **tab);
 
 /* LIB */
@@ -131,5 +143,9 @@ int		xwrite(int fd, char *str, int size);
 void		xfree(void *ptr);
 void		freeall(void);
 int		xwait(int *status);
+int		xfork(void);
+int		xpipe(int *fildes);
+int		xdup2(int old_fd, int new_fd);
+int		xclose(int fd);
 
 #endif /* !__42_H__ */

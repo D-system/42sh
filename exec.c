@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:49:16 2008 laurent lefebvre
-** Last update Fri Apr 25 16:08:29 2008 thomas brennetot
+** Last update Mon Apr 28 12:14:35 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -16,29 +16,49 @@
 ** Met les arguments dans un tableau, fork, execute
 */
 
-int	exec(t_info *info, char *str)
+void	exec_direct(t_info *info, char **tab)
 {
-  char	**tab;
-  int	value_fork;
-  int	status;
+  execve(tab[0], tab, info->env);
+  exit(EXIT_FAILURE);
+}
 
-  if ((tab = my_str_to_wordtab(str)) == NULL)
-    return (EXIT_FAILURE);
-  if (tab[0] == NULL)
-    return (EXIT_SUCCESS);
-  if (my_access(info, tab) == EXIT_FAILURE)
+void	exec_fork(t_info *info, char **tab)
+{
+  int	status;
+  int	pid;
+
+  if ((pid = xfork()) == EXIT_FAILURE)
     {
-      free_tab(tab);
-      return (EXIT_FAILURE);
+      info->status = EXIT_FAILURE;
+      return ;
     }
-  value_fork = fork();
-  if (value_fork == 0)
+  if (pid == 0)
     {
       execve(tab[0], tab, info->env);
       exit(EXIT_FAILURE);
     }
+  else if (xwait(&status) == EXIT_FAILURE)
+    info->status = EXIT_FAILURE;
+}
+
+void	exec(t_info *info, char *str, int flag)
+{
+  char	**tab;
+
+  if ((tab = my_str_to_wordtab(str)) == NULL)
+    return ;
+  if (tab[0] == NULL)
+    return ;
+  if (my_access(info, tab) == EXIT_FAILURE)
+    {
+      free_tab(tab);
+      info->status = EXIT_FAILURE;
+      return ;
+    }
+  if (flag == CHILD)
+    exec_direct(info, tab);
   else
-    xwait(&status);
+    exec_fork(info, tab);
   free_tab(tab);
-  return (EXIT_FAILURE);
+  return ;
 }

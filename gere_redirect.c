@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Sun Apr 27 12:50:30 2008 thomas brennetot
+** Last update Mon Apr 28 12:19:41 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -34,7 +34,7 @@ t_gere	gl_gere[] =
   {0, 0, 0},
 };
 
-int	gere_redirect_next(t_info *info, char *str)
+int	gere_redirect_next(t_info *info, char *str, int flag)
 {
   int	igl;
   int	istr;
@@ -51,28 +51,27 @@ int	gere_redirect_next(t_info *info, char *str)
 	    bracket++;
 	  if (bracket == 0 || gl_gere[igl].str[0] == '(')
 	    if (my_strncmp(&str[istr], gl_gere[igl].str, gl_gere[igl].size_str) == 0)
-	      return (gl_gere[igl].func(info, str));
+	      return (gl_gere[igl].func(info, str, flag));
 	  if (str[istr] == ')')
 	    bracket--;
 	  istr++;
 	}
       igl++;
     }
-  return (NO_REDIR);
+  return (NO_REDIRECTION);
 }
 
-int	gere_redirect(t_info *info, char *str)
+int	gere_redirect(t_info *info, char *str, int flag)
 {
   int	value;
 
-  value = gere_redirect_next(info, str);
-  if (value == EXIT_FAILURE)
-    return (EXIT_FAILURE);
-  if (value == EXIT_SUCCESS)
+  value = gere_redirect_next(info, str, flag);
+  if (value == EXIT_SUCCESS || value == EXIT_FAILURE)
     return (EXIT_SUCCESS);
-  debug("*************** %s\n", str);
-  if (builtins(info, str) == EXIT_FAILURE)
-    if (exec(info, str) == EXIT_FAILURE)
-      return (EXIT_FAILURE);
+  debug("%E %E%E", "***** La ligne apres decoupage ******", str, "\n");
+  if ((value = builtins(info, str)) == EXIT_FAILURE)
+    exec(info, str, flag);
+  if (value == EXIT_EXIT)
+    return (EXIT_EXIT);
   return (EXIT_SUCCESS);
 }

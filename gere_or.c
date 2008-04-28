@@ -5,13 +5,13 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Mon Apr 21 17:55:27 2008 thomas brennetot
+** Last update Mon Apr 28 10:45:33 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include "42.h"
 
-int	gere_or()
+int	gere_or(t_info *info, char *str, int flag)
 {
   return (EXIT_SUCCESS);
 }

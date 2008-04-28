@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr 25 16:04:12 2008 thomas brennetot
-** Last update Fri Apr 25 19:22:16 2008 thomas brennetot
+** Last update Mon Apr 28 12:31:41 2008 thomas brennetot
 */
 
 #include <sys/types.h>
@@ -70,10 +70,10 @@ int		xwait(int *status)
 	  if (st_wait[i].nb_signal == *status)
 	    {
 	      my_printf("%E", st_wait[i].str);
-	      return (pid);
+	      return (EXIT_FAILURE);
 	    }
 	  i++;
 	}
     }
-  return (pid);
+  return (EXIT_SUCCESS);
 }

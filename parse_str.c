@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Thu Apr 24 13:47:05 2008 thomas brennetot
+** Last update Mon Apr 28 10:50:21 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -17,6 +17,6 @@
 
 int	parse_str(t_info *info, char *str)
 {
-  gere_redirect(info, str);
+  my_printf("Le parse est a faire\n\b");
   return (EXIT_SUCCESS);
 }
