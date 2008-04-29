@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Mon Apr 28 10:50:21 2008 thomas brennetot
+** Last update Tue Apr 29 13:44:25 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -18,5 +18,6 @@
 int	parse_str(t_info *info, char *str)
 {
   my_printf("Le parse est a faire\n\b");
+  info->last_status = 0;
   return (EXIT_SUCCESS);
 }

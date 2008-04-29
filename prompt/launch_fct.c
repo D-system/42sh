@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue Apr 15 14:54:50 2008 aymeric derazey
-** Last update Wed Apr 16 14:04:51 2008 thomas brennetot
+** Last update Tue Apr 29 13:27:04 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -22,6 +22,7 @@ t_prompt gl_prompt[] =
     {'n', user_name},	/* User name */
     {'m', hostname_to_dot},	/* The hostname up to the first `.' */
     {'%', pourcent},	/* '%' */
+    {'?', last_status},	/* Valeur de return de la derniere commande */
 /*     {'/', 0},	/\* pwd *\/ */
 /*     {'c', 0},	/\* pwd depuis l'home *\/ */
 /*     {'C', 0},	/\* pwd depuis l'home sans le '~/'*\/ */
@@ -42,7 +43,6 @@ t_prompt gl_prompt[] =
 /*     {'W', 0},	/\* The month in `mm' format. *\/ */
 /*     {'y', 0},	/\* The year in `yy' format. *\/ */
 /*     {'Y', 0},	/\* The year in `yyyy' format. *\/ */
-/*     {'?', 0},	/\* Valeur de return de la derniere commande *\/ */
     {0, 0},
   };
 

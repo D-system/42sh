@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Sun Apr 27 18:54:05 2008 thomas brennetot
+## Last update Tue Apr 29 13:23:01 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -30,7 +30,8 @@ SRC_SH		=	main.c				\
 			builtins.c			\
 			my_access.c			\
 			path_to_tab.c			\
-			parse_str.c
+			parse_str.c			\
+			put_zero.c
 
 SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_getnbr_base.c		\
@@ -70,7 +71,8 @@ SRC_PRT		=	./prompt/prompt.c		\
 			./prompt/pourcent.c		\
 			./prompt/tild.c			\
 			./prompt/hostname_to_dot.c	\
-			./prompt/user_name.c
+			./prompt/user_name.c		\
+			./prompt/last_status.c
 
 SRC_PTF		=	./lib/my_printf/my_printf.c	\
 			./lib/my_printf/my_c.c		\

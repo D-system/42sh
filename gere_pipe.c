@@ -5,49 +5,21 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:48:08 2008 laurent lefebvre
-** Last update Mon Apr 28 12:32:25 2008 thomas brennetot
+** Last update Tue Apr 29 13:34:16 2008 thomas brennetot
 */
 
 #include <stdlib.h>
+#include <sys/resource.h>
 #include "42.h"
 
 /*
 ** Gestion des pipes en recursif
 */
 
-int	gere_pipe_put_zero(char *str)
+int		gere_pipe_next(t_info *info, char *str, int flag, int i, int *fildes)
 {
-  int	i;
-  int	bracket;
+  int		pid;
 
-  i = 0;
-  bracket = 0;
-  while (str[i] != '\0')
-    {
-      if (str[i] == '(')
-	bracket++;
-      if (str[i] == '|' && bracket == 0)
-	{
-	  str[i] = '\0';
-	  return (i);
-	}
-      if (str[i] == ')')
-	bracket--;
-      i++;
-    }
-  return (-1);
-}
-
-int	gere_pipe_next(t_info *info, char *str, int flag)
-{
-  int	pid;
-  int	fildes[2];
-  int	i;
-
-  if ((i = gere_pipe_put_zero(str)) == -1)
-    return (EXIT_FAILURE);
-  if (xpipe(fildes) == EXIT_FAILURE)
-    return (EXIT_FAILURE);
   if ((pid = xfork()) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   if (pid == 0)
@@ -73,16 +45,28 @@ int	gere_pipe_next(t_info *info, char *str, int flag)
   return (EXIT_FAILURE);
 }
 
-int	gere_pipe(t_info *info, char *str, int flag)
+int		gere_pipe(t_info *info, char *str, int flag)
 {
-  int	pid;
-  int	status;
+  int		pid;
+  int		status;
+  struct rusage	rusage;
+  int		fildes[2];
+  int		i;
 
   if ((pid = xfork()) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   if (pid == 0)
-    gere_pipe_next(info, str, CHILD);
-  else if (xwait(&status) == EXIT_FAILURE)
-    info->status = EXIT_FAILURE;
+    {
+      if ((i = put_zero(str, "|")) == -1)
+	return (EXIT_FAILURE);
+      if (xpipe(fildes) == EXIT_FAILURE)
+	return (EXIT_FAILURE);
+      gere_pipe_next(info, str, CHILD, i, fildes);
+    }
+  else if (xwait4(pid, &status, 0, &rusage) == EXIT_FAILURE)
+    {
+      info->last_status = EXIT_FAILURE;
+      return (EXIT_FAILURE);
+    }
   return (EXIT_SUCCESS);
 }

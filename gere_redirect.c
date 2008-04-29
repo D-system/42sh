@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Mon Apr 28 12:19:41 2008 thomas brennetot
+** Last update Tue Apr 29 12:45:55 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -34,6 +34,10 @@ t_gere	gl_gere[] =
   {0, 0, 0},
 };
 
+/*
+** Lance les fonctions qui 'decoupent' la chaine de caractere.
+*/
+
 int	gere_redirect_next(t_info *info, char *str, int flag)
 {
   int	igl;
@@ -61,16 +65,20 @@ int	gere_redirect_next(t_info *info, char *str, int flag)
   return (NO_REDIRECTION);
 }
 
+/*
+** execute la ligne une fois decoupee.
+*/
+
 int	gere_redirect(t_info *info, char *str, int flag)
 {
   int	value;
 
-  value = gere_redirect_next(info, str, flag);
-  if (value == EXIT_SUCCESS || value == EXIT_FAILURE)
-    return (EXIT_SUCCESS);
-  debug("%E %E%E", "***** La ligne apres decoupage ******", str, "\n");
+  if ((value= gere_redirect_next(info, str, flag)) != NO_REDIRECTION)
+    return (value);
+  debug("%E%E%E", "***** La ligne apres decoupage ****** ", str, "\n");
   if ((value = builtins(info, str)) == EXIT_FAILURE)
-    exec(info, str, flag);
+    if (exec(info, str, flag) == EXIT_FAILURE)
+      return (EXIT_FAILURE);
   if (value == EXIT_EXIT)
     return (EXIT_EXIT);
   return (EXIT_SUCCESS);

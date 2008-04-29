@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Mon Apr 28 12:33:40 2008 thomas brennetot
+** Last update Tue Apr 29 13:30:54 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -28,7 +28,7 @@
 # define EXIT_SUCCESS 0
 #endif
 
-#define printf_debug my_printf
+#define printf my_printf
 #define debug my_printf
 
 /* STRUCT */
@@ -38,7 +38,7 @@ typedef struct	s_info
   char		**env;
   char		*prompt;
   char		**path;
-  int		status; /* valeur de retour du wait */
+  int		last_status; /* valeur de retour du wait */
 }		t_info;
 
 /* xmalloc */
@@ -87,6 +87,7 @@ void		hostname_to_dot(t_info *info);
 void		pourcent(t_info *info);
 void		tild(t_info *info);
 void		user_name(t_info *info);
+void		last_status(t_info *info);
 
 /* GERE_REDIRECT */
 int		gere_redirect(t_info *info, char *str, int flag);
@@ -107,7 +108,7 @@ int		builtins(t_info *info, char *str);
 int		command();
 
 /* EXEC */
-void		exec(t_info *info, char *str, int flag);
+int		exec(t_info *info, char *str, int flag);
 int		my_access(t_info *info, char **tab);
 
 /* LIB */
@@ -147,5 +148,10 @@ int		xfork(void);
 int		xpipe(int *fildes);
 int		xdup2(int old_fd, int new_fd);
 int		xclose(int fd);
+int		xwait(int *status);
+int		xwait4(int wait_pid, int *status, int options, struct rusage *rusage);
+
+/* OtherZ */
+int	put_zero(char *str, char *delim);
 
 #endif /* !__42_H__ */

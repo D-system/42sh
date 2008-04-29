@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:24:58 2008 thomas brennetot
-** Last update Fri Apr 25 17:21:38 2008 thomas brennetot
+** Last update Mon Apr 28 13:41:31 2008 thomas brennetot
 */
 
 #include "../42.h"
@@ -54,7 +54,7 @@ void	no_tabulation(char *str)
     }
 }
 
-void	no_space_in_last(char *str)
+void	no_space_in_end(char *str)
 {
   int	i;
 
@@ -80,25 +80,26 @@ char	**my_str_to_wordtab(char *str)
   i = 0;
   itab = 0;
   no_tabulation(str);
-  no_space_in_last(str);
+  no_space_in_end(str);
   if ((tab = xmalloc(sizeof(*tab) * my_str_to_wordtab_nb_word(str))) == NULL)
     return (NULL);
-  while (str[i] != '\0')
-    {
-      u = 0;
-      my_memset(buff, 0, BUFF_WORDTAB);
-      u = 0;
-      while (str[i] == ' ' && str[i] != '\0')
-	i++;
-      while (str[i] != ' ' && str[i] != '\0')
-	buff[u++] = str[i++];
-      if ((tab[itab] = xmalloc(sizeof(**tab) * (my_strlen(buff) + 1))) == NULL)
-	{
-	  free_tab(tab);
-	  return (NULL);
-	}
-      my_strcpy(tab[itab++], buff);
-    }
+  if (my_str_to_wordtab_nb_word(str) > 1)
+    while (str[i] != '\0')
+      {
+	u = 0;
+	my_memset(buff, 0, BUFF_WORDTAB);
+	u = 0;
+	while (str[i] == ' ' && str[i] != '\0')
+	  i++;
+	while (str[i] != ' ' && str[i] != '\0')
+	  buff[u++] = str[i++];
+	if ((tab[itab] = xmalloc(sizeof(**tab) * (my_strlen(buff) + 1))) == NULL)
+	  {
+	    free_tab(tab);
+	    return (NULL);
+	  }
+	my_strcpy(tab[itab++], buff);
+      }
   tab[itab] = NULL;
   return (tab);
 }

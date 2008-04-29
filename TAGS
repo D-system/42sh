@@ -1,18 +1,23 @@
 
-42.h,320
+42.h,453
 # define __42_H__12,276
-#define BUFF_COMPL 17,347
-#define NO_REDIR 18,430
-#define printf_debug 19,569
-#define debug 20,600
-typedef struct	s_info24,665
-}		t_info;30,783
-typedef struct	s_mal33,809
-}		t_mal;37,869
-typedef struct	s_gere40,915
-}		t_gere;45,988
-typedef struct	s_prompt48,1031
-}		t_prompt;52,1087
+#define BUFF_COMPL 18,367
+#define NO_REDIRECTION 19,450
+#define FATHER 20,495
+#define CHILD 21,512
+#define EXIT_EXIT 22,528
+# define EXIT_FAILURE 25,575
+# define EXIT_SUCCESS 28,631
+#define printf 31,663
+#define debug 32,688
+typedef struct	s_info36,753
+}		t_info;42,876
+typedef struct	s_mal45,902
+}		t_mal;49,962
+typedef struct	s_gere52,1008
+}		t_gere;57,1081
+typedef struct	s_prompt60,1124
+}		t_prompt;64,1180
 
 builtins.c,21
 int	builtins(14,292
@@ -20,8 +25,10 @@ int	builtins(14,292
 command.c,20
 int	command(18,405
 
-exec.c,17
-int	exec(19,378
+exec.c,64
+void	exec_direct(19,378
+int	exec_fork(25,482
+int	exec(45,871
 
 gere_and.c,21
 int	gere_and(14,292
@@ -29,9 +36,8 @@ int	gere_and(14,292
 gere_bracket.c,25
 int	gere_bracket(14,296
 
-gere_dotcoma.c,58
-int	gere_dotcoma_bracket(18,345
-int	gere_dotcoma(38,625
+gere_dotcoma.c,25
+int	gere_dotcoma(18,406
 
 gere_double_left.c,29
 int	gere_double_left(14,300
@@ -45,16 +51,17 @@ int	gere_left(18,358
 gere_or.c,20
 int	gere_or(14,291
 
-gere_pipe.c,22
-int	gere_pipe(18,344
+gere_pipe.c,51
+int		gere_pipe_next(19,370
+int		gere_pipe(48,956
 
 gere_redirect.c,89
 t_gere	gl_gere[gl_gere23,478
-int	gere_redirect_next(37,746
-int	gere_redirect(64,1270
+int	gere_redirect_next(41,816
+int	gere_redirect(72,1408
 
 gere_right.c,23
-int	gere_right(18,360
+int	gere_right(14,294
 
 get_cfg.c,48
 int	set_default_var(21,444
@@ -87,11 +94,20 @@ int	how_many_path(15,316
 void	path_to_tab_cut_cp(31,501
 char	**path_to_tab(path_to_tab54,941
 
+put_zero.c,21
+int	put_zero(17,381
+
 completion/completion.c,23
 int	completion(14,297
 
+err/xclose.c,19
+int	xclose(15,313
+
+err/xdup2.c,18
+int	xdup2(15,312
+
 err/xfork.c,18
-int	xfork(15,312
+int	xfork(16,332
 
 err/xfree.c,42
 void		xfree(14,283
@@ -107,16 +123,18 @@ err/xopen.c,18
 int	xopen(14,307
 
 err/xpipe.c,18
-int	xpipe(14,292
+int	xpipe(15,312
 
 err/xread.c,18
 int	xread(16,353
 
-err/xwait.c,99
-typedef struct	s_wait16,337
-}		t_wait;20,393
-t_wait		st_wait[st_wait22,405
-int		xwait(59,1855
+err/xwait.c,145
+typedef struct	s_wait17,357
+}		t_wait;21,413
+t_wait		st_wait[st_wait23,425
+int		err_status(60,1811
+int		xwait(81,2176
+int		xwait4(93,2396
 
 err/xwrite.c,20
 int		xwrite(17,365
@@ -165,12 +183,12 @@ int	my_putnbr_base(13,277
 lib/my_putstr.c,22
 int	my_putstr(15,324
 
-lib/my_str_to_wordtab.c,176
+lib/my_str_to_wordtab.c,175
 #define BUFF_WORDTAB 21,469
 int	my_str_to_wordtab_nb_word(23,495
 void	no_tabulation(44,797
-void	no_space_in_last(57,940
-char	**my_str_to_wordtab(my_str_to_wordtab72,1115
+void	no_space_in_end(57,940
+char	**my_str_to_wordtab(my_str_to_wordtab72,1114
 
 lib/my_str_to_wordtab_mode.c,170
 void	my_inhib(15,330
@@ -206,9 +224,12 @@ void	full_hostname(14,307
 prompt/hostname_to_dot.c,29
 void	hostname_to_dot(15,339
 
+prompt/last_status.c,25
+void	last_status(13,277
+
 prompt/launch_fct.c,61
 t_prompt gl_prompt[gl_prompt18,373
-int	launch_fct(49,1782
+int	launch_fct(49,1784
 
 prompt/pourcent.c,22
 void	pourcent(13,283
