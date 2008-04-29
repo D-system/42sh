@@ -5,16 +5,20 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat Mar 15 16:17:42 2008 aymeric derazey
-** Last update Mon Mar 31 17:39:23 2008 aymeric derazey
+** Last update Tue Apr 29 16:10:54 2008 thomas brennetot
 */
 
 #include <fcntl.h>
 #include "../42.h"
 
-int	xopen(char *file)
+int	xopen(char *file, int flags)
 {
   int	fd;
-  if ((fd = open(file, O_RDONLY)) == -1)
-    my_putstr("error while opening file\n");
+
+  if ((fd = open(file, flags, 0644)) == -1)
+    {
+      my_printf("%E", "Error while opening file\n");
+      return (EXIT_FAILURE);
+    }
   return (fd);
 }

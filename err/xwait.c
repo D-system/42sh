@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr 25 16:04:12 2008 thomas brennetot
-** Last update Tue Apr 29 13:14:26 2008 thomas brennetot
+** Last update Tue Apr 29 15:16:09 2008 thomas brennetot
 */
 
 #include <sys/types.h>
@@ -74,7 +74,6 @@ int		err_status(int *status)
 	  i++;
 	}
     }
-  my_printf("%E", "Error with last proccess (Error Unknow)\n");
   return (EXIT_FAILURE);
 }
 
@@ -92,8 +91,6 @@ int		xwait(int *status)
 
 int		xwait4(int wait_pid, int *status, int options, struct rusage *rusage)
 {
-  int		i;
-
   if (wait4(wait_pid, status, options, rusage) == -1)
     {
       my_printf("%E", "Problem with wait4\n");

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:49:16 2008 laurent lefebvre
-** Last update Tue Apr 29 13:25:53 2008 thomas brennetot
+** Last update Tue Apr 29 16:42:14 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -47,9 +47,9 @@ int	exec(t_info *info, char *str, int flag)
   char	**tab;
 
   if ((tab = my_str_to_wordtab(str)) == NULL)
-    return ;
+    return (EXIT_FAILURE);
   if (tab[0] == NULL)
-    return ;
+    return (EXIT_FAILURE);
   if (my_access(info, tab) == EXIT_FAILURE)
     {
       free_tab(tab);

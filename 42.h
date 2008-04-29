@@ -5,31 +5,32 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Tue Apr 29 13:30:54 2008 thomas brennetot
+** Last update Tue Apr 29 14:42:26 2008 thomas brennetot
 */
 
 #ifndef __42_H__
 # define __42_H__
 
-#include <stdlib.h>
-#include "lib/my_printf/my_printf.h"
+# include <stdlib.h>
+# include <sys/resource.h>
+# include "lib/my_printf/my_printf.h"
 
 /* DEFINES */
-#define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
-#define NO_REDIRECTION 2 /* gere_redirect */
-#define FATHER 0
-#define CHILD 1
-#define EXIT_EXIT 42
+# define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
+# define NO_REDIRECTION 2 /* gere_redirect */
+# define FATHER 0
+# define CHILD 1
+# define EXIT_EXIT 42
 
-#ifndef __EXIT_FAILURE__
-# define EXIT_FAILURE 1
-#endif
-#ifndef __EXIT_SUCCESS__
-# define EXIT_SUCCESS 0
-#endif
+# ifndef __EXIT_FAILURE__
+#  define EXIT_FAILURE 1
+# endif
+# ifndef __EXIT_SUCCESS__
+#  define EXIT_SUCCESS 0
+# endif
 
-#define printf my_printf
-#define debug my_printf
+# define printf my_printf
+# define debug my_printf
 
 /* STRUCT */
 /* structure principale */
@@ -138,7 +139,7 @@ void		*xmalloc(int size);
 void		*mem_add(int rw, void *to_mem);
 void		my_put_in_list(t_mal **begin, void *add);
 void		*x_malloc(int size);
-int		xopen(char *file);
+int		xopen(char *file, int flags);
 int		xread(int fd, char *buf, int size);
 int		xwrite(int fd, char *str, int size);
 void		xfree(void *ptr);
