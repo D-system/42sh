@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Tue Apr 29 13:23:01 2008 thomas brennetot
+## Last update Tue Apr 29 17:17:35 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -31,7 +31,8 @@ SRC_SH		=	main.c				\
 			my_access.c			\
 			path_to_tab.c			\
 			parse_str.c			\
-			put_zero.c
+			put_zero.c			\
+			cut_delim_nextword_and_return_nextword.c
 
 SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_getnbr_base.c		\

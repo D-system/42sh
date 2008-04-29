@@ -1,29 +1,32 @@
 
-42.h,453
+42.h,463
 # define __42_H__12,276
-#define BUFF_COMPL 18,367
-#define NO_REDIRECTION 19,450
-#define FATHER 20,495
-#define CHILD 21,512
-#define EXIT_EXIT 22,528
-# define EXIT_FAILURE 25,575
-# define EXIT_SUCCESS 28,631
-#define printf 31,663
-#define debug 32,688
-typedef struct	s_info36,753
-}		t_info;42,876
-typedef struct	s_mal45,902
-}		t_mal;49,962
-typedef struct	s_gere52,1008
-}		t_gere;57,1081
-typedef struct	s_prompt60,1124
-}		t_prompt;64,1180
+# define BUFF_COMPL 19,396
+# define NO_REDIRECTION 20,480
+# define FATHER 21,526
+# define CHILD 22,544
+# define EXIT_EXIT 23,561
+#  define EXIT_FAILURE 26,610
+#  define EXIT_SUCCESS 29,669
+# define printf 32,703
+# define debug 33,729
+typedef struct	s_info37,795
+}		t_info;43,918
+typedef struct	s_mal46,944
+}		t_mal;50,1004
+typedef struct	s_gere53,1050
+}		t_gere;58,1123
+typedef struct	s_prompt61,1166
+}		t_prompt;65,1222
 
 builtins.c,21
 int	builtins(14,292
 
 command.c,20
 int	command(18,405
+
+cut_delim_nextword_and_return_nextword.c,93
+char		*cut_delim_nextword_and_return_nextword(cut_delim_nextword_and_return_nextword18,395
 
 exec.c,64
 void	exec_direct(19,378
@@ -42,8 +45,9 @@ int	gere_dotcoma(18,406
 gere_double_left.c,29
 int	gere_double_left(14,300
 
-gere_double_right.c,30
-int	gere_double_right(14,301
+gere_double_right.c,68
+int		gere_double_right_next(16,346
+int		gere_double_right(43,1014
 
 gere_left.c,22
 int	gere_left(18,358
@@ -60,8 +64,9 @@ t_gere	gl_gere[gl_gere23,478
 int	gere_redirect_next(41,816
 int	gere_redirect(72,1408
 
-gere_right.c,23
-int	gere_right(14,294
+gere_right.c,53
+int		gere_right_next(17,340
+int		gere_right(43,956
 
 get_cfg.c,48
 int	set_default_var(21,444
@@ -120,7 +125,7 @@ void		my_put_in_list(47,803
 void		*x_malloc(x_malloc57,990
 
 err/xopen.c,18
-int	xopen(14,307
+int	xopen(14,308
 
 err/xpipe.c,18
 int	xpipe(15,312
@@ -133,8 +138,8 @@ typedef struct	s_wait17,357
 }		t_wait;21,413
 t_wait		st_wait[st_wait23,425
 int		err_status(60,1811
-int		xwait(81,2176
-int		xwait4(93,2396
+int		xwait(80,2112
+int		xwait4(92,2332
 
 err/xwrite.c,20
 int		xwrite(17,365

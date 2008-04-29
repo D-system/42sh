@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Tue Apr 29 14:42:26 2008 thomas brennetot
+** Last update Tue Apr 29 17:20:02 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -101,6 +101,7 @@ int		gere_or(t_info *info, char *str, int flag);
 int		gere_and(t_info *info, char *str, int flag);
 int		gere_double_left(t_info *info, char *str, int flag);
 int		gere_double_right(t_info *info, char *str, int flag);
+char		*cut_delim_nextword_and_return_nextword(char *str, char *str_delim_nextword_less, char *delim);
 
 /* BUILTINS */
 int		builtins(t_info *info, char *str);

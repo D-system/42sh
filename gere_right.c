@@ -5,53 +5,24 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 12:53:12 2008 thomas brennetot
-** Last update Tue Apr 29 16:40:43 2008 thomas brennetot
+** Last update Tue Apr 29 18:04:21 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include <fcntl.h>
 #include <sys/resource.h>
 #include "42.h"
-#define BUFF_RIGHT BUFF_COMPL
 
-void		*gere_right_tab(char *str, char *buff)
-{
-  int		i;
-  char		**wordtab;
-  char		*file;
-  int		len;
-  int		u;
-
-  my_memset(buff, 0, BUFF_RIGHT);
-  i = -1;
-  while (str[++i] != '>')
-    buff[i] = str[i];
-  buff[i++] = ' ';
-  if ((wordtab = my_str_to_wordtab(str + i)) == NULL)
-    return (NULL);
-  if ((file = my_strdup(wordtab[0])) == NULL)
-    {
-      free_tab(wordtab);
-      return (NULL);
-    }
-  len = my_strlen(wordtab[0]);
-  u = i;
-  while (my_strncmp(&str[i++], wordtab[0], len) != 0);
-  i += len;
-  my_strcpy(&buff[u], &str[i]);
-  free_tab(wordtab);
-  return (file);
-}
 
 int		gere_right_next(t_info *info, char *str, int flag)
 {
   char		*file;
-  char		buff[BUFF_RIGHT];
+  char		buff[BUFF_COMPL];
   int		fd;
 
-  if ((file = gere_right_tab(str, buff)) == NULL)
+  if ((file = cut_delim_nextword_and_return_nextword(str, buff, ">")) == NULL)
     return (EXIT_FAILURE);
-  if ((fd = xopen(file, O_CREAT | O_WRONLY | O_TRUNC)) == EXIT_FAILURE)
+  if ((fd = xopen(file, O_CREAT | O_WRONLY | O_TRUNC)) == -1)
     {
       xfree(file);
       info->last_status = EXIT_FAILURE;
@@ -89,5 +60,5 @@ int		gere_right(t_info *info, char *str, int flag)
 	  return (EXIT_FAILURE);
 	}
     }
-  return (EXIT_FAILURE);
+  return (EXIT_SUCCESS);
 }
