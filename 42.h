@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Tue Apr 29 17:20:02 2008 thomas brennetot
+** Last update Wed Apr 30 11:06:08 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -91,7 +91,9 @@ void		user_name(t_info *info);
 void		last_status(t_info *info);
 
 /* GERE_REDIRECT */
+int		gere(t_info *info, char *str, int flag);
 int		gere_redirect(t_info *info, char *str, int flag);
+int		gere_delimitor(t_info *info, char *str, int flag);
 int		gere_dotcoma(t_info *info, char *str, int flag);
 int		gere_left(t_info *info, char *str, int flag);
 int		gere_pipe(t_info *info, char *str, int flag);

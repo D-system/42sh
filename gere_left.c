@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:43:44 2008 laurent lefebvre
-** Last update Wed Apr 30 10:21:06 2008 thomas brennetot
+** Last update Wed Apr 30 10:32:54 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -41,7 +41,7 @@ int		gere_left_next(t_info *info, char *str, int flag)
       info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);
     }
-  gere_redirect(info, buff, flag);
+  gere(info, buff, flag);
   xclose(fd);
   return (EXIT_SUCCESS);
 }

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:42:30 2008 laurent lefebvre
-** Last update Tue Apr 29 12:07:19 2008 aymeric derazey
+** Last update Wed Apr 30 10:32:05 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -21,7 +21,7 @@ int	gere_dotcoma(t_info *info, char *str, int flag)
 
   if ((i = put_zero(str, ";")) == -1)
     return (EXIT_FAILURE);
-  gere_redirect(info, str, flag);
-  gere_redirect(info, str + i + 1, flag);
+  gere(info, str, flag);
+  gere(info, str + i + 1, flag);
   return (EXIT_SUCCESS);
 }

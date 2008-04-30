@@ -1,30 +1,22 @@
 /*
-** gere_redirect.c for 42sh in /u/epitech_2012/lefebv_l/cu/public/42sh/official
+** gere_redirect.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
 ** 
-** Made by laurent lefebvre
-** Login   <lefebv_l@epitech.net>
+** Made by thomas brennetot
+** Login   <brenne_t@epitech.net>
 ** 
-** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Tue Apr 29 12:45:55 2008 thomas brennetot
+** Started on  Wed Apr 30 11:03:44 2008 thomas brennetot
+** Last update Wed Apr 30 11:04:38 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include "42.h"
 
 /*
-** Fonction de recursivite. Appels:
-** - gere_dotcoma si ";"
-** - gere_left si "<"
-** - gere_pipe si "|"
-** - gere_right si ">"
-** - command si instruction valide
+** Lance les fonctions qui font les redirections
 */
 
-t_gere	gl_gere[] =
+t_gere	gl_redirect[] =
 {
-  {"||", gere_or, 2},
-  {"&&", gere_and, 2},
-  {";", gere_dotcoma, 1},
   {"(", gere_bracket, 1},
   {"<<", gere_double_left, 2},
   {">>", gere_double_right, 2},
@@ -34,52 +26,29 @@ t_gere	gl_gere[] =
   {0, 0, 0},
 };
 
-/*
-** Lance les fonctions qui 'decoupent' la chaine de caractere.
-*/
-
-int	gere_redirect_next(t_info *info, char *str, int flag)
+int	gere_redirect(t_info *info, char *str, int flag)
 {
   int	igl;
   int	istr;
   int	bracket;
 
-  igl = 0;
+  istr = 0;
   bracket = 0;
-  while (gl_gere[igl].size_str != 0)
+  while (str[istr] != '\0')
     {
-      istr = 0;
-      while (str[istr] != '\0')
+      igl = 0;
+      while (gl_redirect[igl].size_str != 0)
 	{
 	  if (str[istr] == '(')
 	    bracket++;
-	  if (bracket == 0 || gl_gere[igl].str[0] == '(')
-	    if (my_strncmp(&str[istr], gl_gere[igl].str, gl_gere[igl].size_str) == 0)
-	      return (gl_gere[igl].func(info, str, flag));
+	  if (bracket == 0 || gl_redirect[igl].str[0] == '(')
+	    if (my_strncmp(&str[istr], gl_redirect[igl].str, gl_redirect[igl].size_str) == 0)
+	      return (gl_redirect[igl].func(info, str, flag));
 	  if (str[istr] == ')')
 	    bracket--;
-	  istr++;
+	  igl++;
 	}
-      igl++;
+      istr++;
     }
   return (NO_REDIRECTION);
-}
-
-/*
-** execute la ligne une fois decoupee.
-*/
-
-int	gere_redirect(t_info *info, char *str, int flag)
-{
-  int	value;
-
-  if ((value= gere_redirect_next(info, str, flag)) != NO_REDIRECTION)
-    return (value);
-  debug("%E%E%E", "***** La ligne apres decoupage ****** ", str, "\n");
-  if ((value = builtins(info, str)) == EXIT_FAILURE)
-    if (exec(info, str, flag) == EXIT_FAILURE)
-      return (EXIT_FAILURE);
-  if (value == EXIT_EXIT)
-    return (EXIT_EXIT);
-  return (EXIT_SUCCESS);
 }

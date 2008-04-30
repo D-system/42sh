@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 12:53:12 2008 thomas brennetot
-** Last update Wed Apr 30 09:56:38 2008 thomas brennetot
+** Last update Wed Apr 30 10:33:31 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -38,7 +38,7 @@ int		gere_right_next(t_info *info, char *str, int flag)
       info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);
     }
-  gere_redirect(info, buff, flag);
+  gere(info, buff, flag);
   xclose(fd);
   return (EXIT_SUCCESS);
 }

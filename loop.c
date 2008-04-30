@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:31:09 2008 laurent lefebvre
-** Last update Mon Apr 28 16:41:49 2008 thomas brennetot
+** Last update Wed Apr 30 10:34:02 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -27,7 +27,7 @@ int	loop(t_info *info)
 	{
 	  if (parse_str(info, str) == EXIT_FAILURE)
 	    return (EXIT_FAILURE);
-	  if (gere_redirect(info, str, FATHER) == EXIT_EXIT)
+	  if (gere(info, str, FATHER) == EXIT_EXIT)
 	    return (EXIT_EXIT);
 	}
     }

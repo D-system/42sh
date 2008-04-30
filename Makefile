@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Tue Apr 29 17:17:35 2008 thomas brennetot
+## Last update Wed Apr 30 11:06:33 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -15,7 +15,9 @@ SRC_SH		=	main.c				\
 			get_env.c			\
 			loop.c				\
 			get_cfg.c			\
+			gere.c				\
 			gere_redirect.c			\
+			gere_delimitor.c		\
 			gere_dotcoma.c			\
 			gere_left.c			\
 			gere_pipe.c			\

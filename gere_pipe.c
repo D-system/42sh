@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:48:08 2008 laurent lefebvre
-** Last update Tue Apr 29 13:34:16 2008 thomas brennetot
+** Last update Wed Apr 30 10:33:14 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -30,7 +30,7 @@ int		gere_pipe_next(t_info *info, char *str, int flag, int i, int *fildes)
 	  xclose(fildes[0]);
 	  return (EXIT_FAILURE);
 	}
-      return (gere_redirect(info, str + i + 1, CHILD));
+      return (gere(info, str + i + 1, CHILD));
     }
   else
     {
@@ -40,7 +40,7 @@ int		gere_pipe_next(t_info *info, char *str, int flag, int i, int *fildes)
 	  xclose(fildes[1]);
 	  return (EXIT_FAILURE);
 	}
-      return (gere_redirect(info, str, flag));
+      return (gere(info, str, flag));
     }
   return (EXIT_FAILURE);
 }

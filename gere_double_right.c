@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Wed Apr 30 09:57:33 2008 thomas brennetot
+** Last update Wed Apr 30 10:31:38 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -37,7 +37,7 @@ int		gere_double_right_next(t_info *info, char *str, int flag)
       info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);
     }
-  gere_redirect(info, buff, flag);
+  gere(info, buff, flag);
   xclose(fd);
   return (EXIT_SUCCESS);
 }
@@ -50,7 +50,7 @@ int		gere_double_right(t_info *info, char *str, int flag)
 
   debug("%E", "gere_double_right_next\n");
   if (flag == CHILD)
-    gere_right_next(info, str, flag);
+    gere_double_right_next(info, str, flag);
   else
     {
       if ((pid = xfork()) == EXIT_FAILURE)

@@ -5,13 +5,28 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Wed Apr 30 09:59:05 2008 thomas brennetot
+** Last update Wed Apr 30 10:25:27 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include <fcntl.h>
 #include <sys/resource.h>
 #include "42.h"
+
+int		gere_double_left_next(t_info *info, char *str, int flag)
+{
+  char	*stop;
+  char	buff[BUFF_COMPL];
+
+  if ((stop = cut_delim_nextword_and_return_nextword(str, buff, "<<")) == NULL)
+    {
+      info->last_status = EXIT_FAILURE;
+      return (EXIT_FAILURE);
+    }
+  
+  xfree(stop);
+  return (EXIT_SUCCESS);
+}
 
 int	gere_double_left(t_info *info, char *str, int flag)
 {
@@ -35,19 +50,3 @@ int	gere_double_left(t_info *info, char *str, int flag)
     }
   return (EXIT_SUCCESS);
 }
-
-int		gere_double_left_next(t_info *info, char *str, int flag)
-{
-  char	*stop;
-  char	buff[BUFF_COMPL];
-
-  if ((stop = cut_delim_nextword_and_return_nextword(str, buff, "<<")) == NULL)
-    {
-      info->last_status = EXIT_FAILURE;
-      return (EXIT_FAILURE);
-    }
-  
-  xfree(stop);
-  return (EXIT_SUCCESS);
-}
-
