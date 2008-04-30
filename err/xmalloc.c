@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 16:53:03 2008 laurent lefebvre
-** Last update Fri Apr  4 18:58:27 2008 thomas brennetot
+** Last update Wed Apr 30 11:50:32 2008 thomas brennetot
 */
 
 #include "../42.h"
@@ -23,8 +23,8 @@ void		*xmalloc(int size)
   ret = malloc(size);
   if (ret == NULL)
     {
-      my_putstr("Memory Allocation Error\n");
-      return (0);
+      my_printf("%E", "Memory Allocation Error\n");
+      return (NULL);
     }
   list = mem_add(0, 0);
   my_put_in_list(&list, ret);
@@ -61,8 +61,8 @@ void		*x_malloc(int size)
   ret = malloc(size);
   if (ret == NULL)
     {
-      my_putstr("Memory Allocation Error\n");
-      exit(EXIT_FAILURE);
+      my_printf("%E", "Memory Allocation Error\n");
+      return (NULL);
     }
   return (ret);
 }

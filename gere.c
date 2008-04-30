@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Wed Apr 30 11:04:12 2008 thomas brennetot
+** Last update Wed Apr 30 11:43:52 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -33,10 +33,8 @@ int	gere(t_info *info, char *str, int flag)
   if ((value = gere_redirect(info, str, flag)) != NO_REDIRECTION)
     return (value);
   debug("%E%E%E", "***** La ligne apres decoupage ****** ", str, "\n");
-  if ((value = builtins(info, str)) == EXIT_FAILURE)
+  if ((value = builtins(info, str)) == NO_BUILTINS)
     if (exec(info, str, flag) == EXIT_FAILURE)
       return (EXIT_FAILURE);
-  if (value == EXIT_EXIT)
-    return (EXIT_EXIT);
-  return (EXIT_SUCCESS);
+  return (value);
 }

@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Wed Apr 30 11:06:33 2008 thomas brennetot
+## Last update Wed Apr 30 13:04:36 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -29,12 +29,16 @@ SRC_SH		=	main.c				\
 			gere_bracket.c			\
 			command.c			\
 			exec.c				\
-			builtins.c			\
 			my_access.c			\
 			path_to_tab.c			\
 			parse_str.c			\
 			put_zero.c			\
 			cut_delim_nextword_and_return_nextword.c
+
+SRC_BUI		=	./builtins/builtins.c		\
+			./builtins/my_cd.c		\
+			./builtins/my_env.c		\
+			./builtins/my_exit.c
 
 SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_getnbr_base.c		\
@@ -97,6 +101,7 @@ OBJ_ERR		=	$(SRC_ERR:.c=.o)
 OBJ_PRT		=	$(SRC_PRT:.c=.o)
 OBJ_PTF		=	$(SRC_PTF:.c=.o)
 OBJ_COMPL	=	$(SRC_COMPL:.c=.o)
+OBJ_BUI		=	$(SRC_BUI:.c=.o)
 
 CFLAGS		+=	-W -Wall -pedantic -ansi -g -D${OSTYPE} -I.
 
@@ -110,8 +115,8 @@ LIB_solaris	=
 LIB_linux	=	-lefence -L/usr/lib/
 LIB		=	$(LIB_${OSTYPE})
 
-$(NAME)		:	$(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(OBJ_COMPL)
-			$(CC) -o $(NAME) $(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(OBJ_COMPL) $(CFLAGS) $(LIB)
+$(NAME)		:	$(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(OBJ_COMPL) $(OBJ_BUI)
+			$(CC) -o $(NAME) $(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(OBJ_COMPL) $(OBJ_BUI) $(CFLAGS) $(LIB)
 
 all		:	$(NAME)
 

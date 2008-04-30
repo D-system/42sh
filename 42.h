@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Wed Apr 30 11:06:08 2008 thomas brennetot
+** Last update Wed Apr 30 12:01:47 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -18,6 +18,7 @@
 /* DEFINES */
 # define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
 # define NO_REDIRECTION 2 /* gere_redirect */
+# define NO_BUILTINS 24
 # define FATHER 0
 # define CHILD 1
 # define EXIT_EXIT 42
@@ -42,7 +43,7 @@ typedef struct	s_info
   int		last_status; /* valeur de retour du wait */
 }		t_info;
 
-/* xmalloc */
+/* structure pour xmalloc */
 typedef struct	s_mal
 {
   void		*addr;
@@ -56,6 +57,13 @@ typedef struct	s_gere
   int		(*func)();
   int		size_str;
 }		t_gere;
+
+/* structure pour builtins */
+typedef struct	s_bui
+{
+  char		*str;
+  int		(*func)();
+}		t_bui;
 
 /* structure pour le prompt */
 typedef struct	s_prompt
@@ -74,7 +82,7 @@ char		**path_to_tab(char *str);
 /* LOOP */
 int		loop(t_info *info);
 
-/* PARSEUR DU BUFFER*/
+/* PARSEUR */
 int		parse_str(t_info *info, char *str);
 
 /* COMPLETION */
@@ -107,6 +115,11 @@ char		*cut_delim_nextword_and_return_nextword(char *str, char *str_delim_nextwor
 
 /* BUILTINS */
 int		builtins(t_info *info, char *str);
+int		my_cd(t_info *info, char **tab);
+int		my_env(t_info *info, char **tab);
+int		my_exit(t_info *info, char **tab);
+int		my_setenv(t_info *info, char **tab);
+int		my_unsetenv(t_info *info, char **tab);
 
 /* COMMAND */
 int		command();

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Mon Apr  7 16:19:25 2008 laurent lefebvre
-** Last update Fri Apr 25 11:53:22 2008 thomas brennetot
+** Last update Wed Apr 30 13:11:02 2008 thomas brennetot
 */
 
 #include <stdio.h>
@@ -130,6 +130,5 @@ char	**my_str_to_wordtab_mode(char *src, char *delim)
       i++;
     }
   tab[i] = NULL;
-  free(str);
   return (tab);
 }

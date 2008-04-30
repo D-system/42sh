@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr  4 18:50:31 2008 thomas brennetot
-** Last update Fri Apr 25 16:17:59 2008 thomas brennetot
+** Last update Wed Apr 30 13:13:52 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -28,8 +28,6 @@ void		xfree(void *add)
       prev = list;
       list = list->next;
       ch++;
-      if (list == NULL)
-	return ;
     }
   next = list->next;
   free(add);

@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr 25 16:04:12 2008 thomas brennetot
-** Last update Tue Apr 29 15:16:09 2008 thomas brennetot
+** Last update Wed Apr 30 11:55:53 2008 thomas brennetot
 */
 
 #include <sys/types.h>
@@ -20,7 +20,7 @@ typedef struct	s_wait
   char		*str;
 }		t_wait;
 
-t_wait		st_wait[] =
+t_wait		gl_wait[] =
   {
     {SIGHUP, "Hangup"},
     {SIGINT, "Interrupt"},
@@ -64,11 +64,11 @@ int		err_status(int *status)
   if (*status != 0)
     {
       i = 0;
-      while (st_wait[i].nb_signal != 0)
+      while (gl_wait[i].nb_signal != 0)
 	{
-	  if (st_wait[i].nb_signal == *status)
+	  if (gl_wait[i].nb_signal == *status)
 	    {
-	      my_printf("%E%E", st_wait[i].str, "\n");
+	      my_printf("%E%E", gl_wait[i].str, "\n");
 	      return (EXIT_FAILURE);
 	    }
 	  i++;
@@ -86,6 +86,7 @@ int		xwait(int *status)
     }
   if (*status != 0)
     return (err_status(status));
+  usleep(100);
   return (EXIT_SUCCESS);
 }
 

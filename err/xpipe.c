@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Sun Apr 27 13:55:18 2008 thomas brennetot
-** Last update Sun Apr 27 14:18:04 2008 thomas brennetot
+** Last update Wed Apr 30 11:54:27 2008 thomas brennetot
 */
 
 #include <unistd.h>
@@ -18,6 +18,9 @@ int	xpipe(int *fildes)
 
   value = pipe(fildes);
   if (value != 0)
-    return (EXIT_FAILURE);
+    {
+      my_printf("%E", "Problem with pipe function\nx");
+      return (EXIT_FAILURE);
+    }
   return (EXIT_SUCCESS);
 }

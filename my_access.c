@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 23 18:00:20 2008 thomas brennetot
-** Last update Fri Apr 25 13:20:30 2008 thomas brennetot
+** Last update Wed Apr 30 13:09:06 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -62,7 +62,7 @@ int	my_access(t_info *info, char **tab)
 	  {
 	    if (access(concat_path_bin, X_OK) != -1)
 	      {
-		free(tab[0]);
+		xfree(tab[0]);
 		tab[0] = my_strdup(concat_path_bin);
 		return (EXIT_SUCCESS);
 	      }
