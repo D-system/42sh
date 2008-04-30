@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Tue Apr 29 18:31:42 2008 thomas brennetot
+** Last update Wed Apr 30 09:57:33 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -19,10 +19,11 @@ int		gere_double_right_next(t_info *info, char *str, int flag)
   char		buff[BUFF_COMPL];
   int		fd;
 
-  debug("%E", "gere_double_right_next\n");
   if ((file = cut_delim_nextword_and_return_nextword(str, buff, ">>")) == NULL)
-    return (EXIT_FAILURE);
-  debug("%E%E%E", "le file a ouvrir dans >> ", file, "\n");
+    {
+      info->last_status = EXIT_FAILURE;
+      return (EXIT_FAILURE);
+    }
   if ((fd = xopen(file, O_CREAT | O_WRONLY | O_APPEND)) == -1)
     {
       xfree(file);

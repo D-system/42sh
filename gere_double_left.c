@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Tue Apr 29 18:54:40 2008 aymeric derazey
+** Last update Wed Apr 30 09:59:05 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -38,28 +38,16 @@ int	gere_double_left(t_info *info, char *str, int flag)
 
 int		gere_double_left_next(t_info *info, char *str, int flag)
 {
-  char		*file;
-  char		buff[BUFF_COMPL];
-  int		fd;
+  char	*stop;
+  char	buff[BUFF_COMPL];
 
-  debug("%E", "gere_double_right_next\n");
-  if ((file = cut_delim_nextword_and_return_nextword(str, buff, ">>")) == NULL)
-    return (EXIT_FAILURE);
-  debug("%E%E%E", "le file a ouvrir dans >> ", file, "\n");
-  if ((fd = xopen(file, O_CREAT | O_WRONLY | O_APPEND)) == -1)
+  if ((stop = cut_delim_nextword_and_return_nextword(str, buff, "<<")) == NULL)
     {
-      xfree(file);
       info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);
     }
-  xfree(file);
-  if (xdup2(fd, 1) == EXIT_FAILURE)
-    {
-      xclose(fd);
-      info->last_status = EXIT_FAILURE;
-      return (EXIT_FAILURE);
-    }
-  gere_redirect(info, buff, flag);
-  xclose(fd);
+  
+  xfree(stop);
   return (EXIT_SUCCESS);
 }
+

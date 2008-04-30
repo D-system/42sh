@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 12:53:12 2008 thomas brennetot
-** Last update Tue Apr 29 18:04:21 2008 thomas brennetot
+** Last update Wed Apr 30 09:56:38 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -21,7 +21,10 @@ int		gere_right_next(t_info *info, char *str, int flag)
   int		fd;
 
   if ((file = cut_delim_nextword_and_return_nextword(str, buff, ">")) == NULL)
-    return (EXIT_FAILURE);
+    {
+      info->last_status = EXIT_FAILURE;
+      return (EXIT_FAILURE);
+    }
   if ((fd = xopen(file, O_CREAT | O_WRONLY | O_TRUNC)) == -1)
     {
       xfree(file);
