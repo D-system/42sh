@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Wed Apr 30 13:04:36 2008 thomas brennetot
+## Last update Wed Apr 30 16:12:28 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -38,7 +38,9 @@ SRC_SH		=	main.c				\
 SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_cd.c		\
 			./builtins/my_env.c		\
-			./builtins/my_exit.c
+			./builtins/my_exit.c		\
+			./builtins/my_setenv.c		\
+			./builtins/my_unsetenv.c
 
 SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_getnbr_base.c		\

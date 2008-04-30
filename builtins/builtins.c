@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 23 16:27:35 2008 thomas brennetot
-** Last update Wed Apr 30 13:04:13 2008 thomas brennetot
+** Last update Wed Apr 30 16:12:03 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -17,7 +17,7 @@ struct s_bui	gl_bui[] =
   {"env", my_env},
   {"exit", my_exit},
 /*   {"setenv", my_setenv}, */
-/*   {"unsetenv", my_unsetenv}, */
+  {"unsetenv", my_unsetenv},
   {0, 0},
 };
 
