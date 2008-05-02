@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Fri May  2 19:39:36 2008 nicolas mondange
+** Last update Fri May  2 20:22:31 2008 aymeric derazey
 */
 
 #ifndef __42_H__
@@ -42,7 +42,6 @@
 /* STRUCT */
 
 /* Struct list chaine pour l'historique */
-
 typedef struct		s_event
 {
   int			nbr;
@@ -84,6 +83,13 @@ typedef struct	s_bui
   int		(*func)();
 }		t_bui;
 
+/* structure pour le builtin set */
+typedef	struct	s_set
+{
+  char		*cmd;
+  int		(*func)();
+}		t_set;
+
 /* structure pour le prompt */
 typedef struct	s_prompt
 {
@@ -113,7 +119,7 @@ void		read_line(t_event *new_elem, char *line);
 void		parse_event(t_info *params, char *line);
 void		save_event(t_info *params);
 t_event		*first_event(t_info *params, char *to_add, time_t *clock);
-void		aff_event(t_info *params);
+void		aff_event(t_info *params, char **tab);
 void		clear_event(t_info *params, int nbr_elm, int limit);
 t_event         *read_first_line(t_info *params, char *line);
 

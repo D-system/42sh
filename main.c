@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Tue Apr 29 13:42:48 2008 thomas brennetot
+** Last update Fri May  2 20:14:15 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -15,15 +15,13 @@ int		main(void)
 {
   extern char	**environ;
   t_info	info;
-  
+  int		value;
+
   if (init(environ, &info) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   info.prompt = my_strdup("%n@%M Last Status of cmd >>%?<< 42sh ##>"); /* On set en dur pour l'instant */
-  if (loop(&info) == EXIT_FAILURE)
-    {
-      freeall();
-      return (EXIT_FAILURE);
-    }
+  value = loop(&info);
+  save_event(&info);
   freeall();
-  return (EXIT_SUCCESS);
+  return (value);
 }

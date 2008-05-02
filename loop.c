@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:31:09 2008 laurent lefebvre
-** Last update Wed Apr 30 18:47:51 2008 aymeric derazey
+** Last update Fri May  2 20:24:05 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -23,6 +23,7 @@ int	loop(t_info *info)
     {
       prompt(info);
       completion(info, str);
+/*       add_event(info, str); */
       if (str != NULL)
 	{
 	  if (parse_str(info, str) == EXIT_FAILURE)

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 17:28:39 2008 laurent lefebvre
-** Last update Fri May  2 14:06:51 2008 thomas brennetot
+** Last update Fri May  2 20:15:59 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -21,9 +21,10 @@ void	prompt(t_info *info)
   int	i;
   int	var;
 
-  usleep(100);
+  if (isatty(1) == 0)
+    return ;
   if (info->prompt == NULL)
-    my_putchar('>');
+    my_putstr("> ");
   else
     {
       i = 0;
