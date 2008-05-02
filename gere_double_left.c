@@ -5,12 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Wed Apr 30 10:25:27 2008 thomas brennetot
+** Last update Fri May  2 14:21:05 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include <fcntl.h>
-#include <sys/resource.h>
 #include "42.h"
 
 int		gere_double_left_next(t_info *info, char *str, int flag)
@@ -32,17 +31,19 @@ int	gere_double_left(t_info *info, char *str, int flag)
 {
   int		pid;
   int		status;
-  struct rusage	rusage;
 
   if (flag == CHILD)
     gere_double_left_next(info, str, flag);
   else
     {
-      if ((pid = xfork()) == EXIT_FAILURE)
-	return (EXIT_FAILURE);
+      if ((pid = xfork()) == -1)
+	{
+	  info->last_status = EXIT_FAILURE;
+	  return (EXIT_FAILURE);
+	}
       if (pid == 0)
 	gere_double_left_next(info, str, CHILD);
-      else if (xwait4(pid, &status, 0, &rusage) == EXIT_FAILURE)
+      else if (xwaitpid(pid, &status, 0) == EXIT_FAILURE)
 	{
 	  info->last_status = EXIT_FAILURE;
 	  return (EXIT_FAILURE);

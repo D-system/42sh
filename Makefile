@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Wed Apr 30 16:12:28 2008 thomas brennetot
+## Last update Fri May  2 14:29:38 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -125,12 +125,16 @@ all		:	$(NAME)
 etags		:
 			etags *.[ch] */*.[ch]
 
+debug		:
+			grep -H -n -e "debug" *.c */*.c
+
 clean		:
 			rm -f $(OBJ_SH)
 			rm -f $(OBJ_LIB)
 			rm -f $(OBJ_ERR)
 			rm -f $(OBJ_PRT)
 			rm -f $(OBJ_PTF)
+			rm -f $(OBJ_BUI)
 			rm -f *~
 			rm -f */*~
 

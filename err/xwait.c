@@ -5,13 +5,12 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr 25 16:04:12 2008 thomas brennetot
-** Last update Wed Apr 30 11:55:53 2008 thomas brennetot
+** Last update Fri May  2 14:28:43 2008 thomas brennetot
 */
 
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
-#include <unistd.h>
 #include "../42.h"
 
 typedef struct	s_wait
@@ -57,7 +56,7 @@ t_wait		gl_wait[] =
     {0, 0},    
   };
 
-int		err_status(int *status)
+void		err_status(int *status)
 {
   int		i;
 
@@ -69,36 +68,36 @@ int		err_status(int *status)
 	  if (gl_wait[i].nb_signal == *status)
 	    {
 	      my_printf("%E%E", gl_wait[i].str, "\n");
-	      return (EXIT_FAILURE);
+	      return ;
 	    }
 	  i++;
 	}
     }
-  return (EXIT_FAILURE);
 }
 
-int		xwait(int *status)
-{
-  if (wait(status) == -1)
-    {
-      my_printf("%E", "Problem with wait\n");
-      return (EXIT_FAILURE);
-    }
-  if (*status != 0)
-    return (err_status(status));
-  usleep(100);
-  return (EXIT_SUCCESS);
-}
+/* int		xwait4(int wait_pid, int *status, int options, struct rusage *rusage) */
+/* { */
+/*   if (wait4(wait_pid, status, options, rusage) == -1) */
+/*     { */
+/*       my_printf("%E", "Problem with wait4\n"); */
+/*       return (EXIT_FAILURE); */
+/*     } */
+/*   if (*status != 0) */
+/*     { */
+/*       err_status(status); */
+/*       return (EXIT_FAILURE); */
+/*     } */
+/*   return (EXIT_SUCCESS); */
+/* } */
 
-int		xwait4(int wait_pid, int *status, int options, struct rusage *rusage)
+int		xwaitpid(int wait_pid, int *status, int options)
 {
-  if (wait4(wait_pid, status, options, rusage) == -1)
+  if (waitpid(wait_pid, status, options) == -1)
+    return (EXIT_FAILURE);
+  if (*status != 0)
     {
-      my_printf("%E", "Problem with wait4\n");
+      err_status(status);
       return (EXIT_FAILURE);
     }
-  if (*status != 0)
-    return (err_status(status));
-  usleep(100);
   return (EXIT_SUCCESS);
 }

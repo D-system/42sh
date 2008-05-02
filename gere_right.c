@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 12:53:12 2008 thomas brennetot
-** Last update Wed Apr 30 10:33:31 2008 thomas brennetot
+** Last update Fri May  2 14:23:12 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -47,17 +47,19 @@ int		gere_right(t_info *info, char *str, int flag)
 {
   int		pid;
   int		status;
-  struct rusage	rusage;
 
   if (flag == CHILD)
     gere_right_next(info, str, flag);
   else
     {
-      if ((pid = xfork()) == EXIT_FAILURE)
-	return (EXIT_FAILURE);
+      if ((pid = xfork()) == -1)
+	{
+	  info->last_status = EXIT_FAILURE;
+	  return (EXIT_FAILURE);
+	}
       if (pid == 0)
 	gere_right_next(info, str, CHILD);
-      else if (xwait4(pid, &status, 0, &rusage) == EXIT_FAILURE)
+      else if (xwaitpid(pid, &status, 0) == EXIT_FAILURE)
 	{
 	  info->last_status = EXIT_FAILURE;
 	  return (EXIT_FAILURE);

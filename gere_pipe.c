@@ -5,11 +5,10 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:48:08 2008 laurent lefebvre
-** Last update Wed Apr 30 10:33:14 2008 thomas brennetot
+** Last update Fri May  2 14:22:42 2008 thomas brennetot
 */
 
 #include <stdlib.h>
-#include <sys/resource.h>
 #include "42.h"
 
 /*
@@ -49,24 +48,30 @@ int		gere_pipe(t_info *info, char *str, int flag)
 {
   int		pid;
   int		status;
-  struct rusage	rusage;
   int		fildes[2];
   int		i;
 
   if ((pid = xfork()) == EXIT_FAILURE)
-    return (EXIT_FAILURE);
+    {
+      info->last_status = EXIT_FAILURE;
+      return (EXIT_FAILURE);
+    }
   if (pid == 0)
     {
       if ((i = put_zero(str, "|")) == -1)
 	return (EXIT_FAILURE);
       if (xpipe(fildes) == EXIT_FAILURE)
-	return (EXIT_FAILURE);
+	{
+	  info->last_status = EXIT_FAILURE;
+	  return (EXIT_FAILURE);
+	}
       gere_pipe_next(info, str, CHILD, i, fildes);
     }
-  else if (xwait4(pid, &status, 0, &rusage) == EXIT_FAILURE)
+  else if (xwaitpid(pid, &status, 0) == EXIT_FAILURE)
     {
       info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);
     }
+  flag++;
   return (EXIT_SUCCESS);
 }

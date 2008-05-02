@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Sun Apr 27 13:57:45 2008 thomas brennetot
-** Last update Wed Apr 30 11:52:04 2008 thomas brennetot
+** Last update Fri May  2 14:19:23 2008 thomas brennetot
 */
 
 #include <sys/types.h>
@@ -19,9 +19,6 @@ int	xfork(void)
 
   pid = fork();
   if (pid == -1)
-    {
-      my_printf("%E", "Problem with fork\n");
-      return (EXIT_FAILURE);
-    }
+    my_printf("%E", "Problem with fork\n");
   return (pid);
 }

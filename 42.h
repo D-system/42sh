@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Wed Apr 30 12:01:47 2008 thomas brennetot
+** Last update Fri May  2 13:27:28 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -165,10 +165,45 @@ int		xfork(void);
 int		xpipe(int *fildes);
 int		xdup2(int old_fd, int new_fd);
 int		xclose(int fd);
-int		xwait(int *status);
 int		xwait4(int wait_pid, int *status, int options, struct rusage *rusage);
+int		xwaitpid(int wait_pid, int *status, int options);
 
 /* OtherZ */
-int	put_zero(char *str, char *delim);
+int		put_zero(char *str, char *delim);
 
 #endif /* !__42_H__ */
+
+
+
+/* TERMCAPS */
+
+#ifndef __MY_SELECT__
+# define __MY_SELECT__
+
+#include <stdlib.h>
+#include <sys/ioctl.h>
+#include <sys/termios.h>
+#include <sys/types.h>
+#include <sys/uio.h>
+#include <unistd.h>
+
+#define BUF_SIZE 4096
+
+typedef	struct		s_list
+{
+  char			*data;
+  struct s_list		*next;
+}			t_list;
+
+t_list		*push(t_list *list, char *str);
+void		show_list(t_list *list, int pos);
+
+int		canonical_mode(int flag);
+void		display(int ac, char **av);
+void		reverse_video(t_list *list);
+void		clear_win();
+void		my_outc(int c);
+int		inf_list(int pos, int ac);
+int		get_keys1(char *buf, int r, int ac);
+
+#endif

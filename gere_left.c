@@ -5,12 +5,11 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:43:44 2008 laurent lefebvre
-** Last update Wed Apr 30 10:32:54 2008 thomas brennetot
+** Last update Fri May  2 14:22:12 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include <fcntl.h>
-#include <sys/resource.h>
 #include "42.h"
 
 /*
@@ -51,17 +50,19 @@ int		gere_left(t_info *info, char *str, int flag)
 {
   int		pid;
   int		status;
-  struct rusage	rusage;
 
   if (flag == CHILD)
     gere_left_next(info, str, flag);
   else
     {
-      if ((pid = xfork()) == EXIT_FAILURE)
-	return (EXIT_FAILURE);
+      if ((pid = xfork()) == -1)
+	{
+	  info->last_status = EXIT_FAILURE;
+	  return (EXIT_FAILURE);
+	}
       if (pid == 0)
 	gere_left_next(info, str, CHILD);
-      else if (xwait4(pid, &status, 0, &rusage) == EXIT_FAILURE)
+      else if (xwaitpid(pid, &status, 0) == EXIT_FAILURE)
 	{
 	  info->last_status = EXIT_FAILURE;
 	  return (EXIT_FAILURE);
