@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Fri May  2 13:27:28 2008 thomas brennetot
+** Last update Fri May  2 19:39:36 2008 nicolas mondange
 */
 
 #ifndef __42_H__
@@ -14,6 +14,12 @@
 # include <stdlib.h>
 # include <sys/resource.h>
 # include "lib/my_printf/my_printf.h"
+# include <unistd.h>
+# include <fcntl.h>
+# include <string.h>
+# include <sys/wait.h>
+# include <sys/types.h>
+# include <sys/time.h>
 
 /* DEFINES */
 # define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
@@ -34,6 +40,17 @@
 # define debug my_printf
 
 /* STRUCT */
+
+/* Struct list chaine pour l'historique */
+
+typedef struct		s_event
+{
+  int			nbr;
+  char			*time;
+  char			*info;
+  struct s_event	*next;
+}			t_event;
+
 /* structure principale */
 typedef struct	s_info
 {
@@ -41,6 +58,8 @@ typedef struct	s_info
   char		*prompt;
   char		**path;
   int		last_status; /* valeur de retour du wait */
+  t_event	*history;
+  int		nbr_cmd;
 }		t_info;
 
 /* structure pour xmalloc */
@@ -88,6 +107,16 @@ int		parse_str(t_info *info, char *str);
 /* COMPLETION */
 int		completion(t_info *info, char *str);
 
+/* HISTORY */
+void		load_event(t_info *params);
+void		read_line(t_event *new_elem, char *line);
+void		parse_event(t_info *params, char *line);
+void		save_event(t_info *params);
+t_event		*first_event(t_info *params, char *to_add, time_t *clock);
+void		aff_event(t_info *params);
+void		clear_event(t_info *params, int nbr_elm, int limit);
+t_event         *read_first_line(t_info *params, char *line);
+
 /* PROMPT */
 void		prompt(t_info *info);
 int		launch_fct(t_info *info, int i);
@@ -133,6 +162,7 @@ int		my_getnbr(char *str);
 int		my_getnbr_base(char *str, char *base);
 void		*my_memset(char *b, char c, int size);
 void		my_put_nbr(int n);
+void		put_nbr_fd(int n, int fd);
 int		my_putchar(char c);
 int		my_putstr(char *str);
 char		**my_str_to_wordtab(char *str);

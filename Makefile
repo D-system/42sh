@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Fri May  2 14:29:38 2008 thomas brennetot
+## Last update Fri May  2 19:37:29 2008 nicolas mondange
 ##
 
 NAME		=	42sh
@@ -27,6 +27,7 @@ SRC_SH		=	main.c				\
 			gere_double_left.c		\
 			gere_double_right.c		\
 			gere_bracket.c			\
+			history.c			\
 			command.c			\
 			exec.c				\
 			my_access.c			\
@@ -54,6 +55,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_strcpy.c		\
 			./lib/my_strncpy.c		\
 			./lib/my_strdup.c		\
+			./lib/put_nbr_fd.c		\
 			./lib/my_putnbr_base.c		\
 			./lib/my_memset.c		\
 			./lib/epurstr.c			\
