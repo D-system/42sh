@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May  2 22:12:11 2008 aymeric derazey
-** Last update Sat May  3 17:21:09 2008 aymeric derazey
+** Last update Sat May  3 17:39:33 2008 aymeric derazey
 */
 
 #include "../42.h"
@@ -23,9 +23,9 @@ int	my_set(t_info *info, char **tab)
 
   if (tab[1] == NULL)
     aff_set(info);
+  i = 0;
   while (gl_set[i].cmd != 0)
     {
-      printf("tab[1] = %s\n", tab[1]);
       if ((my_strncmp(gl_set[i].cmd, tab[1], gl_set[i].len) == 0))
 	if (gl_set[i].func(info, tab) == EXIT_FAILURE)
 	  return (status(info, EXIT_FAILURE));
