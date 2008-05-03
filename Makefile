@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Fri May  2 19:37:29 2008 nicolas mondange
+## Last update Sat May  3 12:02:30 2008 aymeric derazey
 ##
 
 NAME		=	42sh
@@ -34,12 +34,14 @@ SRC_SH		=	main.c				\
 			path_to_tab.c			\
 			parse_str.c			\
 			put_zero.c			\
+			last_status.c			\
 			cut_delim_nextword_and_return_nextword.c
 
 SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_cd.c		\
 			./builtins/my_env.c		\
 			./builtins/my_exit.c		\
+			./builtins/my_echo.c		\
 			./builtins/my_setenv.c		\
 			./builtins/my_unsetenv.c
 

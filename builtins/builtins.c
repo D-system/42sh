@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 23 16:27:35 2008 thomas brennetot
-** Last update Fri May  2 20:23:48 2008 aymeric derazey
+** Last update Sat May  3 00:32:37 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -19,6 +19,7 @@ struct s_bui	gl_bui[] =
   {"setenv", my_setenv},
   {"unsetenv", my_unsetenv},
   {"history", aff_event},
+  {"echo", my_echo},
 /*   {"set", my_set}, */
   {0, 0},
 };

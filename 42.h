@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Fri May  2 20:22:31 2008 aymeric derazey
+** Last update Sat May  3 12:05:25 2008 aymeric derazey
 */
 
 #ifndef __42_H__
@@ -131,7 +131,6 @@ void		hostname_to_dot(t_info *info);
 void		pourcent(t_info *info);
 void		tild(t_info *info);
 void		user_name(t_info *info);
-void		last_status(t_info *info);
 
 /* GERE_REDIRECT */
 int		gere(t_info *info, char *str, int flag);
@@ -153,6 +152,7 @@ int		builtins(t_info *info, char *str);
 int		my_cd(t_info *info, char **tab);
 int		my_env(t_info *info, char **tab);
 int		my_exit(t_info *info, char **tab);
+int		my_echo(t_info *info, char **tab);
 int		my_setenv(t_info *info, char **tab);
 int		my_unsetenv(t_info *info, char **tab);
 
@@ -206,6 +206,7 @@ int		xwaitpid(int wait_pid, int *status, int options);
 
 /* OtherZ */
 int		put_zero(char *str, char *delim);
+int		status(t_info *info, int status);
 
 #endif /* !__42_H__ */
 
