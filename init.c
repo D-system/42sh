@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Fri May  2 20:05:51 2008 thomas brennetot
+** Last update Sat May  3 16:33:33 2008 aymeric derazey
 */
 
 #include "42.h"
@@ -21,6 +21,7 @@ int	init(char **environ, t_info *info)
   info->prompt = NULL;
   info->last_status = EXIT_SUCCESS;
   get_env(environ, info);
+  get_set(info);
   info->path = path_to_tab(fetch_env(info->env, "PATH"));
   info->history = NULL;
   info->nbr_cmd = 0;

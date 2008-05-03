@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Sat May  3 12:05:25 2008 aymeric derazey
+** Last update Sat May  3 16:54:47 2008 aymeric derazey
 */
 
 #ifndef __42_H__
@@ -54,6 +54,7 @@ typedef struct		s_event
 typedef struct	s_info
 {
   char		**env;
+  char		**set;
   char		*prompt;
   char		**path;
   int		last_status; /* valeur de retour du wait */
@@ -88,6 +89,7 @@ typedef	struct	s_set
 {
   char		*cmd;
   int		(*func)();
+  int		len;
 }		t_set;
 
 /* structure pour le prompt */
@@ -103,6 +105,7 @@ int		get_env(char **environ, t_info *info);
 int		get_cfg(t_info *info);
 int		set_default_var(t_info *info);
 char		**path_to_tab(char *str);
+int		get_set(t_info *info);
 
 /* LOOP */
 int		loop(t_info *info);
@@ -131,6 +134,7 @@ void		hostname_to_dot(t_info *info);
 void		pourcent(t_info *info);
 void		tild(t_info *info);
 void		user_name(t_info *info);
+void		last_status(t_info *info);
 
 /* GERE_REDIRECT */
 int		gere(t_info *info, char *str, int flag);
@@ -155,6 +159,10 @@ int		my_exit(t_info *info, char **tab);
 int		my_echo(t_info *info, char **tab);
 int		my_setenv(t_info *info, char **tab);
 int		my_unsetenv(t_info *info, char **tab);
+int		my_set(t_info *info, char **tab);
+int		aff_set(t_info *info);
+int		set_prompt(t_info *info, char **tab);
+int		set_history(t_info *info, char **tab);
 
 /* COMMAND */
 int		command();

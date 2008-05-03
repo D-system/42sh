@@ -5,11 +5,15 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May  2 23:57:18 2008 aymeric derazey
-** Last update Sat May  3 12:12:11 2008 aymeric derazey
+** Last update Sat May  3 15:02:37 2008 aymeric derazey
 */
 
 #include "stdlib.h"
 #include "../42.h"
+
+/*
+** dans le cas d'un echo "$toto", va chercher et afficher le contenu de la variable.
+*/
 
 int	check_var(char *local_var, t_info *info)
 {
@@ -29,34 +33,9 @@ int	check_var(char *local_var, t_info *info)
   return (EXIT_SUCCESS);
 }
 
-/* nt	check_var(char *local_var, t_info *info) */
-/* { */
-/*   int	i; */
-/*   int	j; */
-/*   int	len; */
-/*   char	*cpy; */
-
-/*   len = my_strlen(local_var); */
-/*   i = 0; */
-/*   j = 0; */
-/*   while (info->env[i] != NULL) */
-/*     { */
-/*       if (my_strncmp(local_var + 1, info->env[i], len - 1) == 0) */
-/* 	{ */
-/* 	  while (info->env[i][j] != '=') */
-/* 	    j++; */
-/* 	  my_putstr(info->env[i] + ++j); */
-/* 	  return (EXIT_SUCCESS); */
-/* 	} */
-/*       i++; */
-/*     } */
-/*   if (info->env[i] == NULL) */
-/*     { */
-/*       my_printf("%s: Undefined variable\n", local_var + 1); */
-/*       return (EXIT_FAILURE); */
-/*     } */
-/*   return (EXIT_SUCCESS); */
-/* } */
+/*
+** Builtin echo, gestion de l'affichage de variable d'ENV et de set.
+*/
 
 int	my_echo(t_info *info, char **tab)
 {

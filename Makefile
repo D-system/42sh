@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Sat May  3 12:02:30 2008 aymeric derazey
+## Last update Sat May  3 16:52:02 2008 aymeric derazey
 ##
 
 NAME		=	42sh
@@ -13,6 +13,7 @@ NAME		=	42sh
 SRC_SH		=	main.c				\
 			init.c				\
 			get_env.c			\
+			get_set.c			\
 			loop.c				\
 			get_cfg.c			\
 			gere.c				\
@@ -34,7 +35,7 @@ SRC_SH		=	main.c				\
 			path_to_tab.c			\
 			parse_str.c			\
 			put_zero.c			\
-			last_status.c			\
+			status.c			\
 			cut_delim_nextword_and_return_nextword.c
 
 SRC_BUI		=	./builtins/builtins.c		\
@@ -43,7 +44,10 @@ SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_exit.c		\
 			./builtins/my_echo.c		\
 			./builtins/my_setenv.c		\
-			./builtins/my_unsetenv.c
+			./builtins/my_unsetenv.c	\
+			./builtins/my_set.c		\
+			./builtins/set_prompt.c		\
+			./builtins/set_history.c
 
 SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_getnbr_base.c		\
