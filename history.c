@@ -5,9 +5,11 @@
 ** Login   <mondan_n@epitech.net>
 ** 
 ** Started on  Wed Apr 30 16:31:47 2008 nicolas mondange
-** Last update Fri May  2 20:23:18 2008 thomas brennetot
+** Last update Wed May  7 11:28:36 2008 thomas brennetot
 */
 
+#include <fcntl.h>
+#include <time.h>
 #include "42.h"
 #define MAX_HISTORY 20
 
@@ -108,16 +110,16 @@ void		save_event(t_info *params)
 void		add_event(t_info *params, char *to_ad)
 {
   int			i;
-  time_t		*clock;
+  time_t		clock;
   t_event		*buff;
   t_event		*new_elem;
   char			*to_add;
 
   i = 0;
   to_add = my_strdup(to_ad);
-  time(clock);
+  time(&clock);
   if (params->history == NULL)
-    first_event(params, to_add, clock);
+    first_event(params, to_add, &clock);
   else
     {
       buff = params->history;
@@ -162,7 +164,7 @@ t_event		*first_event(t_info *params, char *to_add, time_t *clock)
   return (new_elem);
 }
 
-void		aff_event(t_info *params, char **tab)
+int		aff_event(t_info *params, char **tab)
 {
   t_event	*buff;
   int		i;
@@ -177,6 +179,7 @@ void		aff_event(t_info *params, char **tab)
       i++;
     }
   tab++;
+  return (EXIT_SUCCESS);
 }
 
 void		clear_event(t_info *params, int nbr_elm, int limit)

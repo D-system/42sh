@@ -5,11 +5,16 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 12:54:06 2008 thomas brennetot
-** Last update Wed Apr 30 12:57:59 2008 thomas brennetot
+** Last update Sat May  3 18:10:41 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include "../42.h"
+
+
+/*
+**  affiche le tableau d'ENV.
+*/
 
 int	my_env(t_info *info, char **tab)
 {

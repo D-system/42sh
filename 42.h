@@ -1,25 +1,18 @@
 /*
 ** 42.h for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/official
-** 
+**
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-** 
+**
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Sat May  3 16:54:47 2008 aymeric derazey
+** Last update Wed May  7 23:11:30 2008 thomas brennetot
 */
 
 #ifndef __42_H__
 # define __42_H__
 
 # include <stdlib.h>
-# include <sys/resource.h>
 # include "lib/my_printf/my_printf.h"
-# include <unistd.h>
-# include <fcntl.h>
-# include <string.h>
-# include <sys/wait.h>
-# include <sys/types.h>
-# include <sys/time.h>
 
 /* DEFINES */
 # define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
@@ -122,7 +115,7 @@ void		read_line(t_event *new_elem, char *line);
 void		parse_event(t_info *params, char *line);
 void		save_event(t_info *params);
 t_event		*first_event(t_info *params, char *to_add, time_t *clock);
-void		aff_event(t_info *params, char **tab);
+int		aff_event(t_info *params, char **tab);
 void		clear_event(t_info *params, int nbr_elm, int limit);
 t_event         *read_first_line(t_info *params, char *line);
 
@@ -193,6 +186,7 @@ char		*fetch_env(char **env, char *str);
 char		*get_next_line(const int fd);
 int		my_putnbr_base(int n, char *base);
 int		my_getnbr_base(char *str, char* base);
+void		*my_memcpy(void *dest, void *src, int size);
 
 /* ERR */
 void		*xmalloc(int size);
@@ -209,7 +203,6 @@ int		xfork(void);
 int		xpipe(int *fildes);
 int		xdup2(int old_fd, int new_fd);
 int		xclose(int fd);
-int		xwait4(int wait_pid, int *status, int options, struct rusage *rusage);
 int		xwaitpid(int wait_pid, int *status, int options);
 
 /* OtherZ */

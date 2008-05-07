@@ -5,12 +5,14 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 13:02:46 2008 thomas brennetot
-** Last update Wed Apr 30 13:04:05 2008 thomas brennetot
+** Last update Wed May  7 11:22:18 2008 thomas brennetot
 */
 
 #include "../42.h"
 
 int	my_exit(t_info *info, char **tab)
 {
+  info++;
+  tab++;
   return (EXIT_EXIT);
 }

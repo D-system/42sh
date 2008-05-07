@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Sat May  3 16:52:02 2008 aymeric derazey
+## Last update Wed May  7 22:47:55 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -69,7 +69,8 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_str_to_wordtab_mode.c	\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
-			./lib/get_next_line.c
+			./lib/get_next_line.c		\
+			./lib/my_memcpy.c
 
 SRC_ERR		=	./err/xmalloc.c			\
 			./err/xopen.c			\
@@ -120,7 +121,7 @@ CC_solaris	=	/usr/sfw/bin/gcc
 CC_linux	=	gcc
 CC		=	$(CC_${OSTYPE})
 
-LIB_FreeBSD	=	-lefence -L/usr/local/lib/
+##LIB_FreeBSD	=	-lefence -L/usr/local/lib/
 LIB_solaris	=
 LIB_linux	=	-lefence -L/usr/lib/
 LIB		=	$(LIB_${OSTYPE})
@@ -143,6 +144,7 @@ clean		:
 			rm -f $(OBJ_PRT)
 			rm -f $(OBJ_PTF)
 			rm -f $(OBJ_BUI)
+			rm -f $(OBJ_COMPL)
 			rm -f *~
 			rm -f */*~
 

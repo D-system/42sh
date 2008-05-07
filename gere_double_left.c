@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Fri May  2 14:21:05 2008 thomas brennetot
+** Last update Wed May  7 11:17:22 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -22,7 +22,7 @@ int		gere_double_left_next(t_info *info, char *str, int flag)
       info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);
     }
-  
+  gere(info, buff, flag);
   xfree(stop);
   return (EXIT_SUCCESS);
 }

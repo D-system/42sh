@@ -5,39 +5,42 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May  2 22:12:11 2008 aymeric derazey
-** Last update Sat May  3 17:39:33 2008 aymeric derazey
+** Last update Wed May  7 11:23:01 2008 thomas brennetot
 */
 
 #include "../42.h"
 
-struct	s_set	gl_set[] =
-  {
-    {"prompt", set_prompt, 6},
-    {"history", set_history, 7},
-    {0,0,0},
-  };
 
+
+/* int	my_set(t_info *info, char **tab) */
+/* { */
+/*   int	i; */
+
+/*   if (tab[1] == NULL) */
+/*     aff_set(info); */
+/*   else */
+/*     { */
+/*       if (info->set[0] == NULL || fetch_env(info->set, tab[1]) == NULL) */
+/* 	add_set(info, tab); */
+/*       else */
+/* 	update_env(info, tab); */
+/*     } */
+	  
+/*    return (EXIT_SUCCESS); */
+/* } */
 int	my_set(t_info *info, char **tab)
 {
-  int	i;
-
   if (tab[1] == NULL)
     aff_set(info);
-  i = 0;
-  while (gl_set[i].cmd != 0)
-    {
-      if ((my_strncmp(gl_set[i].cmd, tab[1], gl_set[i].len) == 0))
-	if (gl_set[i].func(info, tab) == EXIT_FAILURE)
-	  return (status(info, EXIT_FAILURE));
-      i++;
-    }
+  else
+    return (EXIT_SUCCESS);
   return (EXIT_SUCCESS);
 }
 
 int	aff_set(t_info *info)
 {
   int	i;
-  
+
   i = 0;
   while (info->set[i] != NULL)
     {

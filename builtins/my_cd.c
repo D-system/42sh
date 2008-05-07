@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 12:02:44 2008 thomas brennetot
-** Last update Fri May  2 19:54:06 2008 thomas brennetot
+** Last update Wed May  7 11:30:20 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -56,6 +56,7 @@ int	my_cd_nb_arg_n_tild(t_info *info, char **tab)
   if (i > 2)
     {
       my_printf("%E", "cd: Too many arguments.\n");
+      info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);
     }
   return (EXIT_SUCCESS);

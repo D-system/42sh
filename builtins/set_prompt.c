@@ -5,13 +5,13 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat May  3 16:35:33 2008 aymeric derazey
-** Last update Sat May  3 17:10:25 2008 aymeric derazey
+** Last update Sat May  3 18:40:22 2008 aymeric derazey
 */
 
 #include "../42.h"
 
 int	set_prompt(t_info *info, char **tab)
 {
-  my_printf("a faire\n");
+  
   return (EXIT_SUCCESS);
 }
