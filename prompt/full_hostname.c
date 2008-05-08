@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 15 15:44:56 2008 thomas brennetot
-** Last update Tue Apr 15 17:47:06 2008 thomas brennetot
+** Last update Thu May  8 16:42:42 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -15,7 +15,7 @@ void	full_hostname(t_info *info)
 {
   char	*name;
 
-  name = fetch_env(info->env, "HOST");
+  name = fetch_env(info->env, "HOST", "=");
   if (name != NULL)
     my_putstr(name + 5);
 }

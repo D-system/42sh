@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue Apr 15 15:48:02 2008 aymeric derazey
-** Last update Tue Apr 15 17:49:22 2008 thomas brennetot
+** Last update Thu May  8 16:43:00 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -17,7 +17,7 @@ void	hostname_to_dot(t_info *info)
   char	*host;
   int	i;
 
-  host = fetch_env(info->env, "HOST");
+  host = fetch_env(info->env, "HOST", "=");
   if (host != NULL)
     {
       i = 0;

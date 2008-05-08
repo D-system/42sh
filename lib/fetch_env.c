@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr  7 18:55:39 2008 thomas brennetot
-** Last update Thu Apr 24 14:26:43 2008 thomas brennetot
+** Last update Thu May  8 16:40:41 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -15,7 +15,7 @@
 ** donne un pointeur sur l'environement demande 
 */
 
-char	*fetch_env(char **env, char *str)
+char	*fetch_env(char **env, char *str, char *sepa)
 {
   int	i;
   int	size;
@@ -26,7 +26,7 @@ char	*fetch_env(char **env, char *str)
     return (NULL);
   if (env[i] == NULL)
     return (NULL);
-  if ((str_cat = my_strcat(str, "=")) == NULL)
+  if ((str_cat = my_strcat(str, sepa)) == NULL)
     return (NULL);
   size = my_strlen(str_cat);
   while (my_strncmp(env[i], str_cat, size) != 0)

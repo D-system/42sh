@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 15 17:56:25 2008 thomas brennetot
-** Last update Tue Apr 15 17:59:31 2008 thomas brennetot
+** Last update Thu May  8 16:43:18 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -15,7 +15,7 @@ void	user_name(t_info *info)
 {
   char	*user;
 
-  user = fetch_env(info->env, "USER");
+  user = fetch_env(info->env, "USER", "=");
   if (user != NULL)
     my_putstr(user + 5);
 }

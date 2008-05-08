@@ -5,16 +5,24 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 12:02:44 2008 thomas brennetot
-** Last update Wed May  7 11:30:20 2008 thomas brennetot
+** Last update Thu May  8 16:44:06 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "../42.h"
 
-void	update_pwd(t_info *info, char *str)
+void	put_pwd(t_info *info)
 {
-/*   debug("\n\nFaut mettre a jour le pwd de l'env\n\n"); */
+  char	*tab[4];
+
+  tab[0] = "setenv";
+  tab[1] = "PWD";
+  tab[2] = my_pwd();
+  tab[3] = NULL;
+  my_setenv(info, tab);
+  if (tab[2] != NULL)
+    xfree(tab[2]);
 }
 
 int	my_cd_access(t_info *info, char **tab)
@@ -29,7 +37,7 @@ int	my_cd_access(t_info *info, char **tab)
 	      return (EXIT_FAILURE);
 	    }
 	  else
-	    update_pwd(info, tab[1]);
+	    put_pwd(info);
 	}
       else
 	{
@@ -67,7 +75,7 @@ int	my_cd_tild(t_info *info, char **tab)
   char	*home;
   char	*concat;
 
-  if ((home = fetch_env(info->env, "HOME")) == NULL)
+  if ((home = fetch_env(info->env, "HOME", "=")) == NULL)
     {
       info->last_status = EXIT_FAILURE;
       my_printf("%E", "cd: No home directory.\n");
@@ -101,7 +109,7 @@ int	my_cd(t_info *info, char **tab)
     }
   else
     {
-      if ((home = fetch_env(info->env, "HOME")) != NULL)
+      if ((home = fetch_env(info->env, "HOME", "=")) != NULL)
 	{
 	  tab_home[1] = home + 5;
 	  return (my_cd_access(info, tab_home));

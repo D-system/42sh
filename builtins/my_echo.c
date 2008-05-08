@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May  2 23:57:18 2008 aymeric derazey
-** Last update Sat May  3 15:02:37 2008 aymeric derazey
+** Last update Thu May  8 16:44:41 2008 thomas brennetot
 */
 
 #include "stdlib.h"
@@ -19,7 +19,7 @@ int	check_var(char *local_var, t_info *info)
 {
   char	*line;
 
-  line = fetch_env(info->env, local_var + 1);
+  line = fetch_env(info->env, local_var + 1, "=");
   if (line == NULL)
     {
       my_printf("%E%E", local_var + 1, ": Undefined variable\n");

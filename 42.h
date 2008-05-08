@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Wed May  7 23:11:30 2008 thomas brennetot
+** Last update Thu May  8 18:14:06 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -118,6 +118,7 @@ t_event		*first_event(t_info *params, char *to_add, time_t *clock);
 int		aff_event(t_info *params, char **tab);
 void		clear_event(t_info *params, int nbr_elm, int limit);
 t_event         *read_first_line(t_info *params, char *line);
+void		add_event(t_info *params, char *to_ad);
 
 /* PROMPT */
 void		prompt(t_info *info);
@@ -172,6 +173,7 @@ void		my_put_nbr(int n);
 void		put_nbr_fd(int n, int fd);
 int		my_putchar(char c);
 int		my_putstr(char *str);
+char		*my_pwd(void);
 char		**my_str_to_wordtab(char *str);
 char		**my_str_to_wordtab_mode(char *src, char *delim);
 int		my_strcmp(char *s1, char *s2);
@@ -182,7 +184,7 @@ int		my_strncmp(char *s1, char *s2, int n);
 char		*my_strcat(char *s1, char *s2);
 char		*epurstr(char *str);
 void		free_tab(char **tab);
-char		*fetch_env(char **env, char *str);
+char		*fetch_env(char **env, char *str, char *sepa);
 char		*get_next_line(const int fd);
 int		my_putnbr_base(int n, char *base);
 int		my_getnbr_base(char *str, char* base);

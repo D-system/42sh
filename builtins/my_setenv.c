@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 16:02:32 2008 thomas brennetot
-** Last update Wed Apr 30 16:06:37 2008 thomas brennetot
+** Last update Thu May  8 17:52:40 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -28,7 +28,7 @@ char	*add_env_concat(char **tab, int mode)
   str_tmp[istr++] = '=';
   itab = 0;
   if (mode == 3)
-    while (tab[1][itab] != '\0')
+    while (tab[2][itab] != '\0')
       str_tmp[istr++] = tab[2][itab++];
   str_tmp[istr] = '\0';
   return (str_tmp);
@@ -51,7 +51,7 @@ void	add_env(t_info *info, char **tab, int nb_env)
       i++;
     }
   if (nb_env == 3)
-    my_putstr(env_tmp[i++] = add_env_concat(tab, 3));
+    env_tmp[i++] = add_env_concat(tab, 3);
   else
     env_tmp[i++] = add_env_concat(tab, 2);
   env_tmp[i] = NULL;
@@ -74,7 +74,7 @@ void	update_env(t_info *info, char **tab, int nb_env)
     info->env[ienv] = add_env_concat(tab, 3);
   else
     info->env[ienv] = add_env_concat(tab, 2);
-  free(tmp);
+  xfree(tmp);
 }
 
 int	my_setenv(t_info *info, char **tab)
@@ -90,7 +90,7 @@ int	my_setenv(t_info *info, char **tab)
     my_printf("%E", "setenv: Too many arguments.\n");
   else
     {
-      if (info->env[0] == NULL || fetch_env(info->env, tab[1]) == NULL)
+      if (info->env[0] == NULL || fetch_env(info->env, tab[1], "=") == NULL)
 	add_env(info, tab, nb_env);
       else
 	update_env(info, tab, nb_env);

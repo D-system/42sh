@@ -5,26 +5,25 @@
 ** Login   <mondan_n@epitech.net>
 ** 
 ** Started on  Wed Apr 30 16:31:47 2008 nicolas mondange
-** Last update Wed May  7 11:28:36 2008 thomas brennetot
+** Last update Thu May  8 18:13:00 2008 thomas brennetot
 */
 
 #include <fcntl.h>
 #include <time.h>
 #include "42.h"
-#define MAX_HISTORY 20
+#define MAX_HISTORY 100
 
 void		load_event(t_info *params)
 {
   char		*line;
   int		fd;
-
-  if ((fd = xopen(".history", O_CREAT|O_RDONLY)) != -1)
+  
+  if ((fd = open(".history", O_RDONLY)) != -1)
     {
-      line = get_next_line(fd);
-      while (line != '\0')
+      while ((line = get_next_line(fd)) != NULL)
 	{
-	  line = get_next_line(fd);
 	  parse_event(params, line);
+	  xfree(line);
 	}
       xclose(fd);
     }
@@ -33,7 +32,7 @@ void		load_event(t_info *params)
 void		my_word_str(char *str, char c)
 {
   int		i;
-
+  
   i = 0;
   while (str[i] != '\0')
     {
@@ -45,28 +44,23 @@ void		my_word_str(char *str, char c)
 
 void		read_line(t_event *new_elem, char *line)
 {
-  char		*str;
-
-  str = my_strdup(line);
-  my_word_str(str, '\t');
-  str++;
-  new_elem->nbr = my_getnbr(str);
-  while (*str != '\0')
-    str++;
-  str++;
-  new_elem->time = my_strdup(str);
-  while (*str != '\0')
-    str++;
-  str++;
-  new_elem->info = my_strdup(str);
-  xfree(str);
+  my_word_str(line, '\t');
+  new_elem->nbr = my_getnbr(line);
+  while (*line != '\0')
+    line++;
+  line++;
+  new_elem->time = my_strdup(line);
+  while (*line != '\0')
+    line++;
+  line++;
+  new_elem->info = my_strdup(line);
 }
 
 void		parse_event(t_info *params, char *line)
 {
   t_event		*buff;
   t_event		*new_elem;
-
+  
   if (params->history == NULL)
     read_first_line(params, line);
   else
@@ -78,6 +72,8 @@ void		parse_event(t_info *params, char *line)
       new_elem->next = NULL;
       read_line(new_elem, line);
       buff->next = new_elem;
+      if (params->nbr_cmd < new_elem->nbr)
+	params->nbr_cmd = new_elem->nbr + 1; 
     }
 }
 
@@ -93,15 +89,14 @@ void		save_event(t_info *params)
 	  buff = params->history;
 	  while (buff != NULL)
 	    {
-	      xwrite(fd, "\t", 1);
 	      put_nbr_fd(buff->nbr, fd);
 	      xwrite(fd, "\t", 1);
 	      xwrite(fd, buff->time, my_strlen(buff->time));
 	      xwrite(fd, "\t", 1);
 	      xwrite(fd, buff->info, my_strlen(buff->info));
-	      xwrite(fd, "\t", 1);
+	      xwrite(fd, "\n", 1);	      
+	      buff = buff->next;
 	    }
-	  xwrite(fd, "\n", 1);
 	}
       xclose(fd);
     }
@@ -130,14 +125,15 @@ void		add_event(t_info *params, char *to_ad)
 	}
       new_elem = xmalloc(sizeof(*new_elem));
       new_elem->next = NULL;
-      new_elem->nbr = params->nbr_cmd;
-      new_elem->time = my_strdup(ctime(clock));
+      new_elem->nbr = params->nbr_cmd++;
+      new_elem->time = my_strdup(ctime(&clock));
+      new_elem->time[my_strlen(new_elem->time) - 1] = '\0';
       new_elem->info = my_strdup(to_add);
       buff->next = new_elem;
     }
   if (i > MAX_HISTORY)
     clear_event(params, i, MAX_HISTORY);
-  free(to_add);
+  xfree(to_add);
 }
 
 t_event         *read_first_line(t_info *params, char *line)
@@ -158,27 +154,29 @@ t_event		*first_event(t_info *params, char *to_add, time_t *clock)
   new_elem = xmalloc(sizeof(*new_elem));
   new_elem->next = NULL;
   params->history = new_elem;
-  new_elem->nbr = params->nbr_cmd;
+  new_elem->nbr = params->nbr_cmd++;
   new_elem->time = my_strdup(ctime(clock));
+  new_elem->time[my_strlen(new_elem->time) - 1] = '\0';
   new_elem->info = my_strdup(to_add);
   return (new_elem);
 }
 
-int		aff_event(t_info *params, char **tab)
+int		aff_event(t_info *params, char **burne)
 {
   t_event	*buff;
-  int		i;
-  
-  i = 0;  
+
   buff = params->history;
   while (buff != NULL)
     {
+      my_put_nbr(buff->nbr);
+      my_putchar('\t');
+      my_putstr(buff->time);
+      my_putchar('\t');
       my_putstr(buff->info);
       my_putchar('\n');
       buff = buff->next;
-      i++;
     }
-  tab++;
+  burne++;
   return (EXIT_SUCCESS);
 }
 

@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May  2 23:34:02 2008 aymeric derazey
-** Last update Wed May  7 11:26:38 2008 thomas brennetot
+** Last update Thu May  8 16:33:08 2008 aymeric derazey
 */
 
 #include <sys/types.h>
@@ -21,7 +21,6 @@ int	get_set(t_info *info)
   if ((user = getlogin()) == NULL)
     return (EXIT_FAILURE);
   /* size = get_size(); */
-  my_printf("%s\n", user);
   size = 2;
   if ((info->set = xmalloc(sizeof(*(info->set)) * (size + 1))) == NULL)
       return (EXIT_FAILURE);

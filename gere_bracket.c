@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Mon Apr 21 17:55:55 2008 thomas brennetot
-** Last update Wed May  7 23:55:45 2008 thomas brennetot
+** Last update Thu May  8 16:42:15 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -49,7 +49,7 @@ int		gere_bracket(t_info *info, char *str, int flag)
   my_memcpy(&info_cp, info, sizeof(t_info));
   value = gere(&info_cp, buff, flag);
   tab[0] = "cd";
-  if ((tab[1] = fetch_env(info->env, "PWD") + 4) == NULL)
+  if ((tab[1] = fetch_env(info->env, "PWD", "=") + 4) == NULL)
     return (status(info, EXIT_FAILURE));
   tab[2] = NULL;
   my_cd(info, tab);
