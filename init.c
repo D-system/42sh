@@ -5,11 +5,12 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Thu May  8 18:09:28 2008 thomas brennetot
+** Last update Mon May 12 12:10:00 2008 thomas brennetot
 */
 
-#include "42.h"
 #include <stdlib.h>
+#include <signal.h>
+#include "42.h"
 
 /*
 ** Set TOUTES les variables a NULL, recupere l'env et lit le fichier de conf
@@ -25,6 +26,8 @@ int	init(char **environ, t_info *info)
   info->path = path_to_tab(fetch_env(info->env, "PATH", "="));
   info->history = NULL;
   info->nbr_cmd = 0;
+  info->pwd = my_pwd();
+  info->last_pwd = NULL;
 /*   if (get_cfg(info) == EXIT_FAILURE) */
 /*       return (EXIT_FAILURE); */
   load_event(info);

@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May  2 23:34:02 2008 aymeric derazey
-** Last update Thu May  8 16:33:08 2008 aymeric derazey
+** Last update Fri May  9 21:15:00 2008 aymeric derazey
 */
 
 #include <sys/types.h>
@@ -17,14 +17,18 @@ int	get_set(t_info *info)
 {
   int	size;
   char	*user;
+  char	*yeah;
+  char	*bla;
 
+  bla = "user";
   if ((user = getlogin()) == NULL)
     return (EXIT_FAILURE);
   /* size = get_size(); */
   size = 2;
   if ((info->set = xmalloc(sizeof(*(info->set)) * (size + 1))) == NULL)
       return (EXIT_FAILURE);
-  info->set[0] = my_strdup(user); /* en dur pour l'instant */
+  yeah = my_strcat_trois(bla, "\t", user);
+  info->set[0] = my_strdup(yeah); /* en dur pour l'instant */
   info->set[1] = NULL;
   return (EXIT_SUCCESS);
 }
@@ -50,3 +54,4 @@ int	get_set(t_info *info)
 /*   size++; */
 /*   return (size); */
 /* } */
+

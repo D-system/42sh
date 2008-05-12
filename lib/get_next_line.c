@@ -1,67 +1,64 @@
 /*
-** 3.c for  in /u/epitech_2012/brenne_t/cu/rendu/c/get_next_line_test
+** get_next_line2.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
 ** 
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
 ** 
-** Started on  Mon Dec 10 15:12:23 2007 thomas brennetot
-** Last update Wed Apr 23 16:00:10 2008 thomas brennetot
+** Started on  Sun May 11 15:10:21 2008 thomas brennetot
+** Last update Mon May 12 11:07:47 2008 thomas brennetot
 */
 
-#include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
-#include "get_next_line.h"
 #include "../42.h"
 
-char		*get_next_line(const int fd)
+#define READ_SIZE 2048
+
+char		*get_next_line(int fd)
 {
-  static char	buffer[BUFF_GNL];
-  static int	start;
-  static int	rd_val;
-  t_stat	stat;
+  static char	buffer[READ_SIZE];
+  static int	pos = 0;
+  static int	size = -1;
+  int		pos2;
+  char		*s2;
+  char		*s3;
+  char		*s4;
 
-  if (rd_val == 0)
-    rd_val = xread(fd, buffer, BUFF_GNL);
-  stat.str = 0;
-  stat.i = start;
-  while (rd_val != 0 && buffer[stat.i] != '\n')
+  if (size < 0 || pos >= size)
     {
-      while (stat.i < rd_val && buffer[stat.i] != '\n')
-	stat.i++;
-      stat.str = my_concat(buffer, stat.str, start, stat.i);
-      start = stat.i + 1;
-      if (start >= (rd_val - 1))
-	{
-	  stat.i = 0;
-	  start = 0;
-	  rd_val = xread(fd, buffer, BUFF_GNL);
-	}
+      if (!(size = xread(fd, buffer, READ_SIZE - 1)))
+	return (NULL);
+      pos = 0;
     }
-  return (stat.str);
-}
-
-char		*my_concat(char *buffer, char *str, int start, int i)
-{
-  char		*temp;
-  int		block;
-  int		size;
-
-  block = 0;
-  if (str != 0)
+  pos2 = pos;
+  while (42)
     {
-      size = my_strlen(str);
-      temp = xmalloc(sizeof(*temp) * ((i - start) + size + 1));
-      while (str[block] != '\0')
+      if (pos2 >= size)
 	{
-	  temp[block] = str[block];
-	  block++;
+	  s2 = xmalloc(pos2 - pos + 1);
+	  my_strncpy(s2, buffer + pos, pos2 - pos);
+	  s2[pos2 - pos] = 0;
+	  size = -1;
+	  if ((s3 = get_next_line(fd)))
+	    {
+	      s4 = xmalloc(my_strlen(s2) + my_strlen(s3) + 1);
+	      my_strncpy(s4, s2, my_strlen(s2));
+	      my_strncpy(s4 + my_strlen(s2), s3, my_strlen(s3));
+	      s4[my_strlen(s2) + my_strlen(s3)] = 0;
+	      xfree(s2);
+	      xfree(s3);
+	      return (s4);
+	    }
+	  else
+	    return (s2);
 	}
+      if (*(buffer + pos2) == '\n')
+	{
+	  s2 = xmalloc(pos2 - pos + 1);
+	  my_strncpy(s2, buffer + pos, pos2 - pos);
+	  s2[pos2 - pos] = 0;
+	  pos = pos2 + 1;
+	  return (s2);
+	}
+      pos2 ++;
     }
-  else
-    temp = xmalloc(sizeof(*str) * ((i - start) + 1));
-  while (start < i)
-    temp[block++] = buffer[start++];
-  temp[block] = '\0';
-  return (temp);
 }

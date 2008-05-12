@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May  2 22:12:11 2008 aymeric derazey
-** Last update Thu May  8 16:51:00 2008 aymeric derazey
+** Last update Fri May  9 21:35:18 2008 aymeric derazey
 */
 
 #include "../42.h"
@@ -28,22 +28,24 @@
 	  
 /*    return (EXIT_SUCCESS); */
 /* } */
+
 int	my_set(t_info *info, char **tab)
 {
   if (tab[1] == NULL)
-    aff_set(info);
- /*  else */
-/*     { */
-/*       if ((info->set[0] == NULL) || (fetch_env(info->set, tab[1], "\t")) == NULL) */
-/* 	add_local(info, tab); */
-/*       else */
-/* 	    update_local(info, tab);  */
-/*       return (EXIT_SUCCESS); */
-/*     } */
+    aff_local(info);
+  else
+    {
+      if ((info->set[0] == NULL) || (fetch_env(info->set, tab[1], "\t")) == NULL)
+	add_local(info, tab);
+      /* else
+	 update_local(info, tab);*/
+      debug("DEBUG 1\n");
+      return (EXIT_SUCCESS);
+    }
   return (EXIT_SUCCESS);
 }
 
-int	aff_set(t_info *info)
+int	aff_local(t_info *info)
 {
   int	i;
 

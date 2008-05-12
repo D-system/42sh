@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr  4 18:50:31 2008 thomas brennetot
-** Last update Wed Apr 30 13:13:52 2008 thomas brennetot
+** Last update Sun May 11 16:10:33 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -22,12 +22,14 @@ void		xfree(void *add)
     return ;
   ch = 0;
   list = mem_add(0, 0);
-  prev = 0;
+  prev = NULL;
   while (list->addr != add)
     {
       prev = list;
       list = list->next;
       ch++;
+      if (list == NULL)
+	return ;
     }
   next = list->next;
   free(add);

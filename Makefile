@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Thu May  8 18:15:12 2008 thomas brennetot
+## Last update Mon May 12 10:53:48 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -46,6 +46,9 @@ SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_setenv.c		\
 			./builtins/my_unsetenv.c	\
 			./builtins/my_set.c		\
+			./builtins/add_local.c		\
+			./builtins/check_syntax.c	\
+			./builtins/add_local_concat.c	\
 			./builtins/set_prompt.c		\
 			./builtins/set_history.c
 
@@ -56,6 +59,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_put_nbr.c		\
 			./lib/my_strlen.c		\
 			./lib/my_strcat.c		\
+			./lib/my_strcat_trois.c		\
 			./lib/my_strcmp.c		\
 			./lib/my_strncmp.c		\
 			./lib/my_strcpy.c		\

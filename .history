@@ -1,4 +1,102 @@
-0	Thu May  8 18:11:58 2008	ls
-1	Thu May  8 18:11:59 2008	ls 
-2	Thu May  8 18:12:02 2008	history
-3	Thu May  8 18:12:05 2008	exit
+33014	Mon May 12 12:58:04 2008	zanfar_m:x:22080:21000:majid zanfari:/u/ipsa/zanfar_m:/bin/shells/ipsa
+33015	Mon May 12 12:58:04 2008	zang-y_f:x:62222:2012:francois zang-yen:/u/epita_2012/zang-y_f:/bin/shells/epita_2012
+33016	Mon May 12 12:58:04 2008	zaoui_t:x:18343:2008:thibaut zaoui:/u/epita_2008/zaoui_t:/bin/shells/epita_2008
+33017	Mon May 12 12:58:04 2008	zappy:x:725:700:zappy bibicy:/u/proj/zappy:/bin/shells/proj
+33018	Mon May 12 12:58:04 2008	zard_m:x:17118:2007:michael zard:/u/epita_2007/zard_m:/bin/shells/epita_2007
+33019	Mon May 12 12:58:04 2008	zarka_j:x:35238:32005:julien zarka:/u/epitech_2005/zarka_j:/bin/shells/epitech_2005
+33020	Mon May 12 12:58:04 2008	zarrou_m:x:61005:2011:mehdi zarrouri:/u/epita_2011/zarrou_m:/bin/shells/epita_2011
+33021	Mon May 12 12:58:04 2008	zaug_m:x:22439:21000:marc-antoine zaug:/u/ipsa/zaug_m:/bin/shells/ipsa
+33022	Mon May 12 12:58:04 2008	zavie:x:3063:7000:julien guertault:/u/ext/zavie:/bin/shells/ext
+33023	Mon May 12 12:58:04 2008	zazoun_j:x:80188:2010:jeremie zazoun:/u/epita_2010/zazoun_j:/bin/shells/epita_2010
+33024	Mon May 12 12:58:04 2008	zeggan_g:x:11354:2001:gregory zeggane:/u/epita_2001/zeggan_g:/bin/shells/epita_2001
+33025	Mon May 12 12:58:04 2008	zeil_j:x:18199:2008:jean-julien zeil:/u/epita_2008/zeil_j:/bin/shells/epita_2008
+33026	Mon May 12 12:58:04 2008	zeler_b:x:39223:32009:benoit zeler:/u/epitech_2009/zeler_b:/bin/shells/epitech_2009
+33027	Mon May 12 12:58:04 2008	zellag_a:x:521:300:assia zellagui:/u/prof/zellag_a:/bin/shells/prof
+33028	Mon May 12 12:58:04 2008	zelphi_p:x:56025:52009:pascal zelphin:/u/etna_2009/zelphi_p:/bin/shells/etna_2009
+33029	Mon May 12 12:58:04 2008	zelten_k:x:16320:2006:khomais zelteni:/u/epita_2006/zelten_k:/bin/shells/epita_2006
+33030	Mon May 12 12:58:04 2008	zenatt_l:x:22565:21000:laurent zenatti:/u/ipsa/zenatt_l:/bin/shells/ipsa
+33031	Mon May 12 12:58:04 2008	zenoni_p:x:24320:24000:paul zenoni:/u/isbp/zenoni_p:/bin/shells/isbp
+33032	Mon May 12 12:58:04 2008	zepety_a:x:37086:32007:aykun zepetyan:/u/epitech_2007/zepety_a:/bin/shells/epitech_2007
+33033	Mon May 12 12:58:04 2008	zerark_m:x:23172:23000:mohamed-abdelhak zerarka:/u/master/zerark_m:/bin/shells/master
+33034	Mon May 12 12:58:04 2008	zerbib_j:x:15130:40000:joseph zerbib:/u/tmp/zerbib_j:/bin/shells/tmp
+33035	Mon May 12 12:58:04 2008	zerbib_k:x:40122:40000:kevin zerbib:/u/tmp/zerbib_k:/bin/shells/tmp
+33036	Mon May 12 12:58:04 2008	zerbib_y:x:36040:32006:yohann zerbib:/u/epitech_2006/zerbib_y:/bin/shells/epitech_2006
+33037	Mon May 12 12:58:04 2008	zeroua_t:x:72139:32012:toufik zerouali:/u/epitech_2012/zeroua_t:/bin/shells/epitech_2012
+33038	Mon May 12 12:58:04 2008	zerr_n:x:72387:32012:nicolas zerr:/u/epitech_2012/zerr_n:/bin/shells/epitech_2012
+33039	Mon May 12 12:58:04 2008	zerria_m:x:23173:23000:mohsen zerriaa:/u/master/zerria_m:/bin/shells/master
+33040	Mon May 12 12:58:04 2008	zerrou_a:x:22082:21000:arab zerrouk:/u/ipsa/zerrou_a:/bin/shells/ipsa
+33041	Mon May 12 12:58:04 2008	zerrou_c:x:39225:32009:camel zerrouqi:/u/epitech_2009/zerrou_c:/bin/shells/epitech_2009
+33042	Mon May 12 12:58:04 2008	zeus:x:219:6000:Nicolas Sadirac:/u/guest/zeus:/bin/shells/guest
+33043	Mon May 12 12:58:04 2008	zhan_s:x:70138:32010:shengjie zhan:/u/epitech_2010/zhan_s:/bin/shells/epitech_2010
+33044	Mon May 12 12:58:04 2008	zhang-_s:x:3002:7000:selina zhang-rui:/u/ext/zhang-_s:/bin/shells/ext
+33045	Mon May 12 12:58:04 2008	zhang_c:x:18040:2008:chao zhang:/u/epita_2008/zhang_c:/bin/shells/epita_2008
+33046	Mon May 12 12:58:04 2008	zhao_b:x:36300:32006:baoer zhao:/u/epitech_2006/zhao_b:/bin/shells/epitech_2006
+33047	Mon May 12 12:58:04 2008	zibaou_m:x:80184:2010:marwan zibaoui:/u/epita_2010/zibaou_m:/bin/shells/epita_2010
+33048	Mon May 12 12:58:04 2008	zidelk_m:x:60073:2010:mehdi zidelkhil:/u/epita_2010/zidelk_m:/bin/shells/epita_2010
+33049	Mon May 12 12:58:04 2008	zie_f:x:23360:23000:franck zie:/u/master/zie_f:/bin/shells/master
+33050	Mon May 12 12:58:04 2008	zim:x:3077:7000:Damien ZIMMER:/u/ext/zim:/bin/shells/ext
+33051	Mon May 12 12:58:04 2008	zimmer_d:x:39224:32009:damien zimmer:/u/epitech_2009/zimmer_d:/bin/shells/epitech_2009
+33052	Mon May 12 12:58:04 2008	zinbi_f:x:23174:23000:fadoua zinbi:/u/master/zinbi_f:/bin/shells/master
+33053	Mon May 12 12:58:04 2008	zivoti_b:x:13081:300:benendo zivotic:/u/prof/zivoti_b:/bin/shells/prof
+33054	Mon May 12 12:58:04 2008	zniber_s:x:37602:33008:saad zniber:/u/epitech_2010s/zniber_s:/bin/shells/epitech_2010s
+33055	Mon May 12 12:58:04 2008	zoa_v:x:24361:24000:valerie zoa:/u/isbp/zoa_v:/bin/shells/isbp
+33056	Mon May 12 12:58:04 2008	zonarz_z:x:40282:40000:zoltan zonarzewski:/u/tmp/zonarz_z:/bin/shells/tmp
+33057	Mon May 12 12:58:04 2008	zorro:x:3082:7000:ben roussel:/u/ext/zorro:/bin/shells/ext
+33058	Mon May 12 12:58:04 2008	zouari_a:x:22914:21000:amira zouari:/u/ipsa/zouari_a:/bin/shells/ipsa
+33059	Mon May 12 12:58:04 2008	zouari_i:x:21331:21000:ian6 zouari:/u/ipsa/zouari_i:/bin/shells/ipsa
+33060	Mon May 12 12:58:04 2008	zouari_m:x:22437:21000:medhi zouari:/u/ipsa/zouari_m:/bin/shells/ipsa
+33061	Mon May 12 12:58:04 2008	zouboy_l:x:23175:23000:lalla zouboye:/u/master/zouboy_l:/bin/shells/master
+33062	Mon May 12 12:58:04 2008	zouita_k:x:22450:21000:khaled zouitane:/u/ipsa/zouita_k:/bin/shells/ipsa
+33063	Mon May 12 12:58:04 2008	zraidi_h:x:22566:21000:hanane zraidi:/u/ipsa/zraidi_h:/bin/shells/ipsa
+33064	Mon May 12 12:58:04 2008	zraidi_i:x:21337:21000:imad zraidi:/u/ipsa/zraidi_i:/bin/shells/ipsa
+33065	Mon May 12 12:58:04 2008	zucca_a:x:38265:32008:alexis zucca:/u/epitech_2008/zucca_a:/bin/shells/epitech_2008
+33066	Mon May 12 12:58:04 2008	zuili_o:x:22119:21000:olivier zuili:/u/ipsa/zuili_o:/bin/shells/ipsa
+33067	Mon May 12 12:58:04 2008	zuo_z:x:71090:32011:zijian zuo:/u/epitech_2011/zuo_z:/bin/shells/epitech_2011
+33068	Mon May 12 12:58:04 2008	zyazev_a:x:21074:21000:anna zyazeva:/u/ipsa/zyazev_a:/bin/shells/ipsa
+33069	Mon May 12 12:58:04 2008	zydron_d:x:71286:32011:david zydron:/u/epitech_2011/zydron_d:/bin/shells/epitech_2011
+33070	Mon May 12 12:58:04 2008	zyzak_r:x:19212:2009:ralph zyzak:/u/epita_2009/zyzak_r:/bin/shells/epita_2009
+33071	Mon May 12 13:01:37 2008	ls ; (ls)
+33072	Mon May 12 13:02:03 2008	ls ; (ls)
+33073	Mon May 12 13:02:08 2008	fg
+33074	Mon May 12 13:02:38 2008	ls ; (ls)
+33075	Mon May 12 13:03:05 2008	fg
+33076	Mon May 12 13:05:13 2008	ls ; (ls)
+33077	Mon May 12 13:11:32 2008	pwd ; (pwd)
+33078	Mon May 12 13:12:03 2008	pwd ; (pwd)
+33079	Mon May 12 13:12:19 2008	fg
+33080	Mon May 12 13:12:40 2008	pwd ; (pwd)
+33081	Mon May 12 13:12:51 2008	fg
+33082	Mon May 12 13:13:25 2008	pwd ; (pwd)
+33083	Mon May 12 13:13:31 2008	fg
+33084	Mon May 12 13:29:54 2008	`
+33085	Mon May 12 13:39:27 2008	ls ; (ls)
+33086	Mon May 12 13:39:37 2008	env
+33087	Mon May 12 13:40:02 2008	pwd ; (unsetenv TERMCAP);env
+33088	Mon May 12 13:44:13 2008	ls ; ()[Dls
+33089	Mon May 12 13:44:19 2008	ls ; (ls)
+33090	Mon May 12 13:44:20 2008	fg
+33091	Mon May 12 13:45:02 2008	ls ;(ls)
+33092	Mon May 12 13:45:11 2008	fg
+33093	Mon May 12 13:45:49 2008	ls ; (pwd)
+33094	Mon May 12 13:45:59 2008	ls (pwd)
+33095	Mon May 12 13:51:11 2008	ls
+33096	Mon May 12 13:51:14 2008	ls ; ()
+33097	Mon May 12 13:51:20 2008	ls ()
+33098	Mon May 12 13:51:21 2008	()
+33099	Mon May 12 13:51:33 2008	((ls))
+33100	Mon May 12 14:44:41 2008	ls
+33101	Mon May 12 14:44:45 2008	ls ; (ls)
+33102	Mon May 12 14:45:10 2008	ls ; (ls)
+33103	Mon May 12 14:45:17 2008	ls
+33104	Mon May 12 14:46:40 2008	(ls)
+33105	Mon May 12 14:46:47 2008	(env)
+33106	Mon May 12 14:48:15 2008	(ls)
+33107	Mon May 12 14:50:12 2008	(ls)
+33108	Mon May 12 14:52:20 2008	(ls)
+33109	Mon May 12 14:52:58 2008	(ls)
+33110	Mon May 12 14:53:01 2008	fg
+33111	Mon May 12 14:53:16 2008	(ls)
+33112	Mon May 12 14:53:50 2008	ls
+33113	Mon May 12 14:53:53 2008	(ls)
+33114	Mon May 12 14:53:58 2008	fg
+33115	Mon May 12 14:54:10 2008	(ls)

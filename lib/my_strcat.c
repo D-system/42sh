@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat Mar 15 16:19:11 2008 aymeric derazey
-** Last update Mon Apr  7 19:41:22 2008 thomas brennetot
+** Last update Fri May  9 21:05:49 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -14,14 +14,10 @@
 char	*my_strcat(char *s1, char *s2)
 {
   char	*buff;
-  int	len1;
-  int	len2;
   int	i;
   int	j;
-
-  len1 = my_strlen(s1);
-  len2 = my_strlen(s2);
-  if ((buff = xmalloc(sizeof(buff) * ((len1 + len2) + 1))) == NULL)
+			
+  if ((buff = xmalloc(sizeof(*buff) * (my_strlen(s1) + my_strlen(s2) + 1))) == NULL)
     return (NULL);
   i = 0;
   while (s1[i] != '\0')

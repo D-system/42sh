@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Thu May  8 18:14:06 2008 thomas brennetot
+** Last update Mon May 12 14:42:54 2008 thomas brennetot
 */
 
 #ifndef __42_H__
@@ -48,11 +48,13 @@ typedef struct	s_info
 {
   char		**env;
   char		**set;
-  char		*prompt;
   char		**path;
+  char		*prompt;
   int		last_status; /* valeur de retour du wait */
   t_event	*history;
   int		nbr_cmd;
+  char		*pwd;
+  char		*last_pwd;
 }		t_info;
 
 /* structure pour xmalloc */
@@ -107,7 +109,7 @@ int		loop(t_info *info);
 int		parse_str(t_info *info, char *str);
 
 /* COMPLETION */
-int		completion(t_info *info, char *str);
+char		*completion(t_info *info);
 
 /* HISTORY */
 void		load_event(t_info *params);
@@ -154,7 +156,14 @@ int		my_echo(t_info *info, char **tab);
 int		my_setenv(t_info *info, char **tab);
 int		my_unsetenv(t_info *info, char **tab);
 int		my_set(t_info *info, char **tab);
-int		aff_set(t_info *info);
+int		add_local(t_info *info, char **tab);
+char		**cpy_old_local(t_info *info, char **tab);
+int		aff_local(t_info *info);
+char		*add_local_concat(char *str);
+char		*replace_char(char *str, char c);
+int		check_syntax(t_info *info, char **tab, char **new_local);
+int		check_begin(t_info *info, char *str);
+int		check_equal(t_info *info, char *tab);
 int		set_prompt(t_info *info, char **tab);
 int		set_history(t_info *info, char **tab);
 
@@ -178,10 +187,12 @@ char		**my_str_to_wordtab(char *str);
 char		**my_str_to_wordtab_mode(char *src, char *delim);
 int		my_strcmp(char *s1, char *s2);
 char		*my_strcpy(char *dest, char *src);
+char		*my_strncpy(char *dest, char *src, int n);
 char		*my_strdup(char *str);
 int		my_strlen(char *str);
 int		my_strncmp(char *s1, char *s2, int n);
 char		*my_strcat(char *s1, char *s2);
+char		*my_strcat_trois(char *s1, char *s2, char *s3);
 char		*epurstr(char *str);
 void		free_tab(char **tab);
 char		*fetch_env(char **env, char *str, char *sepa);

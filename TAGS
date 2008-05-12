@@ -14,21 +14,21 @@
 typedef struct		s_event38,807
 }			t_event;44,902
 typedef struct	s_info47,943
-}		t_info;56,1117
-typedef struct	s_mal59,1158
-}		t_mal;63,1218
-typedef struct	s_gere66,1264
-}		t_gere;71,1337
-typedef struct	s_bui74,1379
-}		t_bui;78,1434
-typedef	struct	s_set81,1481
-}		t_set;86,1548
-typedef struct	s_prompt89,1590
-}		t_prompt;93,1646
-# define __MY_SELECT__220,5554
-#define BUF_SIZE 229,5711
-typedef	struct		s_list231,5734
-}			t_list;235,5799
+}		t_info;58,1148
+typedef struct	s_mal61,1189
+}		t_mal;65,1249
+typedef struct	s_gere68,1295
+}		t_gere;73,1368
+typedef struct	s_bui76,1410
+}		t_bui;80,1465
+typedef	struct	s_set83,1512
+}		t_set;88,1579
+typedef struct	s_prompt91,1621
+}		t_prompt;95,1677
+# define __MY_SELECT__231,6003
+#define BUF_SIZE 240,6160
+typedef	struct		s_list242,6183
+}			t_list;246,6248
 
 canonial_mode.c,66
 #define ON 13,310
@@ -101,35 +101,23 @@ int	get_set(16,352
 
 history.c,338
 #define MAX_HISTORY 14,321
-void		load_event(16,345
-void		my_word_str(32,591
-void		read_line(45,740
-void		parse_event(63,1064
-void		save_event(82,1460
-void		add_event(106,1960
-t_event         *read_first_line(read_first_line140,2717
-t_event		*first_event(first_event151,2967
-int		aff_event(165,3356
-void		clear_event(184,3705
-
-history2.c,338
-#define MAX_HISTORY 14,321
 void		load_event(16,346
-void		my_word_str(32,592
-void		read_line(45,743
-void		parse_event(59,1021
-void		save_event(80,1501
-void		add_event(105,2027
-t_event         *read_first_line(read_first_line139,2784
-t_event		*first_event(first_event150,3034
-int		aff_event(164,3423
-void		clear_event(183,3772
+void		my_word_str(32,591
+void		read_line(45,742
+void		parse_event(59,1020
+void		save_event(80,1500
+void		add_event(105,2026
+t_event         *read_first_line(read_first_line139,2783
+t_event		*first_event(first_event150,3033
+int		aff_event(164,3422
+void		clear_event(183,3771
 
-init.c,17
-int	init(18,376
+init.c,41
+int	init_signal(18,376
+int	init(24,431
 
 loop.c,17
-int	loop(18,382
+int	loop(19,418
 
 main.c,18
 int		main(14,292
@@ -172,8 +160,13 @@ int	put_zero(17,381
 status.c,19
 int	status(13,293
 
-builtins/add_local.c,22
-int	add_local(13,294
+builtins/add_local.c,65
+int	add_local(17,309
+char	**cpy_old_local(cpy_old_local32,618
+
+builtins/add_local_concat.c,88
+char	*add_local_concat(add_local_concat13,301
+char	*replace_char(replace_char20,390
 
 builtins/builtins.c,56
 struct s_bui	gl_bui[gl_bui14,294
@@ -181,8 +174,8 @@ int	builtins(27,512
 
 builtins/check_syntax.c,74
 int	check_syntax(17,356
-int	check_begin(38,769
-int	check_equal(61,1130
+int	check_begin(47,987
+int	check_equal(62,1332
 
 builtins/my_cd.c,122
 void	put_pwd(15,321
@@ -201,9 +194,9 @@ int	my_env(19,339
 builtins/my_exit.c,20
 int	my_exit(13,283
 
-builtins/my_set.c,39
-int	my_set(31,646
-int	aff_set(46,997
+builtins/my_set.c,41
+int	my_set(32,647
+int	aff_local(48,979
 
 builtins/my_setenv.c,113
 char	*add_env_concat(add_env_concat14,304
@@ -277,13 +270,17 @@ void	free_tab(14,306
 
 lib/get_next_line.c,78
 char		*get_next_line(get_next_line17,367
-char		*my_concat(my_concat44,935
+char		*my_concat(my_concat44,943
 
 lib/get_next_line.h,105
 #define _GET_NEXT_LINE_H_12,294
 #define BUFF_GNL 14,321
-typedef struct	t_stat16,343
-}		t_stat;20,391
+typedef struct	t_stat16,344
+}		t_stat;20,392
+
+lib/get_next_line2.c,69
+#define READ_SIZE 13,281
+char*get_next_line2(get_next_line215,305
 
 lib/my_getnbr.c,42
 int	get_int(13,284
@@ -312,7 +309,7 @@ lib/my_putstr.c,22
 int	my_putstr(15,324
 
 lib/my_pwd.c,28
-char	*my_pwd(my_pwd14,293
+char	*my_pwd(my_pwd15,313
 
 lib/my_str_to_wordtab.c,175
 #define BUFF_WORDTAB 21,469
@@ -330,6 +327,9 @@ char	**my_str_to_wordtab_mode(my_str_to_wordtab_mode111,1652
 
 lib/my_strcat.c,34
 char	*my_strcat(my_strcat14,313
+
+lib/my_strcat_trois.c,46
+char	*my_strcat_trois(my_strcat_trois13,301
 
 lib/my_strcmp.c,22
 int	my_strcmp(13,285

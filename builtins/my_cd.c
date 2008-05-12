@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 12:02:44 2008 thomas brennetot
-** Last update Thu May  8 16:44:06 2008 thomas brennetot
+** Last update Sun May 11 17:01:55 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -21,8 +21,10 @@ void	put_pwd(t_info *info)
   tab[2] = my_pwd();
   tab[3] = NULL;
   my_setenv(info, tab);
-  if (tab[2] != NULL)
-    xfree(tab[2]);
+  if (info->last_pwd != NULL)
+    xfree(info->last_pwd);
+  info->last_pwd = info->pwd;
+  info->pwd = tab[2];
 }
 
 int	my_cd_access(t_info *info, char **tab)
@@ -92,11 +94,38 @@ int	my_cd_tild(t_info *info, char **tab)
   return (EXIT_SUCCESS);
 }
 
+int	my_cd_home(t_info *info)
+{
+  char	*tab_home[2];
+  char	*home;
+
+  if ((home = fetch_env(info->env, "HOME", "=")) != NULL)
+    {
+      tab_home[1] = home + 5;
+      return (my_cd_access(info, tab_home));
+    }
+  else
+    {
+      my_printf("%E", "cd: No home directory.\n");
+      return (EXIT_FAILURE);
+    }
+}
+
+int	my_cd_moins(t_info *info)
+{
+  char	*tab[2];
+
+  if (info->last_pwd == NULL)
+    {
+      my_printf("%E", ": No such file or directory.\n");
+      return (status(info, EXIT_FAILURE));
+    }
+  tab[1] = info->last_pwd;
+  return (my_cd_access(info, tab));
+}
+
 int	my_cd(t_info *info, char **tab)
 {
-  char	*home;
-  char	*tab_home[2];
-
   info->last_status = EXIT_FAILURE;
   if (my_cd_nb_arg_n_tild(info, tab) == EXIT_FAILURE)
     return (EXIT_FAILURE);
@@ -104,21 +133,12 @@ int	my_cd(t_info *info, char **tab)
     {
       if (tab[1][0] == '~')
 	return (my_cd_tild(info, tab));
+      else if (my_strcmp(tab[1], "-") == 0)
+	my_cd_moins(info);
       else
 	return (my_cd_access(info, tab));
     }
   else
-    {
-      if ((home = fetch_env(info->env, "HOME", "=")) != NULL)
-	{
-	  tab_home[1] = home + 5;
-	  return (my_cd_access(info, tab_home));
-	}
-      else
-	{
-	  my_printf("%E", "cd: No home directory.\n");
-	  return (EXIT_FAILURE);
-	}
-    }
+    return (my_cd_home(info));
   return (EXIT_SUCCESS);
 }

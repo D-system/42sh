@@ -5,16 +5,26 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Thu Apr 24 14:52:07 2008 thomas brennetot
-** Last update Thu May  8 16:15:50 2008 thomas brennetot
+** Last update Mon May 12 11:33:45 2008 thomas brennetot
 */
 
 #include <stdlib.h>
 #include "../42.h"
 
-int	completion(t_info *info, char *str)
+char	*completion(t_info *info)
 {
-  my_memset(str, 0, BUFF_COMPL);
-  xread(0, str, BUFF_COMPL - 1);
-  str[my_strlen(str) - 1] = '\0';
-  return (EXIT_SUCCESS);
+  static int	i = 0;
+  char	buff[BUFF_COMPL];
+
+  my_memset(buff, 0, BUFF_COMPL);
+  if (xread(0, buff, BUFF_COMPL - 1) == -1)
+    return (NULL);
+  buff[my_strlen(buff) - 1] = '\0';
+  i++;
+  if (i > 50)
+    {
+      debug("%E", "\n\n\nJe crois que tous le monde a compris qu'il y a un prob, non ?\n\n");
+      exit(-1);
+    }
+  return (my_strdup(buff));
 }
