@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:44:28 2008 thomas brennetot
-** Last update Fri Apr  4 17:05:32 2008 laurent lefebvre
+** Last update Thu May 15 12:11:16 2008 thomas brennetot
 */
 
 #include "../42.h"
@@ -14,14 +14,6 @@
 
 int	my_putstr(char *str)
 {
-  int	i;
-  
-  i = 0;
-  while (str[i] != '\0')
-    {
-      if (my_putchar(str[i]) == EXIT_FAILURE)
-	return (EXIT_FAILURE);
-      i++;
-    }
+  xwrite(1, str, my_strlen(str));
   return (EXIT_SUCCESS);
 }

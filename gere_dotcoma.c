@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:42:30 2008 laurent lefebvre
-** Last update Wed Apr 30 10:32:05 2008 thomas brennetot
+** Last update Thu May 15 11:47:47 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -18,10 +18,13 @@
 int	gere_dotcoma(t_info *info, char *str, int flag)
 {
   int	i;
+  int	value;
 
   if ((i = put_zero(str, ";")) == -1)
     return (EXIT_FAILURE);
-  gere(info, str, flag);
-  gere(info, str + i + 1, flag);
-  return (EXIT_SUCCESS);
+  value = gere(info, str, flag);
+  value += gere(info, str + i + 1, flag);
+  if (value == 0)
+    return (status(info, EXIT_SUCCESS));
+  return (status(info, EXIT_FAILURE));  
 }

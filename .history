@@ -1,71 +1,68 @@
-33048	Mon May 12 12:58:04 2008	zidelk_m:x:60073:2010:mehdi zidelkhil:/u/epita_2010/zidelk_m:/bin/shells/epita_2010
-33049	Mon May 12 12:58:04 2008	zie_f:x:23360:23000:franck zie:/u/master/zie_f:/bin/shells/master
-33050	Mon May 12 12:58:04 2008	zim:x:3077:7000:Damien ZIMMER:/u/ext/zim:/bin/shells/ext
-33051	Mon May 12 12:58:04 2008	zimmer_d:x:39224:32009:damien zimmer:/u/epitech_2009/zimmer_d:/bin/shells/epitech_2009
-33052	Mon May 12 12:58:04 2008	zinbi_f:x:23174:23000:fadoua zinbi:/u/master/zinbi_f:/bin/shells/master
-33053	Mon May 12 12:58:04 2008	zivoti_b:x:13081:300:benendo zivotic:/u/prof/zivoti_b:/bin/shells/prof
-33054	Mon May 12 12:58:04 2008	zniber_s:x:37602:33008:saad zniber:/u/epitech_2010s/zniber_s:/bin/shells/epitech_2010s
-33055	Mon May 12 12:58:04 2008	zoa_v:x:24361:24000:valerie zoa:/u/isbp/zoa_v:/bin/shells/isbp
-33056	Mon May 12 12:58:04 2008	zonarz_z:x:40282:40000:zoltan zonarzewski:/u/tmp/zonarz_z:/bin/shells/tmp
-33057	Mon May 12 12:58:04 2008	zorro:x:3082:7000:ben roussel:/u/ext/zorro:/bin/shells/ext
-33058	Mon May 12 12:58:04 2008	zouari_a:x:22914:21000:amira zouari:/u/ipsa/zouari_a:/bin/shells/ipsa
-33059	Mon May 12 12:58:04 2008	zouari_i:x:21331:21000:ian6 zouari:/u/ipsa/zouari_i:/bin/shells/ipsa
-33060	Mon May 12 12:58:04 2008	zouari_m:x:22437:21000:medhi zouari:/u/ipsa/zouari_m:/bin/shells/ipsa
-33061	Mon May 12 12:58:04 2008	zouboy_l:x:23175:23000:lalla zouboye:/u/master/zouboy_l:/bin/shells/master
-33062	Mon May 12 12:58:04 2008	zouita_k:x:22450:21000:khaled zouitane:/u/ipsa/zouita_k:/bin/shells/ipsa
-33063	Mon May 12 12:58:04 2008	zraidi_h:x:22566:21000:hanane zraidi:/u/ipsa/zraidi_h:/bin/shells/ipsa
-33064	Mon May 12 12:58:04 2008	zraidi_i:x:21337:21000:imad zraidi:/u/ipsa/zraidi_i:/bin/shells/ipsa
-33065	Mon May 12 12:58:04 2008	zucca_a:x:38265:32008:alexis zucca:/u/epitech_2008/zucca_a:/bin/shells/epitech_2008
-33066	Mon May 12 12:58:04 2008	zuili_o:x:22119:21000:olivier zuili:/u/ipsa/zuili_o:/bin/shells/ipsa
-33067	Mon May 12 12:58:04 2008	zuo_z:x:71090:32011:zijian zuo:/u/epitech_2011/zuo_z:/bin/shells/epitech_2011
-33068	Mon May 12 12:58:04 2008	zyazev_a:x:21074:21000:anna zyazeva:/u/ipsa/zyazev_a:/bin/shells/ipsa
-33069	Mon May 12 12:58:04 2008	zydron_d:x:71286:32011:david zydron:/u/epitech_2011/zydron_d:/bin/shells/epitech_2011
-33070	Mon May 12 12:58:04 2008	zyzak_r:x:19212:2009:ralph zyzak:/u/epita_2009/zyzak_r:/bin/shells/epita_2009
-33071	Mon May 12 13:01:37 2008	ls ; (ls)
-33072	Mon May 12 13:02:03 2008	ls ; (ls)
-33073	Mon May 12 13:02:08 2008	fg
-33074	Mon May 12 13:02:38 2008	ls ; (ls)
-33075	Mon May 12 13:03:05 2008	fg
-33076	Mon May 12 13:05:13 2008	ls ; (ls)
-33077	Mon May 12 13:11:32 2008	pwd ; (pwd)
-33078	Mon May 12 13:12:03 2008	pwd ; (pwd)
-33079	Mon May 12 13:12:19 2008	fg
-33080	Mon May 12 13:12:40 2008	pwd ; (pwd)
-33081	Mon May 12 13:12:51 2008	fg
-33082	Mon May 12 13:13:25 2008	pwd ; (pwd)
-33083	Mon May 12 13:13:31 2008	fg
-33084	Mon May 12 13:29:54 2008	`
-33085	Mon May 12 13:39:27 2008	ls ; (ls)
-33086	Mon May 12 13:39:37 2008	env
-33087	Mon May 12 13:40:02 2008	pwd ; (unsetenv TERMCAP);env
-33088	Mon May 12 13:44:13 2008	ls ; ()[Dls
-33089	Mon May 12 13:44:19 2008	ls ; (ls)
-33090	Mon May 12 13:44:20 2008	fg
-33091	Mon May 12 13:45:02 2008	ls ;(ls)
-33092	Mon May 12 13:45:11 2008	fg
-33093	Mon May 12 13:45:49 2008	ls ; (pwd)
-33094	Mon May 12 13:45:59 2008	ls (pwd)
-33095	Mon May 12 13:51:11 2008	ls
-33096	Mon May 12 13:51:14 2008	ls ; ()
-33097	Mon May 12 13:51:20 2008	ls ()
-33098	Mon May 12 13:51:21 2008	()
-33099	Mon May 12 13:51:33 2008	((ls))
-33100	Mon May 12 14:44:41 2008	ls
-33101	Mon May 12 14:44:45 2008	ls ; (ls)
-33102	Mon May 12 14:45:10 2008	ls ; (ls)
-33103	Mon May 12 14:45:17 2008	ls
-33104	Mon May 12 14:46:40 2008	(ls)
-33105	Mon May 12 14:46:47 2008	(env)
-33106	Mon May 12 14:48:15 2008	(ls)
-33107	Mon May 12 14:50:12 2008	(ls)
-33108	Mon May 12 14:52:20 2008	(ls)
-33109	Mon May 12 14:52:58 2008	(ls)
 33110	Mon May 12 14:53:01 2008	fg
 33111	Mon May 12 14:53:16 2008	(ls)
 33112	Mon May 12 14:53:50 2008	ls
 33113	Mon May 12 14:53:53 2008	(ls)
 33114	Mon May 12 14:53:58 2008	fg
 33115	Mon May 12 14:54:10 2008	(ls)
+0		
+33116	Tue May 13 14:37:44 2008	ls
+33117	Tue May 13 14:37:44 2008	ls
+33118	Tue May 13 14:37:58 2008	ls
+33119	Tue May 13 14:38:02 2008	env
+33120	Tue May 13 14:38:14 2008	cd /root
+33121	Tue May 13 14:38:16 2008	pwd
+33122	Tue May 13 14:38:20 2008	cd -
+33123	Tue May 13 14:38:32 2008	exit
+33124	Thu May 15 11:55:31 2008	ls
+33125	Thu May 15 11:55:34 2008	ls | grep e
+33126	Thu May 15 11:55:55 2008	ls
+33127	Thu May 15 11:56:33 2008	env | grep e
+33128	Thu May 15 14:08:00 2008	|
+33129	Thu May 15 14:08:05 2008	ls
+33130	Thu May 15 14:08:09 2008	cd ..
+33131	Thu May 15 14:08:11 2008	cd -
+33132	Thu May 15 14:08:26 2008	|
+33133	Thu May 15 14:14:47 2008	set prompt="toto"
+33134	Thu May 15 14:21:06 2008	l
+33135	Thu May 15 14:21:42 2008	ls
+33136	Thu May 15 14:21:43 2008	ls
+33137	Thu May 15 14:21:53 2008	|
+33138	Thu May 15 17:28:53 2008	ls
+33139	Thu May 15 17:28:54 2008	set
+33140	Thu May 15 17:28:56 2008	;D
+33141	Thu May 15 17:28:59 2008	set qweqwe=qweklqw
+33142	Thu May 15 17:29:00 2008	quit]
+33143	Thu May 15 17:29:02 2008	quit
+33144	Thu May 15 17:29:02 2008	quit
+33145	Thu May 15 17:29:04 2008	exxit
+33146	Thu May 15 17:29:05 2008	exit
+33147	Fri May 16 03:18:01 2008	ls 
+33148	Fri May 16 03:18:03 2008	ls -la
+33149	Fri May 16 03:18:07 2008	l
+33150	Fri May 16 03:18:08 2008	l
+33151	Fri May 16 03:18:47 2008	ls ; ls ; ls | grep *.c ; ls ; (cd ; pwd) && ls || haha
+33152	Fri May 16 03:19:05 2008	histoty
+33153	Fri May 16 03:19:10 2008	history
+33154	Fri May 16 03:19:15 2008	set
+33155	Fri May 16 03:19:16 2008	env
+33156	Fri May 16 03:19:27 2008	exit
+33157	Sat May 17 11:42:27 2008	ls | cat -e
+33158	Sat May 17 11:42:41 2008	ls | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+33159	Sat May 17 11:42:57 2008	ls  | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e | cat -e
+33160	Sat May 17 11:43:02 2008	exit
+33161	Mon May 26 17:34:45 2008	set
+33162	Mon May 26 17:34:48 2008	exi
+33163	Mon May 26 17:34:49 2008	exit
+33164	Mon May 26 17:51:14 2008	l
+33165	Mon May 26 17:51:15 2008	set
+33166	Mon May 26 17:51:56 2008	make
+33167	Mon May 26 17:51:57 2008	set
+33168	Mon May 26 17:53:18 2008	make
+33169	Mon May 26 17:53:22 2008	quit
+33170	Mon May 26 17:53:24 2008	exit
+33171	Mon May 26 17:53:33 2008	set
+33172	Mon May 26 17:53:40 2008	exit
+0		
 33116	Mon May 26 17:55:28 2008	salut
 33117	Mon May 26 17:55:31 2008	ls
 33118	Mon May 26 17:55:32 2008	;s
@@ -100,3 +97,6 @@
 33147	Mon May 26 18:12:48 2008	dapkd
 33148	Mon May 26 18:12:52 2008	w,m[vprmw|dsfds
 33149	Mon May 26 18:13:00 2008	+|||||++|+|+|+|+|+
+0		
+33173	Mon May 26 18:18:13 2008	set
+33174	Mon May 26 18:18:16 2008	exit

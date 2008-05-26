@@ -1,11 +1,11 @@
 /*
 ** history.c for  in /u/epitech_2012/mondan_n/cu/public/Dossier_Laurent/42sh
-** 
+**
 ** Made by nicolas mondange
 ** Login   <mondan_n@epitech.net>
-** 
+**
 ** Started on  Wed Apr 30 16:31:47 2008 nicolas mondange
-** Last update Thu May  8 18:13:00 2008 thomas brennetot
+** Last update Wed May 21 10:48:32 2008 aymeric derazey
 */
 
 #include <fcntl.h>
@@ -17,7 +17,7 @@ void		load_event(t_info *params)
 {
   char		*line;
   int		fd;
-  
+
   if ((fd = open(".history", O_RDONLY)) != -1)
     {
       while ((line = get_next_line(fd)) != NULL)
@@ -32,7 +32,7 @@ void		load_event(t_info *params)
 void		my_word_str(char *str, char c)
 {
   int		i;
-  
+
   i = 0;
   while (str[i] != '\0')
     {
@@ -60,7 +60,7 @@ void		parse_event(t_info *params, char *line)
 {
   t_event		*buff;
   t_event		*new_elem;
-  
+
   if (params->history == NULL)
     read_first_line(params, line);
   else
@@ -73,7 +73,7 @@ void		parse_event(t_info *params, char *line)
       read_line(new_elem, line);
       buff->next = new_elem;
       if (params->nbr_cmd < new_elem->nbr)
-	params->nbr_cmd = new_elem->nbr + 1; 
+	params->nbr_cmd = new_elem->nbr + 1;
     }
 }
 
@@ -94,7 +94,7 @@ void		save_event(t_info *params)
 	      xwrite(fd, buff->time, my_strlen(buff->time));
 	      xwrite(fd, "\t", 1);
 	      xwrite(fd, buff->info, my_strlen(buff->info));
-	      xwrite(fd, "\n", 1);	      
+	      xwrite(fd, "\n", 1);
 	      buff = buff->next;
 	    }
 	}
@@ -139,7 +139,7 @@ void		add_event(t_info *params, char *to_ad)
 t_event         *read_first_line(t_info *params, char *line)
 {
   t_event               *new_elem;
-  
+
   new_elem = xmalloc(sizeof(*new_elem));
   new_elem->next = NULL;
   params->history = new_elem;
@@ -150,7 +150,7 @@ t_event         *read_first_line(t_info *params, char *line)
 t_event		*first_event(t_info *params, char *to_add, time_t *clock)
 {
   t_event		*new_elem;
-  
+
   new_elem = xmalloc(sizeof(*new_elem));
   new_elem->next = NULL;
   params->history = new_elem;
@@ -184,7 +184,7 @@ void		clear_event(t_info *params, int nbr_elm, int limit)
 {
   t_event	*save;
   t_event	*buff;
-  
+
   buff = params->history;
   while ((nbr_elm - limit) > 0 && buff != NULL)
     {

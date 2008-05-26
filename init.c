@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Mon May 12 12:10:00 2008 thomas brennetot
+** Last update Thu May 15 16:36:42 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -21,6 +21,7 @@ int	init(char **environ, t_info *info)
   info->env = NULL;
   info->prompt = NULL;
   info->last_status = EXIT_SUCCESS;
+  info->set = 0;
   get_env(environ, info);
   get_set(info);
   info->path = path_to_tab(fetch_env(info->env, "PATH", "="));

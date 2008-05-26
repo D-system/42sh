@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 11:03:44 2008 thomas brennetot
-** Last update Wed Apr 30 11:04:38 2008 thomas brennetot
+** Last update Thu May 15 12:45:00 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -18,7 +18,7 @@
 t_gere	gl_redirect[] =
 {
   {"(", gere_bracket, 1},
-  {"<<", gere_double_left, 2},
+/*   {"<<", gere_double_left, 2}, */
   {">>", gere_double_right, 2},
   {"<", gere_left, 1},
   {">", gere_right, 1},

@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Mon May 26 17:52:34 2008 laurent lefebvre
+## Last update Mon May 26 18:17:02 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -13,7 +13,9 @@ NAME		=	42sh
 SRC_SH		=	main.c				\
 			init.c				\
 			get_env.c			\
+			get_user.c			\
 			get_set.c			\
+			get_uid.c			\
 			loop.c				\
 			get_cfg.c			\
 			gere.c				\
@@ -110,16 +112,20 @@ SRC_PTF		=	./lib/my_printf/my_printf.c	\
 
 SRC_COMPL	=	./completion/completion.c
 
+SRC_ALL		=	$(SRC_SH)			\
+			$(SRC_LIB)			\
+			$(SRC_ERR)			\
+			$(SRC_PRT)			\
+			$(SRC_PTF)			\
+			$(SRC_COMPL)			\
+			$(SRC_BUI)
 
-OBJ_SH		=	$(SRC_SH:.c=.o)
-OBJ_LIB		=	$(SRC_LIB:.c=.o)
-OBJ_ERR		=	$(SRC_ERR:.c=.o)
-OBJ_PRT		=	$(SRC_PRT:.c=.o)
-OBJ_PTF		=	$(SRC_PTF:.c=.o)
-OBJ_COMPL	=	$(SRC_COMPL:.c=.o)
-OBJ_BUI		=	$(SRC_BUI:.c=.o)
 
-CFLAGS		+=	-W -Wall -pedantic -ansi -g -D${OSTYPE} -I.
+INCLUDES	=	42.h
+
+OBJ_ALL		=	$(SRC_ALL:.c=.o)
+
+CFLAGS		+=	-W -Wall -pedantic -ansi -D${OSTYPE} -I.
 
 CC_FreeBSD	=	gcc
 CC_solaris	=	/usr/sfw/bin/gcc
@@ -129,29 +135,24 @@ CC		=	$(CC_${OSTYPE})
 LIB_FreeBSD	=	-lefence -L/usr/local/lib/
 LIB_solaris	=
 LIB_linux	=	-lefence -L/usr/lib/
-LIB		=	$(LIB_${OSTYPE})
+#LIB		=	$(LIB_${OSTYPE})
 
-$(NAME)		:	$(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(OBJ_COMPL) $(OBJ_BUI)
-			$(CC) -o $(NAME) $(OBJ_SH) $(OBJ_LIB) $(OBJ_ERR) $(OBJ_PRT) $(OBJ_PTF) $(OBJ_COMPL) $(OBJ_BUI) $(CFLAGS) $(LIB)
+$(NAME)		:	$(OBJ_ALL)
+			$(CC) -o $(NAME) $(OBJ_ALL) $(CFLAGS) $(LIB)
 
 all		:	$(NAME)
 
 etags		:
-			etags *.[ch] */*.[ch]
+			@echo [TAGS ...]
+			@etags $(SRC_ALL) $(INCLUDES)
+			@echo [... DONE]
 
 debug		:
 			grep -H -n -e "debug" *.c */*.c
 
 clean		:
-			rm -f $(OBJ_SH)
-			rm -f $(OBJ_LIB)
-			rm -f $(OBJ_ERR)
-			rm -f $(OBJ_PRT)
-			rm -f $(OBJ_PTF)
-			rm -f $(OBJ_BUI)
-			rm -f $(OBJ_COMPL)
-			rm -f *~
-			rm -f */*~
+			rm -f $(OBJ_ALL)
+			find . \( -name "*.o" -o -name "*~" -o -name "#*#" \) -delete
 
 c		:	clean
 
@@ -160,8 +161,7 @@ fclean		:	clean
 
 re		:	fclean all
 
-
-.PHONY		:	all clean fclean re
-
 .c.o		:
 			$(CC) $(CFLAGS) -c $< -o $@
+
+.PHONY		:	all clean fclean re etafs .c.o

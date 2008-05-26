@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat Mar 15 16:17:42 2008 aymeric derazey
-** Last update Tue Apr 29 18:04:02 2008 thomas brennetot
+** Last update Sat May 24 12:43:40 2008 nicolas mondange
 */
 
 #include <fcntl.h>
@@ -16,6 +16,6 @@ int	xopen(char *file, int flags)
   int	fd;
 
   if ((fd = open(file, flags, 0644)) == -1)
-    my_printf("%E", "Error while opening file\n");
+    my_printf("%E%E%E", "Error while opening \"", file, "\"\n");
   return (fd);
 }

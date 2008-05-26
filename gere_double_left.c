@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Wed May  7 11:17:22 2008 thomas brennetot
+** Last update Thu May 15 11:27:20 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -16,38 +16,32 @@ int		gere_double_left_next(t_info *info, char *str, int flag)
 {
   char	*stop;
   char	buff[BUFF_COMPL];
+  int	value;
 
   if ((stop = cut_delim_nextword_and_return_nextword(str, buff, "<<")) == NULL)
-    {
-      info->last_status = EXIT_FAILURE;
-      return (EXIT_FAILURE);
-    }
-  gere(info, buff, flag);
+    return (status(info, EXIT_FAILURE));
+  value = gere(info, buff, flag);
   xfree(stop);
-  return (EXIT_SUCCESS);
+  return (value);
 }
 
 int	gere_double_left(t_info *info, char *str, int flag)
 {
   int		pid;
-  int		status;
+  int		value;
 
   if (flag == CHILD)
     gere_double_left_next(info, str, flag);
   else
     {
       if ((pid = xfork()) == -1)
-	{
-	  info->last_status = EXIT_FAILURE;
-	  return (EXIT_FAILURE);
-	}
+	return (status(info, EXIT_FAILURE));
       if (pid == 0)
-	gere_double_left_next(info, str, CHILD);
-      else if (xwaitpid(pid, &status, 0) == EXIT_FAILURE)
 	{
-	  info->last_status = EXIT_FAILURE;
-	  return (EXIT_FAILURE);
+	  exit(gere_double_left_next(info, str, CHILD));
 	}
+      else if (xwaitpid(pid, &value, 0) == EXIT_FAILURE)
+	return (status(info, EXIT_FAILURE));
     }
   return (EXIT_SUCCESS);
 }

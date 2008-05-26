@@ -5,7 +5,11 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
+<<<<<<< .mine
+** Last update Mon May 26 17:46:14 2008 aymeric derazey
+=======
 ** Last update Mon May 26 18:11:44 2008 laurent lefebvre
+>>>>>>> .r39
 */
 
 #ifndef __42_H__
@@ -104,6 +108,7 @@ int		get_cfg(t_info *info);
 int		set_default_var(t_info *info);
 char		**path_to_tab(char *str);
 int		get_set(t_info *info);
+int		get_uid(t_info *info);
 
 /* LOOP */
 int		loop(t_info *info);
@@ -159,6 +164,8 @@ int		my_echo(t_info *info, char **tab);
 int		my_setenv(t_info *info, char **tab);
 int		my_unsetenv(t_info *info, char **tab);
 int		my_set(t_info *info, char **tab);
+int		get_user(t_info *info);
+int		get_size();
 int		add_local(t_info *info, char **tab);
 char		**cpy_old_local(t_info *info, char **tab);
 int		aff_local(t_info *info);

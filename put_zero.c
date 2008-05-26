@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon Apr 28 15:53:11 2008 aymeric derazey
-** Last update Mon Apr 28 16:19:06 2008 aymeric derazey
+** Last update Sat May 17 11:31:23 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -36,5 +36,30 @@ int	put_zero(char *str, char *delim)
 	bracket--;
       i++;
     }
-  return (-1);
+  return (EXIT_FAILURE);
+}
+
+int	put_zero_in_last(char *str, char *delim)
+{
+  int	i;
+  int	bracket;
+  int	len;
+
+  len = my_strlen(delim);
+  i = len;
+  bracket = 0;
+  while (str[i] != '\0')
+    {
+      if (str[i] == ')')
+	bracket++;
+      if ((my_strncmp(str + i, delim, len) == 0) && (bracket == 0))
+	{
+	  str[i] = '\0';
+	  return (i);
+	}
+      if (str[i] == '(')
+	bracket--;
+      i--;
+    }
+  return (EXIT_FAILURE);
 }

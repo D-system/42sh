@@ -5,19 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:24:58 2008 thomas brennetot
-** Last update Mon Apr 28 13:41:31 2008 thomas brennetot
+** Last update Thu May 15 12:11:58 2008 thomas brennetot
 */
 
-#include "../42.h"
-
-/* char	**my_str_to_wordtab(char *str) */
-/* { */
-/*   my_printf("17\n"); */
-/*   return (my_str_to_wordtab_mode(str, " \t")); */
-/* } */
-
-/* a enlever apres */
 #include <stdlib.h>
+#include "../42.h"
 #define BUFF_WORDTAB 256
 
 int	my_str_to_wordtab_nb_word(char *str)

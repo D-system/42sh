@@ -1,11 +1,11 @@
 /*
 ** parse_str.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
-** 
+**
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
-** 
+**
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Mon May 12 14:43:11 2008 thomas brennetot
+** Last update Wed May 21 10:48:10 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -37,7 +37,7 @@ int	parser_nb_bracket(char *str)
 	      my_printf("Too many )'s.\n");
 	      return (EXIT_FAILURE);
 	    }
-	}      
+	}
       i++;
     }
   if (open1 != close1)

@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 12:53:12 2008 thomas brennetot
-** Last update Fri May  2 14:23:12 2008 thomas brennetot
+** Last update Thu May 15 11:51:46 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -19,51 +19,47 @@ int		gere_right_next(t_info *info, char *str, int flag)
   char		*file;
   char		buff[BUFF_COMPL];
   int		fd;
+  int		value;
 
   if ((file = cut_delim_nextword_and_return_nextword(str, buff, ">")) == NULL)
-    {
-      info->last_status = EXIT_FAILURE;
-      return (EXIT_FAILURE);
-    }
+    return (status(info, EXIT_FAILURE));
   if ((fd = xopen(file, O_CREAT | O_WRONLY | O_TRUNC)) == -1)
     {
       xfree(file);
-      info->last_status = EXIT_FAILURE;
-      return (EXIT_FAILURE);
+      return (status(info, EXIT_FAILURE));
     }
   xfree(file);
   if (xdup2(fd, 1) == EXIT_FAILURE)
     {
       xclose(fd);
-      info->last_status = EXIT_FAILURE;
-      return (EXIT_FAILURE);
+      return (status(info, EXIT_FAILURE));
     }
-  gere(info, buff, flag);
+  value = gere(info, buff, flag);
   xclose(fd);
-  return (EXIT_SUCCESS);
+  return (value);
 }
 
 int		gere_right(t_info *info, char *str, int flag)
 {
   int		pid;
-  int		status;
+  int		value;
 
   if (flag == CHILD)
-    gere_right_next(info, str, flag);
+    {
+      value = gere_right_next(info, str, flag);
+      exit(value);
+    }
   else
     {
       if ((pid = xfork()) == -1)
-	{
-	  info->last_status = EXIT_FAILURE;
-	  return (EXIT_FAILURE);
-	}
+	return (status(info, EXIT_FAILURE));
       if (pid == 0)
-	gere_right_next(info, str, CHILD);
-      else if (xwaitpid(pid, &status, 0) == EXIT_FAILURE)
 	{
-	  info->last_status = EXIT_FAILURE;
-	  return (EXIT_FAILURE);
+	  value = gere_right_next(info, str, flag);
+	  exit(value);
 	}
+      else if (xwaitpid(pid, &value, 0) == EXIT_FAILURE)
+	return (status(info, EXIT_FAILURE));
     }
   return (EXIT_SUCCESS);
 }

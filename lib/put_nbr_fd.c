@@ -5,7 +5,7 @@
 ** Login   <mondan_n@epitech.net>
 ** 
 ** Started on  Fri May  2 19:31:17 2008 nicolas mondange
-** Last update Fri May  2 19:45:14 2008 nicolas mondange
+** Last update Thu May 15 12:13:19 2008 thomas brennetot
 */
 
 #include "../42.h"
@@ -16,7 +16,7 @@ void	put_nbr_fd(int nb, int fd)
   
   if (nb < 0)
     {
-      write(fd, "-", 1);
+      xwrite(fd, "-", 1);
       put_nbr_fd(-nb, fd);
     }
   else
@@ -24,14 +24,13 @@ void	put_nbr_fd(int nb, int fd)
       if (nb < 10)
 	{
 	  a = (nb + '0');
-	  write(fd, &a, 1);
+	  xwrite(fd, &a, 1);
 	}
       else
 	{
 	  put_nbr_fd(nb / 10, fd);
 	  a = ((nb % 10) + '0');
-	  write(fd, &a, 1);
+	  xwrite(fd, &a, 1);
 	}
     }
-  return;
 }

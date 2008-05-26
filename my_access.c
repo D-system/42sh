@@ -1,11 +1,11 @@
 /*
 ** my_access.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
-** 
+**
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
-** 
+**
 ** Started on  Wed Apr 23 18:00:20 2008 thomas brennetot
-** Last update Wed Apr 30 13:09:06 2008 thomas brennetot
+** Last update Wed May 21 10:48:18 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -33,7 +33,7 @@ void	my_strcat_mode(char *dest, char *src1, char *src2)
 }
 
 int	my_access_wd(char **tab)
-{ 
+{
   if (access(tab[0], F_OK) != -1)
     {
       if (access(tab[0], X_OK) != -1)

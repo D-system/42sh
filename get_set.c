@@ -1,11 +1,11 @@
 /*
 ** get_set.c for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/builtins
-** 
+**
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-** 
+**
 ** Started on  Fri May  2 23:34:02 2008 aymeric derazey
-** Last update Fri May  9 21:15:00 2008 aymeric derazey
+** Last update Mon May 26 17:45:13 2008 aymeric derazey
 */
 
 #include <sys/types.h>
@@ -16,42 +16,35 @@
 int	get_set(t_info *info)
 {
   int	size;
-  char	*user;
-  char	*yeah;
-  char	*bla;
 
-  bla = "user";
-  if ((user = getlogin()) == NULL)
-    return (EXIT_FAILURE);
-  /* size = get_size(); */
-  size = 2;
+  size = get_size();
   if ((info->set = xmalloc(sizeof(*(info->set)) * (size + 1))) == NULL)
-      return (EXIT_FAILURE);
-  yeah = my_strcat_trois(bla, "\t", user);
-  info->set[0] = my_strdup(yeah); /* en dur pour l'instant */
-  info->set[1] = NULL;
+    return (EXIT_FAILURE);
+  if ((get_user(info)) == EXIT_FAILURE)
+    return (EXIT_FAILURE);
+  if ((get_uid(info)) == EXIT_FAILURE)
+    return (EXIT_FAILURE);
   return (EXIT_SUCCESS);
 }
-
 
 /*
 ** Permet de savoir de combien l'on doit malloc le char **set.
 */
 
-/* int	get_size() */
-/* { */
-/*   int	size; */
-/*   char	*login; */
-/*   t_pid	grp; */
-/*   t_pid	uid; */
-  
-/*   size = 0; */
-/*   if (login = getlogin() != NULL) */
-/*     size++; */
-/*   grp = getegid(); */
-/*   size++; */
-/*   uid = getuid(); */
-/*   size++; */
-/*   return (size); */
-/* } */
+int	get_size()
+{
+  int	size;
+  char	*login;
+  uid_t	grp;
+  uid_t	uid;
+
+  size = 0;
+  if ((login = getlogin()) != NULL)
+    size++;
+  grp = getegid();
+  size++;
+  uid = getuid();
+  size++;
+  return (size);
+}
 

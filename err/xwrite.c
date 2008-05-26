@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:55:00 2008 thomas brennetot
-** Last update Fri Apr  4 17:08:22 2008 laurent lefebvre
+** Last update Thu May 15 12:15:07 2008 thomas brennetot
 */
 
 #include <sys/types.h>
@@ -16,11 +16,22 @@
 
 int		xwrite(int fd, char *str, int size)
 {
-  static int	verif = 0;
-  
-  if (verif != -1)
-    verif = write(fd, str, size);
+  int		i;
+
+  i = 0;
+  if (fd == 0 || fd == 1 || fd == 2)
+    while (i != size)
+      {
+	if (str[i] > 0 && str[i] < 128)
+	  write(fd, str + i, 1);
+	else
+	  {
+	    my_printf("%E%d", "\\", str[i]);
+	    put_nbr_fd(str[i], 2);
+	  }
+	i++;
+      }
   else
-    return (EXIT_FAILURE);
+    write(fd, str, size);
   return (EXIT_SUCCESS);
 }
