@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Mon May 26 18:17:02 2008 thomas brennetot
+## Last update Mon May 26 20:19:13 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -15,6 +15,7 @@ SRC_SH		=	main.c				\
 			get_env.c			\
 			get_user.c			\
 			get_set.c			\
+			get_gid.c			\
 			get_uid.c			\
 			loop.c				\
 			get_cfg.c			\
@@ -135,7 +136,7 @@ CC		=	$(CC_${OSTYPE})
 LIB_FreeBSD	=	-lefence -L/usr/local/lib/
 LIB_solaris	=
 LIB_linux	=	-lefence -L/usr/lib/
-#LIB		=	$(LIB_${OSTYPE})
+LIB		=	$(LIB_${OSTYPE})
 
 $(NAME)		:	$(OBJ_ALL)
 			$(CC) -o $(NAME) $(OBJ_ALL) $(CFLAGS) $(LIB)

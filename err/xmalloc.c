@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 16:53:03 2008 laurent lefebvre
-** Last update Mon May 26 18:12:20 2008 laurent lefebvre
+** Last update Mon May 26 20:20:36 2008 thomas brennetot
 */
 
 #include "../42.h"
@@ -17,7 +17,7 @@
 
 void		*xmalloc(int size)
 {
-  void		*ret;
+  char		*ret;
   t_mal		*list;
   
   ret = malloc(size);

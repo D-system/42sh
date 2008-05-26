@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:55:00 2008 thomas brennetot
-** Last update Thu May 15 12:15:07 2008 thomas brennetot
+** Last update Mon May 26 20:21:35 2008 thomas brennetot
 */
 
 #include <sys/types.h>
@@ -22,7 +22,7 @@ int		xwrite(int fd, char *str, int size)
   if (fd == 0 || fd == 1 || fd == 2)
     while (i != size)
       {
-	if (str[i] > 0 && str[i] < 128)
+	if (str[i] > 0.0 && str[i] < 128.0)
 	  write(fd, str + i, 1);
 	else
 	  {

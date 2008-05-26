@@ -1,84 +1,3 @@
-<<<<<<< .mine
-33073	Mon May 12 13:02:08 2008	fg
-33074	Mon May 12 13:02:38 2008	ls ; (ls)
-33075	Mon May 12 13:03:05 2008	fg
-33076	Mon May 12 13:05:13 2008	ls ; (ls)
-33077	Mon May 12 13:11:32 2008	pwd ; (pwd)
-33078	Mon May 12 13:12:03 2008	pwd ; (pwd)
-33079	Mon May 12 13:12:19 2008	fg
-33080	Mon May 12 13:12:40 2008	pwd ; (pwd)
-33081	Mon May 12 13:12:51 2008	fg
-33082	Mon May 12 13:13:25 2008	pwd ; (pwd)
-33083	Mon May 12 13:13:31 2008	fg
-33084	Mon May 12 13:29:54 2008	`
-33085	Mon May 12 13:39:27 2008	ls ; (ls)
-33086	Mon May 12 13:39:37 2008	env
-33087	Mon May 12 13:40:02 2008	pwd ; (unsetenv TERMCAP);env
-33088	Mon May 12 13:44:13 2008	ls ; ()[Dls
-33089	Mon May 12 13:44:19 2008	ls ; (ls)
-33090	Mon May 12 13:44:20 2008	fg
-33091	Mon May 12 13:45:02 2008	ls ;(ls)
-33092	Mon May 12 13:45:11 2008	fg
-33093	Mon May 12 13:45:49 2008	ls ; (pwd)
-33094	Mon May 12 13:45:59 2008	ls (pwd)
-33095	Mon May 12 13:51:11 2008	ls
-33096	Mon May 12 13:51:14 2008	ls ; ()
-33097	Mon May 12 13:51:20 2008	ls ()
-33098	Mon May 12 13:51:21 2008	()
-33099	Mon May 12 13:51:33 2008	((ls))
-33100	Mon May 12 14:44:41 2008	ls
-33101	Mon May 12 14:44:45 2008	ls ; (ls)
-33102	Mon May 12 14:45:10 2008	ls ; (ls)
-33103	Mon May 12 14:45:17 2008	ls
-33104	Mon May 12 14:46:40 2008	(ls)
-33105	Mon May 12 14:46:47 2008	(env)
-33106	Mon May 12 14:48:15 2008	(ls)
-33107	Mon May 12 14:50:12 2008	(ls)
-33108	Mon May 12 14:52:20 2008	(ls)
-33109	Mon May 12 14:52:58 2008	(ls)
-=======
->>>>>>> .r40
-33110	Mon May 12 14:53:01 2008	fg
-33111	Mon May 12 14:53:16 2008	(ls)
-33112	Mon May 12 14:53:50 2008	ls
-33113	Mon May 12 14:53:53 2008	(ls)
-33114	Mon May 12 14:53:58 2008	fg
-33115	Mon May 12 14:54:10 2008	(ls)
-0		
-33116	Tue May 13 14:37:44 2008	ls
-33117	Tue May 13 14:37:44 2008	ls
-33118	Tue May 13 14:37:58 2008	ls
-33119	Tue May 13 14:38:02 2008	env
-33120	Tue May 13 14:38:14 2008	cd /root
-33121	Tue May 13 14:38:16 2008	pwd
-33122	Tue May 13 14:38:20 2008	cd -
-33123	Tue May 13 14:38:32 2008	exit
-33124	Thu May 15 11:55:31 2008	ls
-33125	Thu May 15 11:55:34 2008	ls | grep e
-33126	Thu May 15 11:55:55 2008	ls
-33127	Thu May 15 11:56:33 2008	env | grep e
-33128	Thu May 15 14:08:00 2008	|
-33129	Thu May 15 14:08:05 2008	ls
-33130	Thu May 15 14:08:09 2008	cd ..
-33131	Thu May 15 14:08:11 2008	cd -
-33132	Thu May 15 14:08:26 2008	|
-33133	Thu May 15 14:14:47 2008	set prompt="toto"
-33134	Thu May 15 14:21:06 2008	l
-33135	Thu May 15 14:21:42 2008	ls
-33136	Thu May 15 14:21:43 2008	ls
-33137	Thu May 15 14:21:53 2008	|
-33138	Thu May 15 17:28:53 2008	ls
-33139	Thu May 15 17:28:54 2008	set
-33140	Thu May 15 17:28:56 2008	;D
-33141	Thu May 15 17:28:59 2008	set qweqwe=qweklqw
-33142	Thu May 15 17:29:00 2008	quit]
-33143	Thu May 15 17:29:02 2008	quit
-33144	Thu May 15 17:29:02 2008	quit
-33145	Thu May 15 17:29:04 2008	exxit
-33146	Thu May 15 17:29:05 2008	exit
-33147	Fri May 16 03:18:01 2008	ls 
-33148	Fri May 16 03:18:03 2008	ls -la
-33149	Fri May 16 03:18:07 2008	l
 33150	Fri May 16 03:18:08 2008	l
 33151	Fri May 16 03:18:47 2008	ls ; ls ; ls | grep *.c ; ls ; (cd ; pwd) && ls || haha
 33152	Fri May 16 03:19:05 2008	histoty
@@ -137,7 +56,7 @@
 33147	Mon May 26 18:12:48 2008	dapkd
 33148	Mon May 26 18:12:52 2008	w,m[vprmw|dsfds
 33149	Mon May 26 18:13:00 2008	+|||||++|+|+|+|+|+
-<<<<<<< .mine
+0		
 33150	Mon May 26 18:13:19 2008	svn commit
 33151	Mon May 26 18:14:06 2008	l
 33152	Mon May 26 18:14:06 2008	l
@@ -163,8 +82,21 @@
 33172	Mon May 26 18:19:01 2008	ls | wc -l
 33173	Mon May 26 18:19:06 2008	l
 33174	Mon May 26 18:19:09 2008	ls
-=======
+0		
 0		
 33173	Mon May 26 18:18:13 2008	set
 33174	Mon May 26 18:18:16 2008	exit
->>>>>>> .r40
+0		
+33174	Mon May 26 18:36:21 2008	set
+33175	Mon May 26 18:37:09 2008	make
+33176	Mon May 26 18:37:10 2008	./42
+33177	Mon May 26 18:37:11 2008	set
+33178	Mon May 26 18:37:14 2008	make re
+33179	Mon May 26 18:37:20 2008	........../42
+33180	Mon May 26 18:37:25 2008	quit
+33181	Mon May 26 18:37:26 2008	./42
+33182	Mon May 26 18:37:28 2008	exit
+33182	Mon May 26 18:38:06 2008	make
+33183	Mon May 26 18:38:08 2008	./42
+33184	Mon May 26 18:38:10 2008	exit
+33185	Mon May 26 18:38:21 2008	exit

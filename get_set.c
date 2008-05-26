@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Fri May  2 23:34:02 2008 aymeric derazey
-** Last update Mon May 26 17:45:13 2008 aymeric derazey
+** Last update Mon May 26 18:36:17 2008 aymeric derazey
 */
 
 #include <sys/types.h>
@@ -23,6 +23,8 @@ int	get_set(t_info *info)
   if ((get_user(info)) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   if ((get_uid(info)) == EXIT_FAILURE)
+    return (EXIT_FAILURE);
+  if ((get_gid(info)) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   return (EXIT_SUCCESS);
 }

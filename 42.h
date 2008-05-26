@@ -6,7 +6,7 @@
 **
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
 <<<<<<< .mine
-** Last update Mon May 26 17:46:14 2008 aymeric derazey
+** Last update Mon May 26 18:35:01 2008 aymeric derazey
 =======
 ** Last update Mon May 26 18:11:44 2008 laurent lefebvre
 >>>>>>> .r39
@@ -109,6 +109,7 @@ int		set_default_var(t_info *info);
 char		**path_to_tab(char *str);
 int		get_set(t_info *info);
 int		get_uid(t_info *info);
+int		get_gid(t_info *info);
 
 /* LOOP */
 int		loop(t_info *info);
