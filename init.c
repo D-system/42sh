@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Thu May 15 16:36:42 2008 aymeric derazey
+** Last update Mon May 26 18:22:20 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -13,22 +13,18 @@
 #include "42.h"
 
 /*
-** Set TOUTES les variables a NULL, recupere l'env et lit le fichier de conf
+** memset la structure, recupere l'env et lit le fichier de conf.
 */
 
 int	init(char **environ, t_info *info)
 {
-  info->env = NULL;
-  info->prompt = NULL;
+  my_memset(info, 0, sizeof(*info));
   info->last_status = EXIT_SUCCESS;
   info->set = 0;
   get_env(environ, info);
   get_set(info);
   info->path = path_to_tab(fetch_env(info->env, "PATH", "="));
-  info->history = NULL;
-  info->nbr_cmd = 0;
   info->pwd = my_pwd();
-  info->last_pwd = NULL;
 /*   if (get_cfg(info) == EXIT_FAILURE) */
 /*       return (EXIT_FAILURE); */
   load_event(info);
