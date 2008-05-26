@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Mon May 12 10:53:48 2008 thomas brennetot
+## Last update Mon May 26 17:52:34 2008 laurent lefebvre
 ##
 
 NAME		=	42sh
