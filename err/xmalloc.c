@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 16:53:03 2008 laurent lefebvre
-** Last update Wed Apr 30 11:50:32 2008 thomas brennetot
+** Last update Mon May 26 18:12:20 2008 laurent lefebvre
 */
 
 #include "../42.h"
@@ -26,6 +26,7 @@ void		*xmalloc(int size)
       my_printf("%E", "Memory Allocation Error\n");
       return (NULL);
     }
+  my_memset(ret, 0, sizeof(*ret));
   list = mem_add(0, 0);
   my_put_in_list(&list, ret);
   mem_add(1, list);

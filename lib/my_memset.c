@@ -5,20 +5,21 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:23:33 2008 thomas brennetot
-** Last update Mon Mar 31 17:23:38 2008 thomas brennetot
+** Last update Mon May 26 18:10:35 2008 laurent lefebvre
 */
 
 #include "../42.h"
 
-void	*my_memset(char *b, char c, int size)
+void	*my_memset(void *b, int c, uint size)
 {
-  int	i;
+  uchar	*buff;
 
-  i = 0;
-  while (i < size)
+  if (b != NULL)
     {
-      b[i] = c;
-      i++;
+      buff = (unsigned char *)b;
+      c = (unsigned char)c;
+      while (size--)
+        *(buff++) = c;
     }
   return (b);
 }

@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Mon May 12 14:42:54 2008 thomas brennetot
+** Last update Mon May 26 18:11:44 2008 laurent lefebvre
 */
 
 #ifndef __42_H__
@@ -31,6 +31,9 @@
 
 # define printf my_printf
 # define debug my_printf
+
+typedef	unsigned int	uint;
+typedef	unsigned char	uchar;
 
 /* STRUCT */
 
@@ -177,7 +180,7 @@ int		my_access(t_info *info, char **tab);
 /* LIB */
 int		my_getnbr(char *str);
 int		my_getnbr_base(char *str, char *base);
-void		*my_memset(char *b, char c, int size);
+void		*my_memset(void *b, int c, uint size);
 void		my_put_nbr(int n);
 void		put_nbr_fd(int n, int fd);
 int		my_putchar(char c);
