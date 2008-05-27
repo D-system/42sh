@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Fri May  2 23:34:02 2008 aymeric derazey
-** Last update Mon May 26 18:36:17 2008 aymeric derazey
+** Last update Tue May 27 15:10:09 2008 laurent lefebvre
 */
 
 #include <sys/types.h>
@@ -42,11 +42,11 @@ int	get_size()
 
   size = 0;
   if ((login = getlogin()) != NULL)
-    size++;
+    ++size;
   grp = getegid();
-  size++;
+  ++size;
   uid = getuid();
-  size++;
+  ++size;
   return (size);
 }
 

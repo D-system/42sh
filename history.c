@@ -5,13 +5,16 @@
 ** Login   <mondan_n@epitech.net>
 **
 ** Started on  Wed Apr 30 16:31:47 2008 nicolas mondange
-** Last update Wed May 21 10:48:32 2008 aymeric derazey
+** Last update Tue May 27 15:16:58 2008 laurent lefebvre
 */
 
 #include <fcntl.h>
 #include <time.h>
 #include "42.h"
 #define MAX_HISTORY 100
+
+/* NORME !!!!!!!!!!!!  11 FONCTIONS PAR FICHIER ? */
+
 
 void		load_event(t_info *params)
 {
@@ -38,7 +41,7 @@ void		my_word_str(char *str, char c)
     {
       if (str[i] == c)
 	str[i] = '\0';
-      i++;
+      ++i;
     }
 }
 
@@ -47,19 +50,19 @@ void		read_line(t_event *new_elem, char *line)
   my_word_str(line, '\t');
   new_elem->nbr = my_getnbr(line);
   while (*line != '\0')
-    line++;
-  line++;
+    ++line;
+  ++line;
   new_elem->time = my_strdup(line);
   while (*line != '\0')
-    line++;
-  line++;
+    ++line;
+  ++line;
   new_elem->info = my_strdup(line);
 }
 
 void		parse_event(t_info *params, char *line)
 {
-  t_event		*buff;
-  t_event		*new_elem;
+  t_event	*buff;
+  t_event	*new_elem;
 
   if (params->history == NULL)
     read_first_line(params, line);
@@ -102,7 +105,7 @@ void		save_event(t_info *params)
     }
 }
 
-void		add_event(t_info *params, char *to_ad)
+void		add_event(t_info *params, char *to_ad) /* NORME !!!! */
 {
   int			i;
   time_t		clock;
@@ -121,7 +124,7 @@ void		add_event(t_info *params, char *to_ad)
       while (buff->next != NULL)
 	{
 	  buff = buff->next;
-	  i++;
+	  ++i;
 	}
       new_elem = xmalloc(sizeof(*new_elem));
       new_elem->next = NULL;
@@ -136,9 +139,9 @@ void		add_event(t_info *params, char *to_ad)
   xfree(to_add);
 }
 
-t_event         *read_first_line(t_info *params, char *line)
+t_event		*read_first_line(t_info *params, char *line)
 {
-  t_event               *new_elem;
+  t_event	*new_elem;
 
   new_elem = xmalloc(sizeof(*new_elem));
   new_elem->next = NULL;
@@ -149,7 +152,7 @@ t_event         *read_first_line(t_info *params, char *line)
 
 t_event		*first_event(t_info *params, char *to_add, time_t *clock)
 {
-  t_event		*new_elem;
+  t_event	*new_elem;
 
   new_elem = xmalloc(sizeof(*new_elem));
   new_elem->next = NULL;
@@ -193,7 +196,7 @@ void		clear_event(t_info *params, int nbr_elm, int limit)
       xfree(save->info);
       xfree(save->time);
       xfree(save);
-      limit++;
+      ++limit;
     }
   params->history = buff;
 }

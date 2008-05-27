@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 16:34:52 2008 laurent lefebvre
-** Last update Fri Apr  4 16:37:42 2008 laurent lefebvre
+** Last update Tue May 27 15:09:11 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -17,7 +17,7 @@ int	get_env(char **environ, t_info *info)
 
   i = 0;
   while (environ[i] != NULL)
-    i++;
+    ++i;
   if ((info->env = xmalloc(sizeof(*(info->env)) * (i + 1))) == NULL)
     return (EXIT_FAILURE);
   i = 0;
@@ -28,7 +28,7 @@ int	get_env(char **environ, t_info *info)
 	  free_tab(info->env);
 	  return (EXIT_FAILURE);
 	}
-      i++;
+      ++i;
     }
   info->env[i] = NULL;
   return (EXIT_SUCCESS);
