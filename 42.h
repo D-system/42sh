@@ -5,11 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-<<<<<<< .mine
-** Last update Mon May 26 18:35:01 2008 aymeric derazey
-=======
-** Last update Mon May 26 18:11:44 2008 laurent lefebvre
->>>>>>> .r39
+** Last update Tue May 27 15:29:58 2008 laurent lefebvre
 */
 
 #ifndef __42_H__
@@ -112,7 +108,7 @@ int		get_uid(t_info *info);
 int		get_gid(t_info *info);
 
 /* LOOP */
-int		loop(t_info *info);
+void		loop(t_info *info);
 
 /* PARSEUR */
 int		parse_str(t_info *info, char *str);

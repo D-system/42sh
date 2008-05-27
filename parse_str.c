@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Wed May 21 10:48:10 2008 aymeric derazey
+** Last update Tue May 27 15:42:22 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -20,23 +20,19 @@ int	parser_nb_bracket(char *str)
   int	open1;
   int	close1;
   int	i;
-
+  
   open1 = 0;
   close1 = 0;
   i = 0;
   while (str[i] != '\0')
     {
-      if (str[i] != '(' && str[i] != ')')
-	;
+      if (str[i] != '(' && str[i] != ')');
       else if (str[i] == '(')
 	open1++;
-      else if (str[i] == ')')
+      else if (str[i] == ')' && (++close1 > open1))
 	{
-	  if (++close1 > open1)
-	    {
-	      my_printf("Too many )'s.\n");
-	      return (EXIT_FAILURE);
-	    }
+	  my_printf("Too many )'s.\n");
+	  return (EXIT_FAILURE);
 	}
       i++;
     }
@@ -87,9 +83,8 @@ int	parser_bracket_valid(char *str)
     {
       if (str[i] == '(')
 	{
-	  if (bracket_valid_before(str, i) == EXIT_FAILURE)
-	    return (EXIT_FAILURE);
-	  if (bracket_valid_after(str, i) == EXIT_FAILURE)
+	  if ((bracket_valid_before(str, i) == EXIT_FAILURE) ||
+	      (bracket_valid_after(str, i) == EXIT_FAILURE))
 	    return (EXIT_FAILURE);
 	}
       i++;
@@ -99,9 +94,8 @@ int	parser_bracket_valid(char *str)
 
 int	parse_str(t_info *info, char *str)
 {
-  if (parser_nb_bracket(str) == EXIT_FAILURE)
-    return (status(info, EXIT_FAILURE));
-  if (parser_bracket_valid(str) == EXIT_FAILURE)
+  if ((parser_nb_bracket(str) == EXIT_FAILURE) ||
+      (parser_bracket_valid(str) == EXIT_FAILURE))
     return (status(info, EXIT_FAILURE));
   info->last_status = 0;
   if (info->nbr_cmd == 0xFFFFFFF)

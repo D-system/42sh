@@ -5,11 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-<<<<<<< .mine
-** Last update Mon May 26 18:27:09 2008 aymeric derazey
-=======
-** Last update Mon May 26 18:01:41 2008 laurent lefebvre
->>>>>>> .r39
+** Last update Tue May 27 15:31:23 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -19,13 +15,12 @@ int		main(void)
 {
   extern char	**environ;
   t_info	info;
-  int		value;
 
   if (init(environ, &info) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   info.prompt = my_strdup("(%n@%M 42sh)"); /* On set en dur pour l'instant */
-  value = loop(&info);
+  loop(&info);
   save_event(&info);
   freeall();
-  return (value);
+  return (EXIT_SUCCESS);
 }

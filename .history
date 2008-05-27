@@ -2,3 +2,8 @@
 1	Tue May 27 15:08:14 2008	ls
 2	Tue May 27 15:19:53 2008	salut
 3	Tue May 27 15:19:54 2008	ls
+4	Tue May 27 15:43:27 2008	ls
+5	Tue May 27 15:43:32 2008	ls | wc
+6	Tue May 27 15:43:52 2008	ls ; (cd .. ; ls) ; ls
+7	Tue May 27 15:44:43 2008	ls ; (cd .. ; ls) ; pwd
+8	Tue May 27 15:45:03 2008	ls
