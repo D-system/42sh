@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Tue May 27 15:29:58 2008 laurent lefebvre
+** Last update Tue May 27 18:37:43 2008 laurent lefebvre
 */
 
 #ifndef __42_H__
@@ -198,7 +198,7 @@ char		*my_strncpy(char *dest, char *src, int n);
 char		*my_strdup(char *str);
 int		my_strlen(char *str);
 int		my_strncmp(char *s1, char *s2, int n);
-char		*my_strcat(char *s1, char *s2);
+char		*my_strcat(char *s1, char *s2); /* A RECODER (man strcat) */
 char		*my_strcat_trois(char *s1, char *s2, char *s3);
 char		*epurstr(char *str);
 void		free_tab(char **tab);
@@ -223,6 +223,7 @@ int		xfork(void);
 int		xpipe(int *fildes);
 int		xdup2(int old_fd, int new_fd);
 int		xclose(int fd);
+int		xchdir(const char *path);
 int		xwaitpid(int wait_pid, int *status, int options);
 
 /* OtherZ */

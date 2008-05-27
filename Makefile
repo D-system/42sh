@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Mon May 26 20:19:13 2008 thomas brennetot
+## Last update Tue May 27 18:35:40 2008 laurent lefebvre
 ##
 
 NAME		=	42sh
@@ -17,6 +17,7 @@ SRC_SH		=	main.c				\
 			get_set.c			\
 			get_gid.c			\
 			get_uid.c			\
+			get_pwd.c			\
 			loop.c				\
 			get_cfg.c			\
 			gere.c				\
@@ -77,8 +78,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
 			./lib/get_next_line.c		\
-			./lib/my_memcpy.c		\
-			./lib/my_pwd.c
+			./lib/my_memcpy.c
 
 SRC_ERR		=	./err/xmalloc.c			\
 			./err/xopen.c			\
@@ -89,7 +89,8 @@ SRC_ERR		=	./err/xmalloc.c			\
 			./err/xpipe.c			\
 			./err/xfork.c			\
 			./err/xclose.c			\
-			./err/xdup2.c
+			./err/xdup2.c			\
+			./err/xchdir.c
 
 SRC_PRT		=	./prompt/prompt.c		\
 			./prompt/launch_fct.c		\
