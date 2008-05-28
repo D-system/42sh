@@ -1,15 +1,15 @@
 /*
 ** my_echo.c for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/builtins
-** 
+**
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-** 
+**
 ** Started on  Fri May  2 23:57:18 2008 aymeric derazey
-** Last update Thu May  8 16:44:41 2008 thomas brennetot
+** Last update Tue May 27 19:35:12 2008 aymeric derazey
 */
 
 #include "stdlib.h"
-#include "../42.h"
+#include "42.h"
 
 /*
 ** dans le cas d'un echo "$toto", va chercher et afficher le contenu de la variable.
@@ -25,7 +25,7 @@ int	check_var(char *local_var, t_info *info)
       my_printf("%E%E", local_var + 1, ": Undefined variable\n");
       return (status(info, EXIT_FAILURE));
     }
-  else 
+  else
     {
       my_putstr(line + my_strlen(local_var));
       my_putchar('\n');

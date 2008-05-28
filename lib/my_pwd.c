@@ -5,12 +5,12 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Thu May  8 15:21:07 2008 thomas brennetot
-** Last update Sun May 11 15:48:30 2008 thomas brennetot
+** Last update Tue May 27 19:26:19 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../42.h"
+#include "42.h"
 
 char	*my_pwd(void)
 {

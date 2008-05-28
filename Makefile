@@ -1,11 +1,11 @@
 ##
 ## Makefile for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/official
-## 
+##
 ## Made by aymeric derazey
 ## Login   <deraze_a@epitech.net>
-## 
+##
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Tue May 27 18:35:40 2008 laurent lefebvre
+## Last update Wed May 28 18:02:22 2008 thomas brennetot
 ##
 
 NAME		=	42sh
@@ -13,10 +13,7 @@ NAME		=	42sh
 SRC_SH		=	main.c				\
 			init.c				\
 			get_env.c			\
-			get_user.c			\
-			get_set.c			\
-			get_gid.c			\
-			get_uid.c			\
+			get_local.c			\
 			get_pwd.c			\
 			loop.c				\
 			get_cfg.c			\
@@ -40,7 +37,15 @@ SRC_SH		=	main.c				\
 			parse_str.c			\
 			put_zero.c			\
 			status.c			\
-			cut_delim_nextword_and_return_nextword.c
+			cdnarn.c			\
+			get_user.c			\
+			get_gid.c			\
+			get_uid.c			\
+			get_history.c			\
+			get_group.c
+
+
+
 
 SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_cd.c		\
@@ -78,6 +83,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
 			./lib/get_next_line.c		\
+			./lib/int_to_str.c		\
 			./lib/my_memcpy.c
 
 SRC_ERR		=	./err/xmalloc.c			\
@@ -120,14 +126,15 @@ SRC_ALL		=	$(SRC_SH)			\
 			$(SRC_PRT)			\
 			$(SRC_PTF)			\
 			$(SRC_COMPL)			\
-			$(SRC_BUI)
+			$(SRC_BUI)			\
+			$(SRC_LOCAL)
 
 
-INCLUDES	=	42.h
+INCLUDES	=	./include
 
 OBJ_ALL		=	$(SRC_ALL:.c=.o)
 
-CFLAGS		+=	-W -Wall -pedantic -ansi -D${OSTYPE} -I.
+CFLAGS		+=	-W -Wall -pedantic -ansi -D${OSTYPE} -I$(INCLUDES)
 
 CC_FreeBSD	=	gcc
 CC_solaris	=	/usr/sfw/bin/gcc
@@ -149,8 +156,8 @@ etags		:
 			@etags $(SRC_ALL) $(INCLUDES)
 			@echo [... DONE]
 
-debug		:
-			grep -H -n -e "debug" *.c */*.c
+grep		:
+			grep -H -n -e "Last" $(SRC_ALL)
 
 clean		:
 			rm -f $(OBJ_ALL)

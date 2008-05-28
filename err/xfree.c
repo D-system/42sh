@@ -1,15 +1,15 @@
 /*
 ** xfree.c for  in /u/epitech_2012/brenne_t/cu/42sh
-** 
+**
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
-** 
+**
 ** Started on  Fri Apr  4 18:50:31 2008 thomas brennetot
-** Last update Sun May 11 16:10:33 2008 thomas brennetot
+** Last update Tue May 27 19:33:44 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 void		xfree(void *add)
 {
@@ -17,7 +17,7 @@ void		xfree(void *add)
   t_mal		*prev;
   t_mal		*next;
   int		ch;
-  
+
   if (add == NULL)
     return ;
   ch = 0;

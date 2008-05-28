@@ -5,22 +5,24 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Mon Mar 31 17:23:33 2008 thomas brennetot
-** Last update Wed May  7 23:00:20 2008 thomas brennetot
+** Last update Wed May 28 17:50:48 2008 thomas brennetot
 */
 
-void	*my_memcpy(void *dest2, void *src2, int size)
+#include "42.h"
+
+void	*my_memcpy(void *dest, void *src, int size)
 {
   int	i;
-  char	*dest;
-  char	*src;
+  char	*dest2;
+  char	*src2;
 
-  dest = dest2;
-  src = src2;
+  dest2 = dest;
+  src2 = src;
   i = 0;
   while (i != size)
     {
-      dest[i] = src[i];
+      dest2[i] = src2[i];
       i++;
     }
-  return (dest);
+  return (dest2);
 }

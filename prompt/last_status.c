@@ -5,10 +5,10 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 13:20:24 2008 thomas brennetot
-** Last update Tue Apr 29 13:23:52 2008 thomas brennetot
+** Last update Tue May 27 19:31:43 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 void	last_status(t_info *info)
 {

@@ -5,11 +5,11 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue Apr 15 14:54:50 2008 aymeric derazey
-** Last update Thu May  8 14:17:36 2008 thomas brennetot
+** Last update Tue May 27 19:31:48 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 /*
 ** Lance la fonction adequate selon le parametre (%x)

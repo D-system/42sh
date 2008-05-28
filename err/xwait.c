@@ -5,13 +5,13 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Apr 25 16:04:12 2008 thomas brennetot
-** Last update Mon May 12 11:29:50 2008 thomas brennetot
+** Last update Tue May 27 19:34:15 2008 aymeric derazey
 */
 
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
-#include "../42.h"
+#include "42.h"
 
 typedef struct	s_wait
 {

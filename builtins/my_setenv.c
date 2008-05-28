@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 16:02:32 2008 thomas brennetot
-** Last update Thu May  8 17:52:40 2008 aymeric derazey
+** Last update Wed May 28 17:17:40 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 char	*add_env_concat(char **tab, int mode)
 {
@@ -90,7 +90,7 @@ int	my_setenv(t_info *info, char **tab)
     my_printf("%E", "setenv: Too many arguments.\n");
   else
     {
-      if (info->env[0] == NULL || fetch_env(info->env, tab[1], "=") == NULL)
+      if ((fetch_env(info->env, tab[1], "=")) == NULL)
 	add_env(info, tab, nb_env);
       else
 	update_env(info, tab, nb_env);

@@ -5,12 +5,12 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Fri Apr  4 17:28:39 2008 laurent lefebvre
-** Last update Mon May 12 12:59:48 2008 thomas brennetot
+** Last update Tue May 27 19:32:01 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../42.h"
+#include "42.h"
 
 /*
 ** Affiche le prompt, gestion de l'isatty

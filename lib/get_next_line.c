@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Sun May 11 15:10:21 2008 thomas brennetot
-** Last update Mon May 12 11:07:47 2008 thomas brennetot
+** Last update Tue May 27 19:24:04 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 #define READ_SIZE 2048
 

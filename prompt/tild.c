@@ -5,10 +5,10 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue Apr 15 15:42:29 2008 aymeric derazey
-** Last update Tue Apr 15 16:24:08 2008 thomas brennetot
+** Last update Tue May 27 19:32:06 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 void	tild(t_info *info)
 {

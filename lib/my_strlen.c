@@ -5,8 +5,10 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:47:58 2008 thomas brennetot
-** Last update Mon Mar 31 16:48:19 2008 thomas brennetot
+** Last update Tue May 27 19:28:27 2008 aymeric derazey
 */
+
+#include "42.h"
 
 int     my_strlen(char *str)
 {

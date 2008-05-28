@@ -5,10 +5,10 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat May  3 16:41:07 2008 aymeric derazey
-** Last update Sat May  3 17:11:20 2008 aymeric derazey
+** Last update Tue May 27 19:31:02 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 int	set_history(t_info *info, char **tab)
 {

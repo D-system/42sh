@@ -1,18 +1,20 @@
 /*
-** 42.h for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/official
+** 42.h for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/lib
 **
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
 **
-** Started on  Mon Mar 31 17:18:10 2008 aymeric derazey
-** Last update Tue May 27 18:37:43 2008 laurent lefebvre
+** Started on  Tue May 27 18:35:13 2008 aymeric derazey
+** Last update Wed May 28 17:55:44 2008 aymeric derazey
 */
 
 #ifndef __42_H__
 # define __42_H__
 
 # include <stdlib.h>
-# include "lib/my_printf/my_printf.h"
+# include "42_struct.h"
+# include "my_term.h"
+# include "my_printf.h"
 
 /* DEFINES */
 # define BUFF_COMPL 2048 /* Taille de la ligne de commande (COMPL == completion) */
@@ -35,77 +37,14 @@
 typedef	unsigned int	uint;
 typedef	unsigned char	uchar;
 
-/* STRUCT */
-
-/* Struct list chaine pour l'historique */
-typedef struct		s_event
-{
-  int			nbr;
-  char			*time;
-  char			*info;
-  struct s_event	*next;
-}			t_event;
-
-/* structure principale */
-typedef struct	s_info
-{
-  char		**env;
-  char		**set;
-  char		**path;
-  char		*prompt;
-  int		last_status; /* valeur de retour du wait */
-  t_event	*history;
-  int		nbr_cmd;
-  char		*pwd;
-  char		*last_pwd;
-}		t_info;
-
-/* structure pour xmalloc */
-typedef struct	s_mal
-{
-  void		*addr;
-  struct s_mal	*next;
-}		t_mal;
-
-/* structure pour gere_redirect */
-typedef struct	s_gere
-{
-  char		*str;
-  int		(*func)();
-  int		size_str;
-}		t_gere;
-
-/* structure pour builtins */
-typedef struct	s_bui
-{
-  char		*str;
-  int		(*func)();
-}		t_bui;
-
-/* structure pour le builtin set */
-typedef	struct	s_set
-{
-  char		*cmd;
-  int		(*func)();
-  int		len;
-}		t_set;
-
-/* structure pour le prompt */
-typedef struct	s_prompt
-{
-  char		c;
-  void		(*func)();
-}		t_prompt;
-
 /* INIT */
 int		init(char **environ, t_info *info);
 int		get_env(char **environ, t_info *info);
 int		get_cfg(t_info *info);
 int		set_default_var(t_info *info);
 char		**path_to_tab(char *str);
-int		get_set(t_info *info);
-int		get_uid(t_info *info);
-int		get_gid(t_info *info);
+int		get_local(t_info *info);
+
 
 /* LOOP */
 void		loop(t_info *info);
@@ -161,18 +100,24 @@ int		my_echo(t_info *info, char **tab);
 int		my_setenv(t_info *info, char **tab);
 int		my_unsetenv(t_info *info, char **tab);
 int		my_set(t_info *info, char **tab);
-int		get_user(t_info *info);
-int		get_size();
 int		add_local(t_info *info, char **tab);
 char		**cpy_old_local(t_info *info, char **tab);
 int		aff_local(t_info *info);
 char		*add_local_concat(char *str);
 char		*replace_char(char *str, char c);
-int		check_syntax(t_info *info, char **tab, char **new_local);
+int		check_syntax(t_info *info, char **tab);
 int		check_begin(t_info *info, char *str);
 int		check_equal(t_info *info, char *tab);
 int		set_prompt(t_info *info, char **tab);
 int		set_history(t_info *info, char **tab);
+
+/* LOCAL VAR */
+int		get_user(t_info *info);
+void		get_uid(t_info *info);
+void		get_gid(t_info *info);
+void		get_history(t_info *info);
+int		get_group(t_info *info);
+int		get_size();
 
 /* COMMAND */
 int		command();
@@ -198,7 +143,7 @@ char		*my_strncpy(char *dest, char *src, int n);
 char		*my_strdup(char *str);
 int		my_strlen(char *str);
 int		my_strncmp(char *s1, char *s2, int n);
-char		*my_strcat(char *s1, char *s2); /* A RECODER (man strcat) */
+char		*my_strcat(char *s1, char *s2);
 char		*my_strcat_trois(char *s1, char *s2, char *s3);
 char		*epurstr(char *str);
 void		free_tab(char **tab);
@@ -207,6 +152,9 @@ char		*get_next_line(const int fd);
 int		my_putnbr_base(int n, char *base);
 int		my_getnbr_base(char *str, char* base);
 void		*my_memcpy(void *dest, void *src, int size);
+int		int_len(int nb);
+char		*int_to_str(int nb);
+
 
 /* ERR */
 void		*xmalloc(int size);
@@ -223,46 +171,12 @@ int		xfork(void);
 int		xpipe(int *fildes);
 int		xdup2(int old_fd, int new_fd);
 int		xclose(int fd);
-int		xchdir(const char *path);
 int		xwaitpid(int wait_pid, int *status, int options);
+int		xchdir(const char *path);
+
 
 /* OtherZ */
 int		put_zero(char *str, char *delim);
 int		status(t_info *info, int status);
 
 #endif /* !__42_H__ */
-
-
-
-/* TERMCAPS */
-
-#ifndef __MY_SELECT__
-# define __MY_SELECT__
-
-#include <stdlib.h>
-#include <sys/ioctl.h>
-#include <sys/termios.h>
-#include <sys/types.h>
-#include <sys/uio.h>
-#include <unistd.h>
-
-#define BUF_SIZE 4096
-
-typedef	struct		s_list
-{
-  char			*data;
-  struct s_list		*next;
-}			t_list;
-
-t_list		*push(t_list *list, char *str);
-void		show_list(t_list *list, int pos);
-
-int		canonical_mode(int flag);
-void		display(int ac, char **av);
-void		reverse_video(t_list *list);
-void		clear_win();
-void		my_outc(int c);
-int		inf_list(int pos, int ac);
-int		get_keys1(char *buf, int r, int ac);
-
-#endif

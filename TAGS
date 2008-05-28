@@ -1,28 +1,22 @@
 
 main.c,18
-int		main(18,384
+int		main(14,290
 
 init.c,17
-int	init(19,395
+int	init(19,384
 
 get_env.c,20
 int	get_env(14,302
 
-get_user.c,21
-int	get_user(14,315
-
-get_set.c,41
-int	get_set(16,350
-int	get_size(34,742
-
-get_uid.c,20
-int	get_uid(16,357
+get_local.c,43
+int	get_local(17,367
+int	get_size(38,820
 
 loop.c,17
 int	loop(18,373
 
 get_cfg.c,20
-int	get_cfg(21,444
+int	get_cfg(21,443
 
 gere.c,17
 int	gere(27,523
@@ -116,39 +110,54 @@ int	put_zero(17,382
 int	put_zero_in_last(42,764
 
 status.c,19
-int	status(13,293
+int	status(17,368
 
-cut_delim_nextword_and_return_nextword.c,93
+rename_it.c,93
 char		*cut_delim_nextword_and_return_nextword(cut_delim_nextword_and_return_nextword18,395
 
+get_user.c,21
+int	get_user(14,315
+
+get_gid.c,21
+void	get_gid(16,343
+
+get_uid.c,21
+void	get_uid(16,357
+
+get_history.c,25
+void	get_history(13,290
+
+get_group.c,22
+int	get_group(14,305
+
 lib/my_getnbr.c,42
-int	get_int(13,284
-int	my_getnbr(35,631
+int	get_int(13,280
+int	my_getnbr(35,627
 
 lib/my_getnbr_base.c,48
-int	find_pos(13,289
-int	my_getnbr_base(27,444
+int	find_pos(13,285
+int	my_getnbr_base(27,440
 
 lib/my_putchar.c,23
-int	my_putchar(15,325
+int	my_putchar(15,321
 
 lib/my_putstr.c,22
-int	my_putstr(15,324
+int	my_putstr(15,320
 
 lib/my_put_nbr.c,24
-void	my_put_nbr(13,285
+void	my_put_nbr(13,281
 
 lib/my_strlen.c,26
-int     my_strlen(11,264
+int     my_strlen(13,280
 
 lib/my_strcat.c,34
-char	*my_strcat(my_strcat14,313
+char	*my_strcat(my_strcat14,307
 
 lib/my_strcat_trois.c,46
-char	*my_strcat_trois(my_strcat_trois13,301
+char	*my_strcat_trois(my_strcat_trois13,295
 
 lib/my_strcmp.c,22
-int	my_strcmp(13,285
+int	my_strcmp(14,300
 
 lib/my_strncmp.c,23
 int	my_strncmp(13,286
@@ -157,117 +166,121 @@ lib/my_strcpy.c,34
 char	*my_strcpy(my_strcpy11,264
 
 lib/my_strncpy.c,36
-char	*my_strncpy(my_strncpy11,265
+char	*my_strncpy(my_strncpy13,281
 
 lib/my_strdup.c,34
-char	*my_strdup(my_strdup14,304
+char	*my_strdup(my_strdup14,300
 
 lib/put_nbr_fd.c,24
-void	put_nbr_fd(13,304
+void	put_nbr_fd(13,298
 
 lib/my_putnbr_base.c,27
-int	my_putnbr_base(13,277
+int	my_putnbr_base(13,273
 
 lib/my_memset.c,34
-void	*my_memset(my_memset13,280
+void	*my_memset(my_memset13,276
 
 lib/epurstr.c,88
-void	notabu(15,342
-char		*decal_word(decal_word28,478
-char		*epurstr(epurstr39,677
+void	notabu(15,338
+char		*decal_word(decal_word28,474
+char		*epurstr(epurstr39,673
 
 lib/my_str_to_wordtab.c,174
-#define BUFF_WORDTAB 13,307
-int	my_str_to_wordtab_nb_word(15,333
-void	no_tabulation(36,635
-void	no_space_in_end(49,778
-char	**my_str_to_wordtab(my_str_to_wordtab64,952
+#define BUFF_WORDTAB 13,303
+int	my_str_to_wordtab_nb_word(15,329
+void	no_tabulation(36,631
+void	no_space_in_end(49,774
+char	**my_str_to_wordtab(my_str_to_wordtab64,948
 
 lib/my_str_to_wordtab_mode.c,170
-void	my_inhib(15,330
-void	my_delim(41,713
-int	get_word(67,1026
-char	*strdup_inhib(strdup_inhib83,1228
-char	**my_str_to_wordtab_mode(my_str_to_wordtab_mode111,1652
+void	my_inhib(15,324
+void	my_delim(41,705
+int	get_word(67,1016
+char	*strdup_inhib(strdup_inhib83,1214
+char	**my_str_to_wordtab_mode(my_str_to_wordtab_mode111,1636
 
 lib/free_tab.c,22
-void	free_tab(14,306
+void	free_tab(14,302
 
 lib/fetch_env.c,34
-char	*fetch_env(fetch_env18,353
+char	*fetch_env(fetch_env18,346
 
 lib/get_next_line.c,69
-#define READ_SIZE 14,301
-char		*get_next_line(get_next_line16,325
+#define READ_SIZE 14,297
+char		*get_next_line(get_next_line16,321
 
 lib/my_memcpy.c,34
-void	*my_memcpy(my_memcpy11,258
+void	*my_memcpy(my_memcpy13,274
 
 lib/my_pwd.c,28
-char	*my_pwd(my_pwd15,313
+char	*my_pwd(my_pwd15,309
+
+lib/int_to_str.c,56
+int	int_len(13,290
+char	*int_to_str(int_to_str26,405
 
 err/xmalloc.c,125
-void		*xmalloc(xmalloc18,395
-void		*mem_add(mem_add37,710
-void		my_put_in_list(48,847
-void		*x_malloc(x_malloc58,1034
+void		*xmalloc(xmalloc18,389
+void		*mem_add(mem_add37,702
+void		my_put_in_list(48,837
+void		*x_malloc(x_malloc58,1024
 
 err/xopen.c,18
-int	xopen(14,308
+int	xopen(14,304
 
 err/xwrite.c,20
-int		xwrite(17,365
+int		xwrite(17,361
 
 err/xread.c,18
-int	xread(16,353
+int	xread(16,349
 
 err/xfree.c,42
-void		xfree(14,283
-void		freeall(43,704
+void		xfree(14,277
+void		freeall(43,696
 
 err/xwait.c,128
-typedef struct	s_wait16,337
-}		t_wait;20,393
-t_wait		gl_wait[gl_wait22,405
-void		err_status(56,1743
-int		xwaitpid(75,2006
+typedef struct	s_wait16,333
+}		t_wait;20,389
+t_wait		gl_wait[gl_wait22,401
+void		err_status(56,1739
+int		xwaitpid(75,2002
 
 err/xpipe.c,18
-int	xpipe(15,312
+int	xpipe(15,308
 
 err/xfork.c,18
 int	xfork(16,332
 
 err/xclose.c,19
-int	xclose(15,313
+int	xclose(15,309
 
 err/xdup2.c,18
-int	xdup2(15,312
+int	xdup2(15,308
 
 prompt/prompt.c,20
-void	prompt(19,373
+void	prompt(19,369
 
 prompt/launch_fct.c,61
-t_prompt gl_prompt[gl_prompt18,373
-int	launch_fct(49,1784
+t_prompt gl_prompt[gl_prompt18,369
+int	launch_fct(49,1780
 
 prompt/full_hostname.c,27
-void	full_hostname(14,307
+void	full_hostname(14,303
 
 prompt/pourcent.c,22
-void	pourcent(13,283
+void	pourcent(13,279
 
 prompt/tild.c,18
-void	tild(13,288
+void	tild(13,284
 
 prompt/hostname_to_dot.c,29
-void	hostname_to_dot(15,339
+void	hostname_to_dot(15,335
 
 prompt/user_name.c,23
-void	user_name(14,296
+void	user_name(14,292
 
 prompt/last_status.c,25
-void	last_status(13,277
+void	last_status(13,273
 
 lib/my_printf/my_printf.c,81
 opt_t	pf_gl[pf_gl17,366
@@ -309,95 +322,62 @@ void	my_printf_E(17,375
 void	my_printf_e(27,523
 
 completion/completion.c,36
-char	*completion(completion14,297
+char	*completion(completion14,293
 
 builtins/builtins.c,56
-struct s_bui	gl_bui[gl_bui14,294
-int	builtins(27,512
+struct s_bui	gl_bui[gl_bui14,289
+int	builtins(27,506
 
 builtins/my_cd.c,173
-void	put_pwd(15,321
-int	my_cd_access(30,580
-int	my_cd_nb_arg_n_tild(59,1161
-int	my_cd_tild(75,1440
-int	my_cd_home(97,1940
-int	my_cd_moins(114,2254
-int	my_cd(127,2511
+void	put_pwd(15,315
+int	my_cd_access(30,574
+int	my_cd_nb_arg_n_tild(59,1155
+int	my_cd_tild(75,1434
+int	my_cd_home(97,1934
+int	my_cd_moins(114,2248
+int	my_cd(127,2505
 
 builtins/my_env.c,19
-int	my_env(19,339
+int	my_env(19,336
 
 builtins/my_exit.c,20
-int	my_exit(13,283
+int	my_exit(13,279
 
 builtins/my_echo.c,42
-int	check_var(18,405
-int	my_echo(40,853
+int	check_var(18,399
+int	my_echo(40,846
 
 builtins/my_setenv.c,113
-char	*add_env_concat(add_env_concat14,304
-void	add_env(37,836
-void	update_env(62,1316
-int	my_setenv(80,1679
+char	*add_env_concat(add_env_concat14,301
+void	add_env(37,833
+void	update_env(62,1313
+int	my_setenv(80,1676
 
 builtins/my_unsetenv.c,118
-void	unsetenv_free_n_renew(14,307
-void	unsetenv_just_that(26,508
-void	unsetenv_all(51,977
-int	my_unsetenv(62,1168
+void	unsetenv_free_n_renew(14,303
+void	unsetenv_just_that(26,504
+void	unsetenv_all(51,973
+int	my_unsetenv(62,1164
 
 builtins/my_set.c,41
-int	my_set(32,642
-int	aff_local(48,974
+int	my_set(32,639
+int	aff_local(48,945
 
 builtins/add_local.c,65
-int	add_local(17,309
-char	**cpy_old_local(cpy_old_local32,618
+int	add_local(17,304
+char	**cpy_old_local(cpy_old_local32,639
 
 builtins/check_syntax.c,74
-int	check_syntax(17,356
-int	check_begin(47,987
-int	check_equal(62,1332
+int	check_syntax(17,351
+int	check_begin(47,981
+int	check_equal(62,1326
 
 builtins/add_local_concat.c,88
-char	*add_local_concat(add_local_concat13,301
-char	*replace_char(replace_char20,390
+char	*add_local_concat(add_local_concat13,296
+char	*replace_char(replace_char20,385
 
 builtins/set_prompt.c,23
-int	set_prompt(13,295
+int	set_prompt(13,290
 
 builtins/set_history.c,24
-int	set_history(13,296
-
-42.h,824
-# define __42_H__16,365
-# define BUFF_COMPL 22,458
-# define NO_REDIRECTION 23,542
-# define NO_BUILTINS 24,588
-# define FATHER 25,612
-# define CHILD 26,630
-# define EXIT_EXIT 27,647
-#  define EXIT_FAILURE 30,696
-#  define EXIT_SUCCESS 33,755
-# define printf 36,789
-# define debug 37,815
-typedef	unsigned int	uint;39,841
-typedef	unsigned char	uchar;40,868
-typedef struct		s_event45,955
-}			t_event;51,1050
-typedef struct	s_info54,1091
-}		t_info;65,1298
-typedef struct	s_mal68,1339
-}		t_mal;72,1399
-typedef struct	s_gere75,1445
-}		t_gere;80,1518
-typedef struct	s_bui83,1560
-}		t_bui;87,1615
-typedef	struct	s_set90,1662
-}		t_set;95,1729
-typedef struct	s_prompt98,1771
-}		t_prompt;102,1827
-# define __MY_SELECT__242,6267
-#define BUF_SIZE 251,6424
-typedef	struct		s_list253,6447
-}			t_list;257,6512
+int	set_history(13,293

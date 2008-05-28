@@ -5,12 +5,12 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Sun Apr 27 13:55:18 2008 thomas brennetot
-** Last update Wed Apr 30 11:54:27 2008 thomas brennetot
+** Last update Tue May 27 19:34:02 2008 aymeric derazey
 */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 int	xpipe(int *fildes)
 {

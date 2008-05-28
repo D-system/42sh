@@ -5,10 +5,10 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:44:28 2008 thomas brennetot
-** Last update Thu May 15 12:11:16 2008 thomas brennetot
+** Last update Tue May 27 19:32:27 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 #include <unistd.h>
 #include <stdlib.h>
 

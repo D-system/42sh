@@ -5,14 +5,14 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Tue Nov 13 14:41:34 2007 thomas brennetot
-** Last update Wed Apr 16 14:23:38 2008 thomas brennetot
+** Last update Tue May 27 19:23:00 2008 aymeric derazey
 */
 
 #ifndef __MY_PRINTF_H__
 #define __MY_PRINTF_H__
 
 #include <stdarg.h>
-#include "../../42.h"
+#include "42.h"
 
 typedef struct	opt_s
 {

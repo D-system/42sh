@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Thu Apr 24 19:46:54 2008 aymeric derazey
-** Last update Thu May  8 18:06:38 2008 thomas brennetot
+** Last update Wed May 28 15:10:21 2008 aymeric derazey
 */
 
 
@@ -21,9 +21,18 @@
 int	get_cfg(t_info *info)
 {
   int	fd;
+  char	*buff;
 
-  if ((fd = open("42shrc", O_RDONLY)) == -1)
-    return (EXIT_SUCCESS);
-  close(fd);
-  return (EXIT_SUCCESS);
+  if ((fd = open(".42shrc", O_RDONLY)) != -1)
+    {
+      while ((buff = get_next_line(fd)) != NULL)
+	{
+	  if (buff[0] != '#')
+	    gere(info, buff, FATHER);
+	  free(buff);
+	}
+      close(fd);
+      return (EXIT_SUCCESS);
+    }
+  return (EXIT_FAILURE);
 }

@@ -5,13 +5,13 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat Mar 15 16:17:55 2008 aymeric derazey
-** Last update Sat May 24 12:42:21 2008 nicolas mondange
+** Last update Tue May 27 19:34:08 2008 aymeric derazey
 */
 
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <unistd.h>
-#include "../42.h"
+#include "42.h"
 
 int	xread(int fd, char *buf, int size)
 {

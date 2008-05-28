@@ -1,22 +1,21 @@
 /*
 ** my_strcat_trois.c for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/builtins
-** 
+**
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-** 
+**
 ** Started on  Fri May  9 21:05:48 2008 aymeric derazey
-** Last update Sun May 11 14:51:25 2008 thomas brennetot
+** Last update Tue May 27 19:27:38 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 char	*my_strcat_trois(char *s1, char *s2, char *s3)
 {
-  
   char  *buff;
   int   i;
   int   j;
-  
+
   if ((buff = xmalloc(sizeof(*buff) * ((my_strlen(s1) +
 					my_strlen(s2) + my_strlen(s3)) + 1))) == NULL)
     return (NULL);

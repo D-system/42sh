@@ -5,12 +5,12 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Sun Apr 27 18:54:16 2008 thomas brennetot
-** Last update Sun Apr 27 18:57:46 2008 thomas brennetot
+** Last update Tue May 27 19:33:29 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../42.h"
+#include "42.h"
 
 int	xdup2(int old_fd, int new_fd)
 {

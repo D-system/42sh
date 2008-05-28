@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon May 26 18:30:21 2008 aymeric derazey
-** Last update Mon May 26 18:38:01 2008 aymeric derazey
+** Last update Tue May 27 20:29:48 2008 aymeric derazey
 */
 
 #include <unistd.h>
@@ -13,22 +13,18 @@
 #include <stdlib.h>
 #include "42.h"
 
-int	get_gid(t_info *info)
+void	get_gid(t_info *info)
 {
   char	*set_grp;
-  uid_t	gid;
+  char	*gid_str;
   int	i;
-  char	*user_gid;
 
-  gid = getegid();
-  printf("this is the gid : %d\n", gid);
+  gid_str = int_to_str(getegid());
   set_grp = "gid";
-  user_gid = my_strcat_trois(set_grp, "\t", "32012");
+  gid_str = my_strcat_trois(set_grp, "\t", gid_str);
   i = 0;
   while (info->set[i] != NULL)
     i++;
-  info->set[i] = my_strdup(user_gid);
-  i++;
+  info->set[i++] = my_strdup(gid_str);
   info->set[i] = NULL;
-  return (EXIT_SUCCESS);
 }

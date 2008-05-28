@@ -5,10 +5,10 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Fri May  2 22:12:11 2008 aymeric derazey
-** Last update Thu May 15 16:20:22 2008 aymeric derazey
+** Last update Wed May 28 17:46:20 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 
 
@@ -35,11 +35,12 @@ int	my_set(t_info *info, char **tab)
     aff_local(info);
   else
     {
-      if ((info->set[0] == NULL) || (fetch_env(info->set, tab[1], "\t")) == NULL)
+      if ((check_syntax(info, tab)) == EXIT_FAILURE)
+	  return (EXIT_FAILURE);
+      if ((fetch_env(info->set, tab[1], "\t")) == NULL)
 	add_local(info, tab);
       /* else
 	 update_local(info, tab);*/
-      debug("DEBUG 1\n");
       return (EXIT_SUCCESS);
     }
   return (EXIT_SUCCESS);

@@ -5,10 +5,10 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Fri Dec 28 15:27:38 2007 thomas brennetot
-** Last update Wed Apr 16 14:54:52 2008 thomas brennetot
+** Last update Tue May 27 19:32:41 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 int	my_putnbr_base(int n, char *base)
 {

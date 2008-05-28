@@ -1,14 +1,14 @@
 /*
 ** xmalloc_01.c for 42sh in /u/epitech_2012/lefebv_l/cu/public/42sh/official
-** 
+**
 ** Made by laurent lefebvre
 ** Login   <lefebv_l@epitech.net>
-** 
+**
 ** Started on  Fri Apr  4 16:53:03 2008 laurent lefebvre
-** Last update Mon May 26 20:20:36 2008 thomas brennetot
+** Last update Tue May 27 19:33:02 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 #include <stdlib.h>
 
 /*
@@ -19,7 +19,7 @@ void		*xmalloc(int size)
 {
   char		*ret;
   t_mal		*list;
-  
+
   ret = malloc(size);
   if (ret == NULL)
     {
@@ -37,7 +37,7 @@ void		*xmalloc(int size)
 void		*mem_add(int rw, void *to_mem)
 {
   static t_mal	*mem = 0;
-  
+
   if (rw)
     mem = to_mem;
   else

@@ -5,10 +5,10 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Thu Mar 20 18:44:17 2008 aymeric derazey
-** Last update Fri May  2 19:40:53 2008 thomas brennetot
+** Last update Tue May 27 19:23:41 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 char		*decal_word(char *buff, int nb_decal, int pos);
 

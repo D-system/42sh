@@ -5,12 +5,12 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Sun Apr 27 18:49:37 2008 thomas brennetot
-** Last update Sat May 24 12:41:04 2008 nicolas mondange
+** Last update Tue May 27 19:33:21 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../42.h"
+#include "42.h"
 
 int	xclose(int fd)
 {

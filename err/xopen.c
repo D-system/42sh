@@ -5,11 +5,11 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat Mar 15 16:17:42 2008 aymeric derazey
-** Last update Sat May 24 12:43:40 2008 nicolas mondange
+** Last update Tue May 27 19:33:10 2008 aymeric derazey
 */
 
 #include <fcntl.h>
-#include "../42.h"
+#include "42.h"
 
 int	xopen(char *file, int flags)
 {

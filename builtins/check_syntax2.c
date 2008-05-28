@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Thu May  8 17:51:11 2008 aymeric derazey
-** Last update Wed May 28 17:58:14 2008 aymeric derazey
+** Last update Tue May 27 19:30:03 2008 aymeric derazey
 */
 
 #include "42.h"
@@ -14,22 +14,30 @@
 ** check les erreurs de syntax avec la commande set
 */
 
-int	check_syntax(t_info *info, char **tab)
+int	check_syntax(t_info *info, char **tab, char **new_local)
 {
   int	i;
+  int	j;
 
-  i = 1;
+  j = 0;
+  while (info->set[j] != NULL)
+    j++;
+  i = 0;
   while (tab[i] != NULL)
     {
-      if ((check_begin(info, tab[i]) == EXIT_FAILURE))
+      if ((check_begin(info, tab[i])) == EXIT_FAILURE)
 	return (EXIT_FAILURE);
-      if ((check_equal(info, tab[i]) == EXIT_FAILURE))
-	return (EXIT_FAILURE);
+      /*      else if ((check_equal(info, tab[i])) == EXIT_FAILURE)
+	      return (EXIT_FAILURE); */
+      else
+	new_local[j++] = add_local_concat(tab[i]);
       i++;
     }
+  new_local[j] = NULL;
+  free(info->env);
+  info->env = new_local;
   return (EXIT_SUCCESS);
 }
-
 
 /*
 ** check une erreur au debut de l'argument pris en parametre, celui-ci doit commencer
@@ -38,11 +46,9 @@ int	check_syntax(t_info *info, char **tab)
 
 int	check_begin(t_info *info, char *str)
 {
-  if (str == NULL)
-    return (EXIT_FAILURE);
-  if (!((str[0] >= 'A' && str[0] <= 'Z') || (str[0] >= 'a' && str[0] <= 'z')))
+  if ((str[0] >= 'A' && str[0] <= 'Z') || (str[0] >= 'a' && str[0] <= 'z'))
     {
-      my_printf("set: Variable name must begin with a letter.\n");
+      my_putstr("set: Variable name must begin with a letter.");
       return (status(info, EXIT_FAILURE));
     }
   return (EXIT_SUCCESS);
@@ -50,27 +56,25 @@ int	check_begin(t_info *info, char *str)
 
 /*
 ** chercher si oui ou non il a un signe "="
-** non -> error syntax.
+** si non -> error syntax.
 */
 
-int	check_equal(t_info *info, char *str)
+int	check_equal(t_info *info, char *tab)
 {
   int	i;
   int	flag;
 
-  if (str == NULL)
-    return (EXIT_FAILURE);
   flag = 0;
   i = 0;
-  while (str[i] != '\0')
+  while (tab[i] != '\0')
     {
-      if (str[i] == '=')
+      if (tab[i] == '=')
 	flag++;
       i++;
     }
   if (flag == 1)
     {
-      my_printf("set: Syntax Error\n");
+      my_putstr("set: Syntax Error\n");
       return (status(info, EXIT_FAILURE));
     }
   return (EXIT_SUCCESS);

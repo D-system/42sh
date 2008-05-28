@@ -5,10 +5,10 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 17:23:33 2008 thomas brennetot
-** Last update Mon May 26 18:10:35 2008 laurent lefebvre
+** Last update Tue May 27 19:25:04 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 void	*my_memset(void *b, int c, uint size)
 {

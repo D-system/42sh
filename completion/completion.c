@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Thu Apr 24 14:52:07 2008 thomas brennetot
-** Last update Mon May 12 11:33:45 2008 thomas brennetot
+** Last update Tue May 27 19:34:42 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 char	*completion(t_info *info)
 {

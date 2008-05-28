@@ -5,14 +5,14 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:55:00 2008 thomas brennetot
-** Last update Mon May 26 20:21:35 2008 thomas brennetot
+** Last update Tue May 27 19:34:22 2008 aymeric derazey
 */
 
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 int		xwrite(int fd, char *str, int size)
 {

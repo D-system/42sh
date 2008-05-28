@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:47:38 2008 thomas brennetot
-** Last update Fri Apr 25 13:02:24 2008 thomas brennetot
+** Last update Tue May 27 19:28:11 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 char	*my_strdup(char *str)
 {

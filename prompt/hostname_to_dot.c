@@ -5,12 +5,12 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue Apr 15 15:48:02 2008 aymeric derazey
-** Last update Thu May  8 16:43:00 2008 thomas brennetot
+** Last update Tue May 27 19:31:37 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../42.h"
+#include "42.h"
 
 void	hostname_to_dot(t_info *info)
 {

@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Wed Apr 30 12:54:06 2008 thomas brennetot
-** Last update Sat May  3 18:10:41 2008 aymeric derazey
+** Last update Tue May 27 19:30:20 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 
 /*

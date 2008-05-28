@@ -5,9 +5,10 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:46:55 2008 thomas brennetot
-** Last update Fri Apr 25 12:47:02 2008 thomas brennetot
+** Last update Tue May 27 19:28:03 2008 aymeric derazey
 */
 
+#include "42.h"
 #include <stdlib.h>
 
 int	my_strcmp(char *s1, char *s2)

@@ -5,10 +5,10 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:43:43 2008 thomas brennetot
-** Last update Mon Mar 31 17:21:06 2008 thomas brennetot
+** Last update Tue May 27 19:25:48 2008 aymeric derazey
 */
 
-#include "../42.h"
+#include "42.h"
 
 void	my_put_nbr(int nb)
 {

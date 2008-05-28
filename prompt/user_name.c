@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 15 17:56:25 2008 thomas brennetot
-** Last update Thu May  8 16:43:18 2008 thomas brennetot
+** Last update Tue May 27 19:32:11 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 void	user_name(t_info *info)
 {

@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 15 15:44:56 2008 thomas brennetot
-** Last update Thu May  8 16:42:42 2008 thomas brennetot
+** Last update Tue May 27 19:31:29 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 
 void	full_hostname(t_info *info)
 {

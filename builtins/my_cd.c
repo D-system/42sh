@@ -1,16 +1,16 @@
 /*
 ** my_cd.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work/builtins
-** 
+**
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
-** 
+**
 ** Started on  Wed Apr 30 12:02:44 2008 thomas brennetot
-** Last update Sun May 11 17:01:55 2008 thomas brennetot
+** Last update Tue May 27 19:30:13 2008 aymeric derazey
 */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../42.h"
+#include "42.h"
 
 void	put_pwd(t_info *info)
 {

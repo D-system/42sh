@@ -5,11 +5,11 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:24:58 2008 thomas brennetot
-** Last update Thu May 15 12:11:58 2008 thomas brennetot
+** Last update Tue May 27 19:26:30 2008 aymeric derazey
 */
 
 #include <stdlib.h>
-#include "../42.h"
+#include "42.h"
 #define BUFF_WORDTAB 256
 
 int	my_str_to_wordtab_nb_word(char *str)
