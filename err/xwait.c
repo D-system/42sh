@@ -34,8 +34,10 @@ t_wait		gl_wait[] =
     {SIGTSTP, "Suspend"},
     {SIGXFSZ, "Exceeded file size limit"},
     {SIGPIPE, "Write on a pipe with no one to read it"},
+#if Linux
     {SIGTHR, "Thread interrupt."},
-/*     {SIGTRAP, "Trace trap (not reset when caught)"}, */
+#endif
+    /*     {SIGTRAP, "Trace trap (not reset when caught)"}, */
 /*     {SIGEMT, "EMT instruction"}, */
 /*     {SIGSYS, "Non-existent system call invoked"}, */
 /*     {SIGALRM, "Alarm clock"}, */

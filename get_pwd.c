@@ -1,11 +1,11 @@
 /*
 ** get_pwd.c for  in /u/epitech_2012/lefebv_l/cu/public/42sh/get_pwd
-** 
+**
 ** Made by laurent lefebvre
 ** Login   <lefebv_l@epitech.net>
-** 
+**
 ** Started on  Tue May 27 16:22:35 2008 laurent lefebvre
-** Last update Tue May 27 18:36:42 2008 laurent lefebvre
+** Last update Wed May 28 11:03:31 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -62,8 +62,8 @@ char	*get_name(uint ino)
 	  return (name);
 	}
     }
-  closedir(rep);  
-  return (NULL);  
+  closedir(rep);
+  return (NULL);
 }
 
 /*
@@ -75,7 +75,7 @@ void		get_pwd(char *pwd)
 {
   uint	ino;
   char	*name = "afs";
-  
+
   if ((ino = get_ino()) <= 2)
     {
       strcat(pwd, "/");

@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Tue May 27 15:42:22 2008 laurent lefebvre
+** Last update Wed May 28 11:11:35 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -29,11 +29,12 @@ int	parser_nb_bracket(char *str)
       if (str[i] != '(' && str[i] != ')');
       else if (str[i] == '(')
 	open1++;
-      else if (str[i] == ')' && (++close1 > open1))
-	{
-	  my_printf("Too many )'s.\n");
-	  return (EXIT_FAILURE);
-	}
+      else if (str[i] == ')')
+	if (++close1 > open1)
+	  {
+	    my_printf("Too many )'s.\n");
+	    return (EXIT_FAILURE);
+	  }
       i++;
     }
   if (open1 != close1)
