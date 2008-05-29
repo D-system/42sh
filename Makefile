@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ##
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Wed May 28 18:02:22 2008 thomas brennetot
+## Last update Thu May 29 11:18:16 2008 laurent lefebvre
 ##
 
 NAME		=	42sh
@@ -134,7 +134,7 @@ INCLUDES	=	./include
 
 OBJ_ALL		=	$(SRC_ALL:.c=.o)
 
-CFLAGS		+=	-W -Wall -pedantic -ansi -D${OSTYPE} -I$(INCLUDES)
+CFLAGS		+=	-W -Wall -pedantic -ansi -D${OSTYPE} -I$(INCLUDES) -ggdb
 
 CC_FreeBSD	=	gcc
 CC_solaris	=	/usr/sfw/bin/gcc

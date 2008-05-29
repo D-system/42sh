@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Mar 31 16:47:58 2008 thomas brennetot
-** Last update Tue May 27 19:28:27 2008 aymeric derazey
+** Last update Thu May 29 11:21:26 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -15,6 +15,11 @@ int     my_strlen(char *str)
   int	result;
 
   result = 0;
+  if (str == NULL)
+    {
+      my_printf("my_strlen failed: NULL str\n");
+      return (-1);
+    }
   while (str[result] != '\0')
     result++;
   return (result);

@@ -1,11 +1,11 @@
 /*
-** builtins.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
+0** builtins.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
 **
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Wed Apr 23 16:27:35 2008 thomas brennetot
-** Last update Tue May 27 19:29:46 2008 aymeric derazey
+** Last update Thu May 29 11:03:41 2008 laurent lefebvre
 */
 
 #include <stdlib.h>

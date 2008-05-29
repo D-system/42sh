@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue May 27 16:22:35 2008 laurent lefebvre
-** Last update Thu May 29 10:49:29 2008 laurent lefebvre
+** Last update Thu May 29 11:23:33 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -90,7 +90,7 @@ void		*t_pwd(void *ptr)
   get_pwd(pwd, rec);
   ptr = pwd;
   xfree(rec);
-  xfree(pwd);
+  /*xfree(pwd);*/
   return (ptr);
 }
 
