@@ -1,30 +1,12 @@
 
 main.c,18
-int		main(14,290
-
-init.c,41
-void	no_signal(19,383
-void	init(24,406
+int		main(15,298
 
 get_env.c,20
 int	get_env(14,302
 
-get_local.c,43
-int	get_local(17,367
-int	get_size(38,820
-
-get_pwd.c,124
-#define	BS	17,358
-int		get_ino(25,466
-char	*get_name(get_name47,816
-void		get_pwd(74,1325
-char	*my_pwd(my_pwd95,1659
-
 loop.c,18
 void	loop(18,372
-
-get_cfg.c,21
-void	get_cfg(21,442
 
 gere.c,17
 int	gere(27,523
@@ -33,12 +15,34 @@ gere_redirect.c,65
 t_gere	gl_redirect[gl_redirect18,353
 int	gere_redirect(29,560
 
+gere_keyboard.c,296
+#define	BUFF_CHAR	21,492
+int		find_key(23,513
+void		add_to_buff(37,732
+int		my_compare(50,935
+typedef struct	s_read73,1644
+}		t_read;77,1717
+t_read		tab[tab79,1729
+int		do_action(91,1983
+void			my_canonical(102,2133
+void		my_blank(125,2571
+char		*gere_keyboard(gere_keyboard147,2845
+
+gere_key.c,188
+int		gere_key_enter(13,294
+int		gere_key_up(18,359
+int		gere_key_down(26,510
+int		gere_key_right(35,689
+int		gere_key_left(40,754
+int		gere_key_back(45,818
+int		gere_key_del(57,964
+
 gere_delimitor.c,68
-t_gere	gl_delimitor[gl_delimitor18,368
-int	gere_delimitor(26,482
+t_gere	gl_delimitor[gl_delimitor18,366
+int	gere_delimitor(26,480
 
 gere_dotcoma.c,25
-int	gere_dotcoma(18,407
+int	gere_dotcoma(18,404
 
 gere_left.c,51
 int		gere_left_next(19,377
@@ -73,21 +77,26 @@ int		copy_info(69,1223
 void		free_info(86,1787
 int		gere_bracket(96,1960
 
-history.c,331
+history.c,380
 #define MAX_HISTORY 14,319
-void		load_event(19,399
-void		my_word_str(35,642
-void		read_line(48,791
-void		parse_event(62,1069
-void		save_event(83,1544
-void		add_event(108,2063
-t_event		*read_first_line(read_first_line142,2837
-t_event		*first_event(first_event153,3064
-int		aff_event(167,3450
-void		clear_event(186,3799
+int		my_cmp(19,399
+void		load_event(35,578
+void		my_word_str(52,857
+void		read_line(65,1006
+void		parse_event(79,1284
+void		save_event(100,1759
+void		add_event(125,2278
+t_event		*read_first_line(read_first_line160,3096
+t_event		*first_event(first_event171,3323
+int		aff_event(185,3709
+void		clear_event(204,4060
+void		give_event(222,4400
 
 command.c,20
 int	command(18,405
+
+get_history.c,25
+void	get_history(13,290
 
 exec.c,64
 void	exec_direct(19,378
@@ -123,24 +132,6 @@ int	status(17,368
 cdnarn.c,93
 char		*cut_delim_nextword_and_return_nextword(cut_delim_nextword_and_return_nextword18,395
 
-get_set.c,20
-int	get_set(17,367
-
-get_user.c,21
-int	get_user(14,315
-
-get_gid.c,21
-void	get_gid(16,343
-
-get_uid.c,21
-void	get_uid(16,357
-
-get_history.c,25
-void	get_history(13,290
-
-get_group.c,22
-int	get_group(14,305
-
 lib/my_getnbr.c,42
 int	get_int(13,280
 int	my_getnbr(35,627
@@ -159,7 +150,7 @@ lib/my_put_nbr.c,24
 void	my_put_nbr(13,281
 
 lib/my_strlen.c,26
-int     my_strlen(13,280
+int     my_strlen(15,302
 
 lib/my_strcat.c,34
 char	*my_strcat(my_strcat14,307
@@ -230,11 +221,19 @@ char	*int_to_str(int_to_str26,405
 lib/my_memcpy.c,34
 void	*my_memcpy(my_memcpy13,275
 
-err/xmalloc.c,125
-void		*xmalloc(xmalloc18,389
-void		*mem_add(mem_add37,702
-void		my_put_in_list(48,837
-void		*x_malloc(x_malloc58,1024
+lib/my_pwd.c,163
+#define	BS	17,351
+uint		get_ino(19,367
+char		*get_name(get_name39,669
+char		*get_pwd(get_pwd59,970
+void		*t_pwd(t_pwd80,1334
+char		*my_pwd(my_pwd96,1629
+
+err/xmalloc.c,126
+void		*xmalloc(xmalloc26,573
+void		*mem_add(mem_add45,886
+void		my_put_in_list(56,1021
+void		*x_malloc(x_malloc66,1208
 
 err/xopen.c,18
 int	xopen(14,304
@@ -272,11 +271,11 @@ err/xchdir.c,19
 int	xchdir(13,276
 
 prompt/prompt.c,20
-void	prompt(19,369
+void	prompt(19,368
 
 prompt/launch_fct.c,61
-t_prompt gl_prompt[gl_prompt18,369
-int	launch_fct(49,1780
+t_prompt gl_prompt[gl_prompt18,368
+int	launch_fct(49,1779
 
 prompt/full_hostname.c,27
 void	full_hostname(14,303
@@ -336,11 +335,19 @@ void	my_printf_E(17,375
 void	my_printf_e(27,523
 
 completion/completion.c,36
-char	*completion(completion14,293
+char	*completion(completion14,294
 
 builtins/builtins.c,56
-struct s_bui	gl_bui[gl_bui14,289
-int	builtins(27,506
+struct s_bui	gl_bui[gl_bui14,291
+int	builtins(28,532
+
+builtins/my_alias.c,150
+void		push_alias(20,416
+void		put_alias(36,760
+int	alias_loop(62,1316
+int	set_alias(88,2021
+void		display_alias(109,2526
+int		my_alias(121,2772
 
 builtins/my_cd.c,173
 void	put_pwd(15,315
@@ -374,32 +381,32 @@ void	unsetenv_all(51,973
 int	my_unsetenv(62,1164
 
 builtins/my_set.c,41
-int	my_set(13,286
-int	aff_local(40,812
+int	my_set(13,287
+int	aff_local(40,828
 
 builtins/add_local.c,80
-int	add_local(17,367
-int	add_with_equal(28,626
-int	add_without_equal(48,1033
+int	add_local(17,369
+int	add_with_equal(28,622
+int	add_without_equal(48,1029
 
 builtins/check_syntax.c,74
 int	check_syntax(17,351
-int	check_begin(38,790
-int	check_equal(55,1203
+int	check_begin(31,714
+int	check_equal(48,1127
 
 builtins/cut_to_equal.c,87
-char	*cut_to_equal(cut_to_equal18,367
-int	where_is_equal(32,603
-int	is_here(46,756
+char	*cut_to_equal(cut_to_equal18,365
+int	where_is_equal(31,592
+int	is_here(45,745
 
 builtins/update_local.c,88
 int	update_local(13,285
-int	update_with_equal(20,459
-int	update_without_equal(35,797
+int	update_with_equal(20,458
+int	update_without_equal(34,759
 
 builtins/up_check_syntax.c,55
 int	up_check_syntax(17,351
-int	up_check_equal(38,772
+int	up_check_equal(31,696
 
 builtins/set_prompt.c,23
 int	set_prompt(13,290
@@ -409,3 +416,28 @@ int	set_history(13,293
 
 builtins/cpy_old_local.c,43
 char	**cpy_old_local(cpy_old_local18,375
+
+init/get_user.c,21
+int	get_user(14,315
+
+init/get_gid.c,21
+void	get_gid(16,343
+
+init/get_uid.c,21
+void	get_uid(16,357
+
+init/get_group.c,22
+int	get_group(14,305
+
+init/get_term_version.c,30
+void	get_term_version(13,289
+
+init/get_local.c,43
+int	get_local(17,367
+int	get_size(39,846
+
+init/init.c,18
+void	init(19,390
+
+init/get_cfg.c,21
+void	get_cfg(20,426
