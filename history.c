@@ -5,7 +5,7 @@
 ** Login   <mondan_n@epitech.net>
 **
 ** Started on  Wed Apr 30 16:31:47 2008 nicolas mondange
-** Last update Thu May 29 22:47:36 2008 nicolas mondange
+** Last update Fri May 30 01:39:41 2008 nicolas mondange
 */
 
 #include <fcntl.h>
@@ -160,7 +160,7 @@ void		add_event(t_info *params, char *to_ad) /* NORME !!!! */
 t_event		*read_first_line(t_info *params, char *line)
 {
   t_event	*new_elem;
-
+  
   new_elem = xmalloc(sizeof(*new_elem));
   new_elem->next = NULL;
   params->history = new_elem;
@@ -223,12 +223,20 @@ void		give_event(t_info *params, char *to_fill, int limit)
 {
   t_event	*buff;
   int		i;
+  int		j;
   
   i = 0;
+  j = 0;
   buff = params->history;
-  while (buff->next != NULL && i < limit)
+  while (buff->next != NULL)
     {
       i++;
+      buff = buff->next;
+    }
+  buff = params->history;
+  while (buff->next != NULL && j <= i - limit)
+    {
+      j++;
       buff = buff->next;
     }
   i = 0;

@@ -3,9 +3,8 @@
 **
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-**
-** Started on  Fri May 30 00:32:04 2008 aymeric derazey
-** Last update Fri May 30 00:32:14 2008 aymeric derazey
+** Started on  Tue May 27 19:48:51 2008 aymeric derazey
+** Last update Fri May 30 01:40:43 2008 nicolas mondange
 */
 
 
@@ -30,6 +29,7 @@ typedef struct		s_event
   char			*time;
   char			*info;
   struct s_event	*next;
+  struct s_event	*prev;
 }			t_event;
 
 /* structure principale */
@@ -42,6 +42,7 @@ typedef struct	s_info
   char		*prompt;
   int		last_status; /* valeur de retour du wait */
   t_event	*history;
+  t_event	*history_r;
   int		hist_max;
   int		nbr_cmd;
   int		hist_m;
