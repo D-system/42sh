@@ -1,15 +1,3 @@
-#!/bin/42sh
-## .42shrc for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work
-##
-## Made by aymeric derazey
-## Login   <deraze_a@epitech.net>
-##
-## Started on  Wed May 28 13:47:31 2008 aymeric derazey
-   Last update Wed May 28 17:11:08 2008 aymeric derazey
-##
-#!/bin/42sh
-
-
 # I love myself !
 
 # User's binaries
@@ -30,7 +18,7 @@
 #setenv MAIL "/u/all/$USER/mail/$USER"
 #setenv TOTO "tata"
 #set watch=(1 any any)
-#set history=10
+#set history=5000
 #set savehist=10
 #set toto=tata
 

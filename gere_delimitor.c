@@ -1,11 +1,11 @@
 /*
 ** gere_delimitor.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
-** 
+**
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
-** 
+**
 ** Started on  Wed Apr 30 11:02:19 2008 thomas brennetot
-** Last update Wed Apr 30 11:02:51 2008 thomas brennetot
+** Last update Thu May 29 22:18:03 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -18,8 +18,8 @@
 t_gere	gl_delimitor[] =
 {
   {";", gere_dotcoma, 1},
-  {"&&", gere_and, 2},
   {"||", gere_or, 2},
+  {"&&", gere_and, 2},
   {0, 0, 0},
 };
 

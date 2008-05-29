@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Fri May  2 23:34:02 2008 aymeric derazey
-** Last update Tue May 27 21:48:45 2008 aymeric derazey
+** Last update Thu May 29 22:50:28 2008 aymeric derazey
 */
 
 #include <sys/types.h>
@@ -28,6 +28,7 @@ int	get_local(t_info *info)
   get_history(info);
   if ((get_group(info)) == EXIT_FAILURE)
     return (EXIT_FAILURE);
+  get_term_version(info);
   return (EXIT_SUCCESS);
 }
 
@@ -41,15 +42,9 @@ int	get_size()
   char	*login;
   struct group *grp;
 
-  size = 0;
+  size = 4;
   if ((login = getlogin()) != NULL)
     size++;
-  getegid();
-  size++;
-  getuid();
-  size++;
-  /* history */
-  size++;
   if ((grp = getgrgid(getegid())) != NULL)
     size++;
   return (size);

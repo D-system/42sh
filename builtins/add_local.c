@@ -1,58 +1,61 @@
 /*
 ** add_local.c for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/builtins
-**
+** 
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-**
-** Started on  Thu May  8 16:44:30 2008 aymeric derazey
-** Last update Thu May 29 11:22:41 2008 laurent lefebvre
+** 
+** Started on  Thu May 29 18:59:25 2008 aymeric derazey
+** Last update Thu May 29 18:59:28 2008 aymeric derazey
 */
 
 #include "42.h"
 
 /*
-** oLoL
+** ajoute une ou plusieurs variables locales qui n'existent pas encore
 */
 
-int	add_local(t_info *info, char **tab)
+int	add_local(t_info *info, char *str)
 {
   char	**new_local;
 
-  if ((new_local = cpy_old_local(info, tab)) != NULL)
+  if ((new_local = cpy_old_local(info)) == NULL)
+    return (EXIT_FAILURE);
+  if ((check_syntax(info, str, new_local)) == EXIT_FAILURE)
     return (EXIT_FAILURE);
   return (EXIT_SUCCESS);
 }
 
-/*
-** copie l'ancien tableau local et renvoie une copie
-** avec l'espace necessaire.
-*/
-
-char	**cpy_old_local(t_info *info, char **tab)
+int	add_with_equal(t_info *info, char *str, char **new_local)
 {
   int	i;
-  int	add;
-  char **new_local;
+  int	len;
 
-  add = 1;
-  while (tab[add] != NULL)
-    add++;
-  if ((new_local = xmalloc(sizeof(*new_local) * (i + add + 1))) == NULL)
-    return (NULL);
+  if (str == NULL)
+    return (EXIT_FAILURE);
+  len = 0;
+  while ((str[len] != '=') && (str[len] != '\0'))
+    len++;
+  str[len] = '\0';
   i = 0;
   while (info->set[i] != NULL)
-    {
-      new_local[i] = info->set[i];
       i++;
-    }
-  i = 0;
-  add = 1;
-  while (tab[add] != NULL)
-    {
-      new_local[i]= tab[add];
-      i++;
-      add++;
-    }
+  new_local[i++] = my_strcat_trois(str, "\t", str+len+1);
   new_local[i] = NULL;
-  return (new_local);
+  info->set = new_local;
+  return (EXIT_SUCCESS);
+}
+
+int	add_without_equal(t_info *info, char *str, char **new_local)
+{
+  int	i;
+
+  if (str == NULL)
+    return (EXIT_FAILURE);
+  i = 0;
+  while (info->set[i] != NULL)
+    i++;
+  new_local[i++] = my_strdup(str);
+  new_local[i] = NULL;
+  info->set = new_local;
+  return (EXIT_SUCCESS);
 }

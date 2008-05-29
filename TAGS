@@ -2,8 +2,9 @@
 main.c,18
 int		main(14,290
 
-init.c,17
-int	init(19,384
+init.c,41
+void	no_signal(19,383
+void	init(24,406
 
 get_env.c,20
 int	get_env(14,302
@@ -12,11 +13,18 @@ get_local.c,43
 int	get_local(17,367
 int	get_size(38,820
 
-loop.c,17
-int	loop(18,373
+get_pwd.c,124
+#define	BS	17,358
+int		get_ino(25,466
+char	*get_name(get_name47,816
+void		get_pwd(74,1325
+char	*my_pwd(my_pwd95,1659
 
-get_cfg.c,20
-int	get_cfg(21,443
+loop.c,18
+void	loop(18,372
+
+get_cfg.c,21
+void	get_cfg(21,442
 
 gere.c,17
 int	gere(27,523
@@ -65,18 +73,18 @@ int		copy_info(69,1223
 void		free_info(86,1787
 int		gere_bracket(96,1960
 
-history.c,338
-#define MAX_HISTORY 14,318
-void		load_event(16,343
-void		my_word_str(32,586
-void		read_line(45,735
-void		parse_event(59,1013
-void		save_event(80,1490
-void		add_event(105,2009
-t_event         *read_first_line(read_first_line139,2766
-t_event		*first_event(first_event150,3014
-int		aff_event(164,3401
-void		clear_event(183,3750
+history.c,331
+#define MAX_HISTORY 14,319
+void		load_event(19,399
+void		my_word_str(35,642
+void		read_line(48,791
+void		parse_event(62,1069
+void		save_event(83,1544
+void		add_event(108,2063
+t_event		*read_first_line(read_first_line142,2837
+t_event		*first_event(first_event153,3064
+int		aff_event(167,3450
+void		clear_event(186,3799
 
 command.c,20
 int	command(18,405
@@ -98,12 +106,12 @@ int	how_many_path(15,316
 void	path_to_tab_cut_cp(31,501
 char	**path_to_tab(path_to_tab54,941
 
-parse_str.c,154
-int	parser_nb_bracket(18,348
-int	bracket_valid_before(51,864
-int	bracket_valid_after(67,1222
-int	parser_bracket_valid(81,1591
-int	parse_str(100,1916
+parse_str.c,153
+int	parser_nb_bracket(18,349
+int	bracket_valid_before(48,849
+int	bracket_valid_after(64,1207
+int	parser_bracket_valid(78,1576
+int	parse_str(96,1879
 
 put_zero.c,50
 int	put_zero(17,382
@@ -112,8 +120,11 @@ int	put_zero_in_last(42,764
 status.c,19
 int	status(17,368
 
-rename_it.c,93
+cdnarn.c,93
 char		*cut_delim_nextword_and_return_nextword(cut_delim_nextword_and_return_nextword18,395
+
+get_set.c,20
+int	get_set(17,367
 
 get_user.c,21
 int	get_user(14,315
@@ -205,19 +216,19 @@ void	free_tab(14,302
 lib/fetch_env.c,34
 char	*fetch_env(fetch_env18,346
 
+lib/fetch_env_int.c,26
+int	fetch_env_int(18,356
+
 lib/get_next_line.c,69
 #define READ_SIZE 14,297
 char		*get_next_line(get_next_line16,321
 
-lib/my_memcpy.c,34
-void	*my_memcpy(my_memcpy13,274
-
-lib/my_pwd.c,28
-char	*my_pwd(my_pwd15,309
-
 lib/int_to_str.c,56
 int	int_len(13,290
 char	*int_to_str(int_to_str26,405
+
+lib/my_memcpy.c,34
+void	*my_memcpy(my_memcpy13,275
 
 err/xmalloc.c,125
 void		*xmalloc(xmalloc18,389
@@ -242,8 +253,8 @@ err/xwait.c,128
 typedef struct	s_wait16,333
 }		t_wait;20,389
 t_wait		gl_wait[gl_wait22,401
-void		err_status(56,1739
-int		xwaitpid(75,2002
+void		err_status(58,1760
+int		xwaitpid(77,2023
 
 err/xpipe.c,18
 int	xpipe(15,308
@@ -256,6 +267,9 @@ int	xclose(15,309
 
 err/xdup2.c,18
 int	xdup2(15,308
+
+err/xchdir.c,19
+int	xchdir(13,276
 
 prompt/prompt.c,20
 void	prompt(19,369
@@ -360,24 +374,38 @@ void	unsetenv_all(51,973
 int	my_unsetenv(62,1164
 
 builtins/my_set.c,41
-int	my_set(32,639
-int	aff_local(48,945
+int	my_set(13,286
+int	aff_local(40,812
 
-builtins/add_local.c,65
-int	add_local(17,304
-char	**cpy_old_local(cpy_old_local32,639
+builtins/add_local.c,80
+int	add_local(17,367
+int	add_with_equal(28,626
+int	add_without_equal(48,1033
 
 builtins/check_syntax.c,74
 int	check_syntax(17,351
-int	check_begin(47,981
-int	check_equal(62,1326
+int	check_begin(38,790
+int	check_equal(55,1203
 
-builtins/add_local_concat.c,88
-char	*add_local_concat(add_local_concat13,296
-char	*replace_char(replace_char20,385
+builtins/cut_to_equal.c,87
+char	*cut_to_equal(cut_to_equal18,367
+int	where_is_equal(32,603
+int	is_here(46,756
+
+builtins/update_local.c,88
+int	update_local(13,285
+int	update_with_equal(20,459
+int	update_without_equal(35,797
+
+builtins/up_check_syntax.c,55
+int	up_check_syntax(17,351
+int	up_check_equal(38,772
 
 builtins/set_prompt.c,23
 int	set_prompt(13,290
 
 builtins/set_history.c,24
 int	set_history(13,293
+
+builtins/cpy_old_local.c,43
+char	**cpy_old_local(cpy_old_local18,375

@@ -5,13 +5,24 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Sat May  3 16:35:33 2008 aymeric derazey
-** Last update Tue May 27 19:31:16 2008 aymeric derazey
+** Last update Thu May 29 23:27:42 2008 aymeric derazey
 */
 
 #include "42.h"
 
-int	set_prompt(t_info *info, char **tab)
+int	set_prompt(t_info *info)
 {
+  int	i;
+  char	*fetched;
 
+  i = 0;
+  if ((fetched = fetch_env(info->set, "prompt", "\t")) != NULL)
+    {
+      while (fetched[i++] != '\t');
+      xfree(info->prompt);
+      info->prompt = my_strdup(fetched + i);
+    }
+  else
+    return (EXIT_FAILURE);
   return (EXIT_SUCCESS);
 }

@@ -1,11 +1,11 @@
 /*
 ** get_param.c for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/mrk/prompt
-** 
+**
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-** 
+**
 ** Started on  Tue Apr 15 14:54:50 2008 aymeric derazey
-** Last update Tue May 27 19:31:48 2008 aymeric derazey
+** Last update Fri May 30 00:24:14 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -46,16 +46,16 @@ t_prompt gl_prompt[] =
     {0, 0},
   };
 
-int	launch_fct(t_info *info, int i)
+int	launch_fct(t_info *info, int i, char *prompt)
 {
-  int	gl;
+  int	igl;
 
-  gl = 0;
-  while (info->prompt[i] != gl_prompt[gl].c && gl_prompt[gl].c != 0)
-    gl++;
-  if (info->prompt[i] == gl_prompt[gl].c)
+  igl = 0;
+  while (prompt[i] != gl_prompt[igl].c && gl_prompt[igl].c != 0)
+    igl++;
+  if (prompt[i] == gl_prompt[igl].c)
     {
-      gl_prompt[gl].func(info);
+      gl_prompt[igl].func(info);
       return (EXIT_SUCCESS);
     }
   return (EXIT_FAILURE);

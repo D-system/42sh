@@ -1,12 +1,13 @@
 ##
-## Makefile for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/official
-##
+## Makefile for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work
+## 
 ## Made by aymeric derazey
 ## Login   <deraze_a@epitech.net>
+## 
+## Started on  Fri May 30 00:29:56 2008 aymeric derazey
+## Last update Fri May 30 00:30:02 2008 aymeric derazey
 ##
-## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Thu May 29 21:36:12 2008 nicolas mondange
-##
+
 
 NAME		=	42sh
 
@@ -40,13 +41,13 @@ SRC_SH		=	main.c				\
 			put_zero.c			\
 			status.c			\
 			cdnarn.c			\
+			get_set.c			\
 			get_user.c			\
 			get_gid.c			\
 			get_uid.c			\
 			get_history.c			\
-			get_group.c
-
-
+			get_group.c			\
+			get_term_version.c
 
 
 SRC_BUI		=	./builtins/builtins.c		\
@@ -60,9 +61,12 @@ SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_set.c		\
 			./builtins/add_local.c		\
 			./builtins/check_syntax.c	\
-			./builtins/add_local_concat.c	\
+			./builtins/cut_to_equal.c	\
+			./builtins/update_local.c	\
+			./builtins/up_check_syntax.c	\
 			./builtins/set_prompt.c		\
-			./builtins/set_history.c
+			./builtins/set_history.c	\
+			./builtins/cpy_old_local.c
 
 SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_getnbr_base.c		\
@@ -85,6 +89,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_str_to_wordtab_mode.c	\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
+			./lib/fetch_env_int.c		\
 			./lib/get_next_line.c		\
 			./lib/int_to_str.c		\
 			./lib/my_memcpy.c
@@ -160,7 +165,7 @@ etags		:
 			@echo [... DONE]
 
 grep		:
-			grep -H -n -e "Last" $(SRC_ALL)
+			grep -H -n -e "int_to_str" $(SRC_ALL)
 
 clean		:
 			rm -f $(OBJ_ALL)

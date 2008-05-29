@@ -5,43 +5,34 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Fri May  2 22:12:11 2008 aymeric derazey
-** Last update Wed May 28 17:46:20 2008 aymeric derazey
+** Last update Thu May 29 22:37:49 2008 thomas brennetot
 */
 
 #include "42.h"
 
-
-
-/* int	my_set(t_info *info, char **tab) */
-/* { */
-/*   int	i; */
-
-/*   if (tab[1] == NULL) */
-/*     aff_set(info); */
-/*   else */
-/*     { */
-/*       if (info->set[0] == NULL || fetch_env(info->set, tab[1]) == NULL) */
-/* 	add_set(info, tab); */
-/*       else */
-/* 	update_env(info, tab); */
-/*     } */
-
-/*    return (EXIT_SUCCESS); */
-/* } */
-
 int	my_set(t_info *info, char **tab)
 {
+  int	i;
+  int	fetched;
+  char	*cuted;
+
   if (tab[1] == NULL)
     aff_local(info);
   else
     {
-      if ((check_syntax(info, tab)) == EXIT_FAILURE)
-	  return (EXIT_FAILURE);
-      if ((fetch_env(info->set, tab[1], "\t")) == NULL)
-	add_local(info, tab);
-      /* else
-	 update_local(info, tab);*/
-      return (EXIT_SUCCESS);
+      i = 1;
+      while (tab[i] != NULL)
+	{
+	  if ((is_here(tab[i], '=')) == HERE)
+	    cuted = cut_to_equal(tab[i], where_is_equal(tab[i]));
+	  else
+	    cuted = tab[i];
+	  if ((fetched = fetch_env_int(info->set, cuted, "\t")) != -1)
+	    update_local(info, tab[i], fetched);
+	  else if ((add_local(info, tab[i])) == EXIT_FAILURE)
+	    return (EXIT_FAILURE);
+	  i++;
+	}
     }
   return (EXIT_SUCCESS);
 }

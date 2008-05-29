@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Thu May 15 16:29:36 2008 aymeric derazey
-** Last update Thu May 15 17:28:46 2008 aymeric derazey
+** Last update Fri May 30 00:18:22 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -13,14 +13,15 @@
 
 int	get_user(t_info *info)
 {
-  char	*set_user;
-  char	*user;
+  char	*user1;
+  char	*user2;
 
-  set_user = "user";
-  if ((user = getlogin()) == NULL)
+  if ((user1 = getlogin()) == NULL)
     return (EXIT_FAILURE);
-  user = my_strcat_trois(set_user, "\t", user);
-  info->set[0] = my_strdup(user);
+  user2 = my_strcat_trois("user", "\t", user1);
+  info->set[0] = my_strdup(user2);
   info->set[1] = NULL;
+  xfree(user1);
+  xfree(user2);
   return (EXIT_SUCCESS);
 }

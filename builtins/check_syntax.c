@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Thu May  8 17:51:11 2008 aymeric derazey
-** Last update Wed May 28 17:58:14 2008 aymeric derazey
+** Last update Thu May 29 18:13:24 2008 aymeric derazey
 */
 
 #include "42.h"
@@ -14,22 +14,14 @@
 ** check les erreurs de syntax avec la commande set
 */
 
-int	check_syntax(t_info *info, char **tab)
+int	check_syntax(t_info *info, char *str, char **new_local)
 {
-  int	i;
-
-  i = 1;
-  while (tab[i] != NULL)
-    {
-      if ((check_begin(info, tab[i]) == EXIT_FAILURE))
-	return (EXIT_FAILURE);
-      if ((check_equal(info, tab[i]) == EXIT_FAILURE))
-	return (EXIT_FAILURE);
-      i++;
-    }
+  if ((check_begin(info, str) == EXIT_FAILURE))
+    return (EXIT_FAILURE);
+  if ((check_equal(info, str, new_local) == EXIT_FAILURE))
+    return (EXIT_FAILURE);
   return (EXIT_SUCCESS);
 }
-
 
 /*
 ** check une erreur au debut de l'argument pris en parametre, celui-ci doit commencer
@@ -49,11 +41,11 @@ int	check_begin(t_info *info, char *str)
 }
 
 /*
-** chercher si oui ou non il a un signe "="
-** non -> error syntax.
+** ajoute la chaine de caractere str au tableau **set
+** selon si il y a un '=' ou non.
 */
 
-int	check_equal(t_info *info, char *str)
+int	check_equal(t_info *info, char *str, char **new_local)
 {
   int	i;
   int	flag;
@@ -68,10 +60,9 @@ int	check_equal(t_info *info, char *str)
 	flag++;
       i++;
     }
-  if (flag == 1)
-    {
-      my_printf("set: Syntax Error\n");
-      return (status(info, EXIT_FAILURE));
-    }
+  if (flag >= 1)
+    add_with_equal(info, str, new_local);
+  else
+    add_without_equal(info, str, new_local);
   return (EXIT_SUCCESS);
 }

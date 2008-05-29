@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue May 27 14:43:30 2008 aymeric derazey
-** Last update Tue May 27 18:33:43 2008 aymeric derazey
+** Last update Fri May 30 00:02:44 2008 aymeric derazey
 */
 
 #include "42.h"
@@ -32,7 +32,7 @@ char	*int_to_str(int nb)
 
   div = 1;
   len = int_len(nb);
-  buff = malloc(sizeof(*buff) * (len + 1));
+  buff = xmalloc(sizeof(*buff) * (len + 1));
   while (len > 1)
     {
       div *= 10;

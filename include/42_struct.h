@@ -1,16 +1,13 @@
 /*
 ** 42_struct.h for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/include
-** 
+**
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-** 
-** Started on  Tue May 27 19:48:51 2008 aymeric derazey
-<<<<<<< .mine
-** Last update Thu May 29 22:29:18 2008 nicolas mondange
-=======
-** Last update Thu May 29 18:45:16 2008 laurent lefebvre
->>>>>>> .r54
+**
+** Started on  Fri May 30 00:32:04 2008 aymeric derazey
+** Last update Fri May 30 00:32:14 2008 aymeric derazey
 */
+
 
 #ifndef __42_STRUCT_H__
 # define __42_STRUCT_H__
@@ -99,4 +96,3 @@ enum {KEY_UP, HEY_DOWN, KEY_RIGHT, KEY_DOWN,
       KEY_LEFT, KEY_DEL, KEY_BACK, KEY_ENTER};
 
 #endif /* __42_STRUCT_H__ */
-  

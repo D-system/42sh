@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Mon May 26 18:30:21 2008 aymeric derazey
-** Last update Tue May 27 20:29:48 2008 aymeric derazey
+** Last update Fri May 30 00:07:16 2008 aymeric derazey
 */
 
 #include <unistd.h>
@@ -15,16 +15,17 @@
 
 void	get_gid(t_info *info)
 {
-  char	*set_grp;
-  char	*gid_str;
+  char	*gid_str1;
+  char	*gid_str2;
   int	i;
 
-  gid_str = int_to_str(getegid());
-  set_grp = "gid";
-  gid_str = my_strcat_trois(set_grp, "\t", gid_str);
+  gid_str1 = int_to_str(getegid());
+  gid_str2 = my_strcat_trois("gid", "\t", gid_str1);
   i = 0;
   while (info->set[i] != NULL)
     i++;
-  info->set[i++] = my_strdup(gid_str);
+  info->set[i++] = my_strdup(gid_str2);
   info->set[i] = NULL;
+  xfree(gid_str1);
+  xfree(gid_str2);
 }

@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Thu May 15 16:46:11 2008 aymeric derazey
-** Last update Tue May 27 20:30:13 2008 aymeric derazey
+** Last update Fri May 30 00:08:04 2008 aymeric derazey
 */
 
 #include <unistd.h>
@@ -15,16 +15,17 @@
 
 void	get_uid(t_info *info)
 {
-  char	*set_uid;
-  char	*str_uid;
+  char	*str_uid1;
+  char	*str_uid2;
   int	i;
 
-  str_uid = int_to_str(getuid());
-  set_uid = "uid";
-  str_uid = my_strcat_trois(set_uid, "\t", str_uid);
+  str_uid1 = int_to_str(getuid());
+  str_uid2 = my_strcat_trois("uid", "\t", str_uid1);
   i = 0;
     while (info->set[i] != NULL)
       i++;
-  info->set[i++] = my_strdup(str_uid);
+  info->set[i++] = my_strdup(str_uid2);
   info->set[i] = NULL;
+  xfree(str_uid1);
+  xfree(str_uid2);
 }

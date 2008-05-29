@@ -1,16 +1,13 @@
 /*
-** 42.h for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/lib
+** 42.h for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/include
 **
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
 **
-** Started on  Tue May 27 18:35:13 2008 aymeric derazey
-<<<<<<< .mine
-** Last update Thu May 29 22:18:45 2008 nicolas mondange
-=======
-** Last update Thu May 29 18:39:14 2008 laurent lefebvre
->>>>>>> .r54
+** Started on  Fri May 30 00:31:26 2008 aymeric derazey
+** Last update Fri May 30 00:31:34 2008 aymeric derazey
 */
+
 
 #ifndef __42_H__
 # define __42_H__
@@ -27,6 +24,8 @@
 # define FATHER 0
 # define CHILD 1
 # define EXIT_EXIT 42
+# define HERE 0
+# define NOT_HERE 1
 
 # ifndef __EXIT_FAILURE__
 #  define EXIT_FAILURE 1
@@ -42,12 +41,13 @@ typedef	unsigned int	uint;
 typedef	unsigned char	uchar;
 
 /* INIT */
-int		init(char **environ, t_info *info);
+void		init(char **environ, t_info *info);
 int		get_env(char **environ, t_info *info);
-int		get_cfg(t_info *info);
+void		get_cfg(t_info *info);
 int		set_default_var(t_info *info);
 char		**path_to_tab(char *str);
 int		get_local(t_info *info);
+int		get_set(t_info *info);
 
 /* LOOP */
 void		loop(t_info *info);
@@ -72,7 +72,7 @@ void		give_event(t_info *params, char *to_fill, int limit);
 
 /* PROMPT */
 void		prompt(t_info *info);
-int		launch_fct(t_info *info, int i);
+int		launch_fct(t_info *info, int i, char *prompt);
 void		full_hostname(t_info *info);
 void		hostname_to_dot(t_info *info);
 void		pourcent(t_info *info);
@@ -99,7 +99,7 @@ int		gere_key_right(t_info *info, char *buff);
 int		gere_key_left(t_info *info, char *buff);
 int		gere_key_back(t_info *info, char *buff);
 int		gere_key_del(t_info *info, char *buff);
-  
+
 /* GERE_REDIRECT */
 int		gere(t_info *info, char *str, int flag);
 int		gere_redirect(t_info *info, char *str, int flag);
@@ -125,15 +125,23 @@ int		my_echo(t_info *info, char **tab);
 int		my_setenv(t_info *info, char **tab);
 int		my_unsetenv(t_info *info, char **tab);
 int		my_set(t_info *info, char **tab);
-int		add_local(t_info *info, char **tab);
-char		**cpy_old_local(t_info *info, char **tab);
+int		add_local(t_info *info, char *str);
+int		add_with_equal(t_info *info, char *str, char **new_local);
+int		add_without_equal(t_info *info, char *str, char **new_local);
+int		update_local(t_info *info, char *str, int fetched);
+int		up_check_syntax(t_info *info, char *str, int fetched);
+int		up_check_equal(t_info *info, char *str, int fetched);
+int		update_with_equal(t_info *info, char *str, int fetched);
+int		update_without_equal(t_info *info, char *str, int fetched);
+char		*cut_to_equal(char *str, int count);
+int		where_is_equal(char *str);
+int		is_here(char *str, char c);
+char		**cpy_old_local(t_info *info);
 int		aff_local(t_info *info);
-char		*add_local_concat(char *str);
-char		*replace_char(char *str, char c);
-int		check_syntax(t_info *info, char **tab);
+int		check_syntax(t_info *info, char *str, char **new_local);
 int		check_begin(t_info *info, char *str);
-int		check_equal(t_info *info, char *tab);
-int		set_prompt(t_info *info, char **tab);
+int		check_equal(t_info *info, char *tab, char **new_local);
+int		set_prompt(t_info *info);
 int		set_history(t_info *info, char **tab);
 
 /* LOCAL VAR */
@@ -142,6 +150,7 @@ void		get_uid(t_info *info);
 void		get_gid(t_info *info);
 void		get_history(t_info *info);
 int		get_group(t_info *info);
+void		get_term_version(t_info *info);
 int		get_size();
 
 /* COMMAND */
@@ -173,12 +182,14 @@ char		*my_strcat_trois(char *s1, char *s2, char *s3);
 char		*epurstr(char *str);
 void		free_tab(char **tab);
 char		*fetch_env(char **env, char *str, char *sepa);
+int		fetch_env_int(char **env, char *str, char *sepa);
 char		*get_next_line(const int fd);
 int		my_putnbr_base(int n, char *base);
 int		my_getnbr_base(char *str, char* base);
 void		*my_memcpy(void *dest, void *src, int size);
 int		int_len(int nb);
 char		*int_to_str(int nb);
+
 
 
 /* ERR */

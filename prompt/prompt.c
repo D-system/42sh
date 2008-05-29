@@ -1,11 +1,11 @@
 /*
 ** prompt.c for 42sh in /u/epitech_2012/lefebv_l/cu/public/42sh/official
-** 
+**
 ** Made by laurent lefebvre
 ** Login   <lefebv_l@epitech.net>
-** 
+**
 ** Started on  Fri Apr  4 17:28:39 2008 laurent lefebvre
-** Last update Tue May 27 19:32:01 2008 aymeric derazey
+** Last update Thu May 29 23:56:42 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -20,24 +20,27 @@ void	prompt(t_info *info)
 {
   int	i;
   int	var;
+  char	*prompt;
 
   if (isatty(1) == 0 || isatty(0) == 0)
     return ;
-  if (info->prompt == NULL)
+  prompt = fetch_env(info->set, "prompt", "\t");
+  if (prompt == NULL)
     my_putstr("> ");
   else
     {
       i = 0;
-      while (info->prompt[i] != '\0')
+      prompt += 7;
+      while (prompt[i] != '\0')
 	{
 	  var = 0;
-	  while (info->prompt[i + var] != '%' && info->prompt[i + var] != '\0')
+	  while (prompt[i + var] != '%' && prompt[i + var] != '\0')
 	    var++;
 	  if (var > 0)
-	    write(1, &info->prompt[i], var);
+	    write(1, &prompt[i], var);
 	  i += var;
-	  if (info->prompt[i] == '%')
-	    if (launch_fct(info, ++i) == EXIT_SUCCESS)
+	  if (prompt[i] == '%')
+	    if (launch_fct(info, ++i, prompt) == EXIT_SUCCESS)
 	      i++;
 	}
     }
