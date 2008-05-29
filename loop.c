@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:31:09 2008 laurent lefebvre
-** Last update Tue May 27 15:31:34 2008 laurent lefebvre
+** Last update Wed May 28 21:23:12 2008 nicolas mondange
 */
 
 #include <stdlib.h>
@@ -18,16 +18,20 @@
 void	loop(t_info *info)
 {
   char	*str;
-
+  
   while (42)
     {
       prompt(info);
-      if ((str = get_next_line(0)) == NULL)
+      if (isatty(0) == 1 && isatty(1) == 1)
 	{
-	  if (isatty(0) == 1 && isatty(1) == 1)
-	    my_printf("exit\n");
-	  return ;
+	  if ((str = gere_keyboard(info)) == NULL)
+	    {
+	      my_printf("exit\n");
+	      return ;
+	    }
 	}
+      else if ((str = get_next_line(0)) == NULL)
+	return ;
       if (my_strlen(str) > 0)
 	{
 	  add_event(info, str);
@@ -38,3 +42,5 @@ void	loop(t_info *info)
       xfree(str);
     }
 }
+
+

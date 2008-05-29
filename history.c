@@ -5,7 +5,7 @@
 ** Login   <mondan_n@epitech.net>
 **
 ** Started on  Wed Apr 30 16:31:47 2008 nicolas mondange
-** Last update Tue May 27 15:16:58 2008 laurent lefebvre
+** Last update Thu May 29 22:47:36 2008 nicolas mondange
 */
 
 #include <fcntl.h>
@@ -16,16 +16,33 @@
 /* NORME !!!!!!!!!!!!  11 FONCTIONS PAR FICHIER ? */
 
 
+int		my_cmp(char *line, char c)
+{
+  int		i;
+  int		cmp;
+  
+  i = 0;
+  cmp = 0;
+  while (line[i] != '\0')
+    {
+      if (line[i] == c)
+	cmp++;
+      i++;
+    }
+  return (cmp);
+}
+
 void		load_event(t_info *params)
 {
   char		*line;
   int		fd;
-
+  
   if ((fd = open(".history", O_RDONLY)) != -1)
     {
       while ((line = get_next_line(fd)) != NULL)
 	{
-	  parse_event(params, line);
+	  if (my_cmp(line, '\t') == 2)
+	    parse_event(params, line);
 	  xfree(line);
 	}
       xclose(fd);
@@ -114,6 +131,7 @@ void		add_event(t_info *params, char *to_ad) /* NORME !!!! */
   char			*to_add;
 
   i = 0;
+  params->hist_max = MAX_HISTORY;
   to_add = my_strdup(to_ad);
   time(&clock);
   if (params->history == NULL)
@@ -134,8 +152,8 @@ void		add_event(t_info *params, char *to_ad) /* NORME !!!! */
       new_elem->info = my_strdup(to_add);
       buff->next = new_elem;
     }
-  if (i > MAX_HISTORY)
-    clear_event(params, i, MAX_HISTORY);
+  if (i > params->hist_max)
+    clear_event(params, i, params->hist_max);
   xfree(to_add);
 }
 
@@ -167,7 +185,7 @@ t_event		*first_event(t_info *params, char *to_add, time_t *clock)
 int		aff_event(t_info *params, char **burne)
 {
   t_event	*buff;
-
+  
   buff = params->history;
   while (buff != NULL)
     {
@@ -187,7 +205,7 @@ void		clear_event(t_info *params, int nbr_elm, int limit)
 {
   t_event	*save;
   t_event	*buff;
-
+  
   buff = params->history;
   while ((nbr_elm - limit) > 0 && buff != NULL)
     {
@@ -199,4 +217,24 @@ void		clear_event(t_info *params, int nbr_elm, int limit)
       ++limit;
     }
   params->history = buff;
+}
+
+void		give_event(t_info *params, char *to_fill, int limit)
+{
+  t_event	*buff;
+  int		i;
+  
+  i = 0;
+  buff = params->history;
+  while (buff->next != NULL && i < limit)
+    {
+      i++;
+      buff = buff->next;
+    }
+  i = 0;
+  while (buff->info[i] != '\0')
+    {
+      to_fill[i] = buff->info[i];
+      i++;
+    }
 }

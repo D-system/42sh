@@ -5,7 +5,11 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue May 27 19:48:51 2008 aymeric derazey
+<<<<<<< .mine
+** Last update Thu May 29 22:29:18 2008 nicolas mondange
+=======
 ** Last update Thu May 29 18:45:16 2008 laurent lefebvre
+>>>>>>> .r54
 */
 
 #ifndef __42_STRUCT_H__
@@ -41,7 +45,9 @@ typedef struct	s_info
   char		*prompt;
   int		last_status; /* valeur de retour du wait */
   t_event	*history;
+  int		hist_max;
   int		nbr_cmd;
+  int		hist_m;
   char		*pwd;
   char		*last_pwd;
   t_alias	*alias; /* liste chainee des alias */
@@ -89,4 +95,8 @@ typedef struct	s_prompt
   void		(*func)();
 }		t_prompt;
 
+enum {KEY_UP, HEY_DOWN, KEY_RIGHT, KEY_DOWN,
+      KEY_LEFT, KEY_DEL, KEY_BACK, KEY_ENTER};
+
 #endif /* __42_STRUCT_H__ */
+  

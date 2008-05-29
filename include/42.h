@@ -5,7 +5,11 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Tue May 27 18:35:13 2008 aymeric derazey
+<<<<<<< .mine
+** Last update Thu May 29 22:18:45 2008 nicolas mondange
+=======
 ** Last update Thu May 29 18:39:14 2008 laurent lefebvre
+>>>>>>> .r54
 */
 
 #ifndef __42_H__
@@ -45,7 +49,6 @@ int		set_default_var(t_info *info);
 char		**path_to_tab(char *str);
 int		get_local(t_info *info);
 
-
 /* LOOP */
 void		loop(t_info *info);
 
@@ -65,6 +68,7 @@ int		aff_event(t_info *params, char **tab);
 void		clear_event(t_info *params, int nbr_elm, int limit);
 t_event         *read_first_line(t_info *params, char *line);
 void		add_event(t_info *params, char *to_ad);
+void		give_event(t_info *params, char *to_fill, int limit);
 
 /* PROMPT */
 void		prompt(t_info *info);
@@ -76,6 +80,26 @@ void		tild(t_info *info);
 void		user_name(t_info *info);
 void		last_status(t_info *info);
 
+/* GERE_CLAV */
+
+char		*gere_keyboard(t_info *info);
+int		find_key(t_info *info, char *new, char *buff);
+void		add_to_buff(char *buff, char *new);
+int		my_compare(char *new);
+int		do_action(t_info *info, int i, char *buff);
+void		my_canonical(int i);
+
+
+/* GERE_KEY */
+
+int		gere_key_enter(t_info *info, char *buff);
+int		gere_key_up(t_info *info, char *buff);
+int		gere_key_down(t_info *info, char *buff);
+int		gere_key_right(t_info *info, char *buff);
+int		gere_key_left(t_info *info, char *buff);
+int		gere_key_back(t_info *info, char *buff);
+int		gere_key_del(t_info *info, char *buff);
+  
 /* GERE_REDIRECT */
 int		gere(t_info *info, char *str, int flag);
 int		gere_redirect(t_info *info, char *str, int flag);

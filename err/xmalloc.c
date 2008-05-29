@@ -5,7 +5,15 @@
 ** Login   <lefebv_l@epitech.net>
 **
 ** Started on  Fri Apr  4 16:53:03 2008 laurent lefebvre
+<<<<<<< .mine
+<<<<<<< .mine
+** Last update Mon May 26 20:21:42 2008 nicolas mondange
+=======
+** Last update Mon May 26 20:20:36 2008 thomas brennetot
+=======
 ** Last update Tue May 27 19:33:02 2008 aymeric derazey
+>>>>>>> .r49
+>>>>>>> .r43
 */
 
 #include "42.h"

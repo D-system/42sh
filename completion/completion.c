@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Thu Apr 24 14:52:07 2008 thomas brennetot
-** Last update Tue May 27 19:34:42 2008 aymeric derazey
+** Last update Wed May 28 20:04:11 2008 nicolas mondange
 */
 
 #include <stdlib.h>
