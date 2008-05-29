@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Wed Apr 23 16:27:35 2008 thomas brennetot
-** Last update Thu May 29 18:45:56 2008 laurent lefebvre
+** Last update Thu May 29 19:28:16 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -25,7 +25,7 @@ struct s_bui	gl_bui[] =
   {0, 0},
 };
 
-int	builtins(t_info *info, char *str)
+int	builtins(t_info *info, char *str) /* NORME */
 {
   int	ibui;
   char	**tab;
@@ -34,6 +34,11 @@ int	builtins(t_info *info, char *str)
   if ((tab = my_str_to_wordtab(str)) == NULL)
     {
       info->last_status = EXIT_FAILURE;
+      return (EXIT_FAILURE);
+    }
+  if (my_alias(info, tab, str) != NO_BUILTINS)
+    {
+      free_tab(tab);
       return (EXIT_FAILURE);
     }
   ibui = 0;

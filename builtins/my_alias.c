@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Thu May 29 11:31:19 2008 laurent lefebvre
-** Last update Thu May 29 18:47:13 2008 laurent lefebvre
+** Last update Thu May 29 19:34:26 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -40,11 +40,6 @@ void		put_alias(t_alias *alist, char *alias, char *cmd)
 
   prev = NULL;
   current = alist;
-  if (!my_strcmp(alias, "alias") || !my_strcmp(cmd, "alias"))
-    {
-      printf("alias: Too dangerous to alias that.\n");
-      return ;
-    }
   while (current != NULL)
     {
       if (current->alias != NULL && !my_strcmp(alias, current->alias))
@@ -78,10 +73,17 @@ int	set_alias(t_info *info, char **tab)
   if (i == 1)
     display_alias(info->alias);
   else if (i == 3)
-    put_alias(info->alias, tab[1], tab[2]);
+    {
+      if (!my_strcmp(tab[1], "alias") || !my_strcmp(tab[2], "alias") ||
+	  !my_strcmp(tab[1], tab[2]))
+	{
+	  printf("alias: Too dangerous to alias that.\n");
+	  return (EXIT_FAILURE);
+	}
+      put_alias(info->alias, tab[1], tab[2]);
+    }
   else
     printf("To many or to few arguments to alias\n");
-  /*free_tab(tab);*/
   return (EXIT_SUCCESS);
 }
 
@@ -95,6 +97,25 @@ void		display_alias(t_alias *alist)
       printf("%s\t<->\t%s\n", alist->next->alias, alist->next->cmd);
       alist = alist->next;
     }
+}
+
+int		my_alias(t_info *info, char **tab, char *str)
+{
+  t_alias	*current;
+
+  current = info->alias;
+  if (tab[0] == NULL)
+    return (NO_BUILTINS);
+  while (current != NULL)
+    {
+      if (!my_strcmp(tab[0], current->alias))
+	{
+	  gere(info, current->cmd, FATHER);
+	  return (EXIT_FAILURE);
+	}
+      current = current->next;
+    }
+  return (NO_BUILTINS);
 }
 
 /*
