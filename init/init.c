@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Thu May 29 18:53:22 2008 aymeric derazey
-** Last update Thu May 29 22:46:59 2008 aymeric derazey
+** Last update Fri May 30 01:03:11 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -23,7 +23,6 @@ void	init(char **environ, t_info *info)
   info->alias = xmalloc(sizeof(*info->alias));
   my_memset(info->alias, 0, sizeof(*(info->alias)));
   get_env(environ, info);
-  get_set(info);
   get_local(info);
   info->pwd = my_pwd();
   info->path = path_to_tab(fetch_env(info->env, "PATH", "="));

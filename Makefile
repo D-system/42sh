@@ -1,23 +1,19 @@
 ##
 ## Makefile for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work
-## 
+##
 ## Made by aymeric derazey
 ## Login   <deraze_a@epitech.net>
-## 
+##
 ## Started on  Fri May 30 00:29:56 2008 aymeric derazey
-## Last update Fri May 30 00:30:02 2008 aymeric derazey
+## Last update Fri May 30 01:01:15 2008 thomas brennetot
 ##
 
 
 NAME		=	42sh
 
 SRC_SH		=	main.c				\
-			init.c				\
 			get_env.c			\
-			get_local.c			\
-			get_pwd.c			\
 			loop.c				\
-			get_cfg.c			\
 			gere.c				\
 			gere_redirect.c			\
 			gere_keyboard.c			\
@@ -34,21 +30,23 @@ SRC_SH		=	main.c				\
 			gere_bracket.c			\
 			history.c			\
 			command.c			\
+			get_history.c			\
 			exec.c				\
 			my_access.c			\
 			path_to_tab.c			\
 			parse_str.c			\
 			put_zero.c			\
 			status.c			\
-			cdnarn.c			\
-			get_set.c			\
-			get_user.c			\
-			get_gid.c			\
-			get_uid.c			\
-			get_history.c			\
-			get_group.c			\
-			get_term_version.c
+			cdnarn.c
 
+SRC_INIT	=	./init/get_user.c		\
+			./init/get_gid.c		\
+			./init/get_uid.c		\
+			./init/get_group.c		\
+			./init/get_term_version.c	\
+			./init/get_local.c		\
+			./init/init.c			\
+			./init/get_cfg.c
 
 SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_alias.c		\
@@ -92,7 +90,8 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/fetch_env_int.c		\
 			./lib/get_next_line.c		\
 			./lib/int_to_str.c		\
-			./lib/my_memcpy.c
+			./lib/my_memcpy.c		\
+			./lib/my_pwd.c
 
 SRC_ERR		=	./err/xmalloc.c			\
 			./err/xopen.c			\
@@ -135,7 +134,8 @@ SRC_ALL		=	$(SRC_SH)			\
 			$(SRC_PTF)			\
 			$(SRC_COMPL)			\
 			$(SRC_BUI)			\
-			$(SRC_LOCAL)
+			$(SRC_LOCAL)			\
+			$(SRC_INIT)
 
 
 INCLUDES	=	./include
