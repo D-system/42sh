@@ -1,104 +1,104 @@
 /*
 ** get_pwd.c for  in /u/epitech_2012/lefebv_l/cu/public/42sh/get_pwd
-**
+** 
 ** Made by laurent lefebvre
 ** Login   <lefebv_l@epitech.net>
-**
+** 
 ** Started on  Tue May 27 16:22:35 2008 laurent lefebvre
-** Last update Wed May 28 11:03:31 2008 laurent lefebvre
+** Last update Thu May 29 10:49:29 2008 laurent lefebvre
 */
 
 #include "42.h"
+#include <string.h>
 #include <stdlib.h>
 #include <dirent.h>
 #include <sys/types.h>
-#include <string.h>
 
-#define	BS	2048
+#define	BS	512
 
-/* IMPLEMENTATION IN PROGRESS */
-
-/*
-** Ajouter xopendir / xreaddir / xclosedir a err/
-*/
-
-int		get_ino()
+uint		get_ino(char *rec)
 {
   uint		ino;
   struct dirent *read;
   DIR		*rep;
 
-  if (!(rep = opendir(".")))
-    return (0);
-  while ((read = readdir(rep)) != NULL)
+  rep = opendir(rec);
+  while ((read = readdir(rep)))
     {
       if ((read->d_name[0] == '.') && (read->d_name[1] == 0))
 	{
 	  ino = read->d_ino;
-	  if (closedir(rep) == -1)
-	    return (0);
+	  closedir(rep);
 	  return (ino);
 	}
     }
   closedir(rep);
-  return (2);
+  return (0);
 }
 
-char	*get_name(uint ino)
+char		*get_name(uint ino, char *rec)
 {
   struct dirent *read;
   DIR		*rep;
   char		*name;
 
-  if (!(rep = opendir(".")))
-    return (0);
+  rep = opendir(rec);
   while ((read = readdir(rep)))
     {
       if (read->d_ino == ino)
 	{
 	  name = my_strdup(read->d_name);
-	  if (closedir(rep) == -1)
-	    return (NULL);
+	  closedir(rep);
 	  return (name);
 	}
     }
   closedir(rep);
-  return (NULL);
+  return (NULL);  
 }
 
-/*
-** J'utilise strcat car my_strcat est mal code, il ne doit pas malloquer un nouveau pointeur,
-** mais ecrire directement dans le premier argument. (man strcat)
-*/
-
-void		get_pwd(char *pwd)
+char		*get_pwd(char *pwd, char *rec)
 {
-  uint	ino;
-  char	*name = "afs";
+  uint		ino;
+  char		*name;
 
-  if ((ino = get_ino()) <= 2)
+  if ((ino = get_ino(rec)) <= 2)
     {
       strcat(pwd, "/");
-      strcat(pwd, name);
-      return ;
+      strcat(pwd, "afs");
+      return (NULL);
     }
-  if (xchdir("../") == -1)
-    return ;
-  if ((name = get_name(ino)) == NULL)
-    return ;
-  get_pwd(pwd);
+  strcat(rec, "../");
+  if ((name = get_name(ino, rec)) == NULL)
+    return (NULL);
+  get_pwd(pwd, rec);
   strcat(pwd, "/");
   strcat(pwd, name);
   xfree(name);
+  return (pwd);
 }
 
-char	*my_pwd(void)
+void		*t_pwd(void *ptr)
 {
-  char	*pwd;
+  char		*pwd;
+  char		*rec;
 
-  pwd = xmalloc(sizeof(*pwd) * BS);
-  my_memset(pwd, 0, sizeof(*pwd));
-  get_pwd(pwd);
-  xchdir(pwd);
-  return (pwd);
+  pwd = xmalloc(sizeof(char) * BS);
+  my_memset(pwd, 0, sizeof(char) * BS);
+  rec = xmalloc(sizeof(char) * BS);
+  my_memset(rec, 0, sizeof(char) * BS);
+  strcat(rec, "./");
+  get_pwd(pwd, rec);
+  ptr = pwd;
+  xfree(rec);
+  xfree(pwd);
+  return (ptr);
+}
+
+char		*my_pwd()
+{
+  void		*ptr;
+
+  ptr = NULL;
+  ptr = t_pwd(ptr);
+  return ((char*)ptr);
 }
