@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Wed Apr 23 16:27:35 2008 thomas brennetot
-** Last update Thu May 29 11:03:41 2008 laurent lefebvre
+** Last update Thu May 29 18:45:56 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -21,6 +21,7 @@ struct s_bui	gl_bui[] =
   {"history", aff_event},
   {"echo", my_echo},
   {"set", my_set},
+  {"alias", set_alias},
   {0, 0},
 };
 
@@ -38,7 +39,8 @@ int	builtins(t_info *info, char *str)
   ibui = 0;
   while (gl_bui[ibui].str != 0)
     {
-      if (my_strcmp(gl_bui[ibui].str, tab[0]) == 0)
+      if (!my_strcmp(gl_bui[ibui].str, tab[0]) &&
+	  my_strlen(tab[0]) == my_strlen(gl_bui[ibui].str))
 	{
 	  if ((value = gl_bui[ibui].func(info, tab)) == EXIT_FAILURE)
 	    info->last_status = EXIT_FAILURE;

@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Tue May 27 18:35:13 2008 aymeric derazey
-** Last update Wed May 28 17:55:44 2008 aymeric derazey
+** Last update Thu May 29 18:39:14 2008 laurent lefebvre
 */
 
 #ifndef __42_H__
@@ -93,6 +93,7 @@ char		*cut_delim_nextword_and_return_nextword(char *str, char *str_delim_nextwor
 
 /* BUILTINS */
 int		builtins(t_info *info, char *str);
+int		set_alias(t_info *info, char **tab);
 int		my_cd(t_info *info, char **tab);
 int		my_env(t_info *info, char **tab);
 int		my_exit(t_info *info, char **tab);

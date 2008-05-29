@@ -5,11 +5,21 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Tue May 27 19:48:51 2008 aymeric derazey
-** Last update Tue May 27 19:53:26 2008 aymeric derazey
+** Last update Thu May 29 18:45:16 2008 laurent lefebvre
 */
 
 #ifndef __42_STRUCT_H__
 # define __42_STRUCT_H__
+
+
+/* structure for alias gestion */
+typedef	struct		s_alias
+{
+  char			*alias;
+  char			*cmd;
+  struct s_alias	*next;
+}			t_alias;
+
 
 /* Struct list chaine pour l'historique */
 
@@ -34,6 +44,7 @@ typedef struct	s_info
   int		nbr_cmd;
   char		*pwd;
   char		*last_pwd;
+  t_alias	*alias; /* liste chainee des alias */
 }		t_info;
 
 /* structure pour xmalloc */

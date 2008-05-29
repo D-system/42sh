@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Mon Mar 31 17:20:16 2008 thomas brennetot
-** Last update Wed May 28 17:46:44 2008 thomas brennetot
+** Last update Thu May 29 18:43:18 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -20,6 +20,8 @@ int	init(char **environ, t_info *info)
 {
   my_memset(info, 0, sizeof(*info));
   info->last_status = EXIT_SUCCESS;
+  info->alias = xmalloc(sizeof(*info->alias));
+  my_memset(info->alias, 0, sizeof(*(info->alias)));
   get_env(environ, info);
   get_local(info);
   info->path = path_to_tab(fetch_env(info->env, "PATH", "="));

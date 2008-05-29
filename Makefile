@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ##
 ## Started on  Mon Mar 31 16:44:23 2008 aymeric derazey
-## Last update Thu May 29 11:18:16 2008 laurent lefebvre
+## Last update Thu May 29 18:35:02 2008 laurent lefebvre
 ##
 
 NAME		=	42sh
@@ -48,6 +48,7 @@ SRC_SH		=	main.c				\
 
 
 SRC_BUI		=	./builtins/builtins.c		\
+			./builtins/my_alias.c		\
 			./builtins/my_cd.c		\
 			./builtins/my_env.c		\
 			./builtins/my_exit.c		\
