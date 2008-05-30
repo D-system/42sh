@@ -1,11 +1,11 @@
 /*
-0** builtins.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
-**
-** Made by thomas brennetot
-** Login   <brenne_t@epitech.net>
-**
-** Started on  Wed Apr 23 16:27:35 2008 thomas brennetot
-** Last update Fri May 30 18:31:46 2008 laurent lefebvre
+** builtins.c for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/builtins
+** 
+** Made by aymeric derazey
+** Login   <deraze_a@epitech.net>
+** 
+** Started on  Sat May 31 00:33:43 2008 aymeric derazey
+** Last update Sat May 31 00:33:44 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -21,6 +21,7 @@ struct s_bui	gl_bui[] =
   {"history", aff_event},
   {"echo", my_echo},
   {"set", my_set},
+  {"unset", my_unset},
   {"alias", set_alias},
   {0, 0},
 };

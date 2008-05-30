@@ -1,13 +1,12 @@
 /*
 ** 42.h for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work/include
-**
+** 
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
-**
-** Started on  Fri May 30 00:31:26 2008 aymeric derazey
-** Last update Fri May 30 17:57:51 2008 laurent lefebvre
+** 
+** Started on  Sat May 31 00:36:54 2008 aymeric derazey
+** Last update Sat May 31 00:36:55 2008 aymeric derazey
 */
-
 
 #ifndef __42_H__
 # define __42_H__
@@ -122,9 +121,14 @@ int		my_cd(t_info *info, char **tab);
 int		my_env(t_info *info, char **tab);
 int		my_exit(t_info *info, char **tab);
 int		my_echo(t_info *info, char **tab);
+int		check_var(char *var, char **tab, char *delim);
 int		my_setenv(t_info *info, char **tab);
 int		my_unsetenv(t_info *info, char **tab);
 int		my_set(t_info *info, char **tab);
+int		my_unset(t_info *info, char **tab);
+void		unsetall(t_info *info);
+void		unset_just_that(char *str, t_info *info);
+void		unset_free_n_renew(t_info *info, int delete_local);
 int		add_local(t_info *info, char *str);
 int		add_with_equal(t_info *info, char *str, char **new_local);
 int		add_without_equal(t_info *info, char *str, char **new_local);

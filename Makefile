@@ -1,13 +1,12 @@
 ##
 ## Makefile for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work
-##
+## 
 ## Made by aymeric derazey
 ## Login   <deraze_a@epitech.net>
+## 
+## Started on  Sat May 31 00:32:07 2008 aymeric derazey
+## Last update Sat May 31 00:32:10 2008 aymeric derazey
 ##
-## Started on  Fri May 30 00:29:56 2008 aymeric derazey
-## Last update Fri May 30 19:47:09 2008 laurent lefebvre
-##
-
 
 NAME		=	42sh
 
@@ -61,6 +60,7 @@ SRC_BUI		=	./builtins/builtins.c		\
 			./builtins/my_setenv.c		\
 			./builtins/my_unsetenv.c	\
 			./builtins/my_set.c		\
+			./builtins/my_unset.c		\
 			./builtins/add_local.c		\
 			./builtins/check_syntax.c	\
 			./builtins/cut_to_equal.c	\
@@ -157,7 +157,7 @@ CC		=	$(CC_${OSTYPE})
 LIB_FreeBSD	=	-lefence -L/usr/local/lib/
 LIB_solaris	=
 LIB_linux	=	-lefence -L/usr/lib/
-#LIB		=	$(LIB_${OSTYPE})
+LIB		=	$(LIB_${OSTYPE})
 
 $(NAME)		:	$(OBJ_ALL)
 			$(CC) -o $(NAME) $(OBJ_ALL) $(CFLAGS) $(LIB)
@@ -170,7 +170,7 @@ etags		:
 			@echo [... DONE]
 
 grep		:
-			grep -H -n -e "int_to_str" $(SRC_ALL)
+			grep -H -n -e "str_to_wordtab" $(SRC_ALL)
 
 clean		:
 			rm -f $(OBJ_ALL)
