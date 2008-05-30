@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:31:09 2008 laurent lefebvre
-** Last update Wed May 28 21:23:12 2008 nicolas mondange
+** Last update Fri May 30 19:42:47 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -42,5 +42,3 @@ void	loop(t_info *info)
       xfree(str);
     }
 }
-
-

@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Wed May 28 11:11:35 2008 laurent lefebvre
+** Last update Fri May 30 19:44:39 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -98,6 +98,8 @@ int	parse_str(t_info *info, char *str)
   if ((parser_nb_bracket(str) == EXIT_FAILURE) ||
       (parser_bracket_valid(str) == EXIT_FAILURE))
     return (status(info, EXIT_FAILURE));
+  if (parse_redirect(info, str) == EXIT_FAILURE)
+    return (EXIT_FAILURE);
   info->last_status = 0;
   if (info->nbr_cmd == 0xFFFFFFF)
     info->nbr_cmd = 0;

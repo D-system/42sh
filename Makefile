@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ##
 ## Started on  Fri May 30 00:29:56 2008 aymeric derazey
-## Last update Fri May 30 17:46:23 2008 laurent lefebvre
+## Last update Fri May 30 19:47:09 2008 laurent lefebvre
 ##
 
 
@@ -23,6 +23,7 @@ SRC_SH		=	main.c				\
 			my_access.c			\
 			path_to_tab.c			\
 			parse_str.c			\
+			parse_redirect.c		\
 			put_zero.c			\
 			status.c			\
 			cdnarn.c
