@@ -9,7 +9,7 @@
 # System's binaries
 #set path=($path /usr/{bin,sbin} /{sbin,bin})
 
-#set prompt="<test for 42>"
+set prompt=prompt_de_ouf   
 #set rprompt="[ %B%~%b ]
 #setenv SHELL "/bin/tcsh"
 #setenv TERM "xterm"
@@ -18,7 +18,7 @@
 #setenv MAIL "/u/all/$USER/mail/$USER"
 #setenv TOTO "tata"
 #set watch=(1 any any)
-#set history=5000
+set history=200
 #set savehist=10
 #set toto=tata
 

@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ##
 ## Started on  Fri May 30 00:29:56 2008 aymeric derazey
-## Last update Fri May 30 01:01:15 2008 thomas brennetot
+## Last update Fri May 30 02:18:30 2008 thomas brennetot
 ##
 
 
@@ -14,20 +14,8 @@ NAME		=	42sh
 SRC_SH		=	main.c				\
 			get_env.c			\
 			loop.c				\
-			gere.c				\
-			gere_redirect.c			\
 			gere_keyboard.c			\
 			gere_key.c			\
-			gere_delimitor.c		\
-			gere_dotcoma.c			\
-			gere_left.c			\
-			gere_pipe.c			\
-			gere_right.c			\
-			gere_or.c			\
-			gere_and.c			\
-			gere_double_left.c		\
-			gere_double_right.c		\
-			gere_bracket.c			\
 			history.c			\
 			command.c			\
 			get_history.c			\
@@ -38,6 +26,21 @@ SRC_SH		=	main.c				\
 			put_zero.c			\
 			status.c			\
 			cdnarn.c
+
+SRC_GERE	=	./gere/gere.c			\
+			./gere/gere_redirect.c		\
+			./gere/gere_delimitor.c		\
+			./gere/gere_dotcoma.c		\
+			./gere/gere_left.c		\
+			./gere/gere_pipe.c		\
+			./gere/gere_right.c		\
+			./gere/gere_or.c		\
+			./gere/gere_and.c		\
+			./gere/gere_double_left.c	\
+			./gere/gere_double_right.c	\
+			./gere/gere_bracket.c
+
+
 
 SRC_INIT	=	./init/get_user.c		\
 			./init/get_gid.c		\
@@ -135,7 +138,8 @@ SRC_ALL		=	$(SRC_SH)			\
 			$(SRC_COMPL)			\
 			$(SRC_BUI)			\
 			$(SRC_LOCAL)			\
-			$(SRC_INIT)
+			$(SRC_INIT)			\
+			$(SRC_GERE)
 
 
 INCLUDES	=	./include
@@ -152,7 +156,7 @@ CC		=	$(CC_${OSTYPE})
 LIB_FreeBSD	=	-lefence -L/usr/local/lib/
 LIB_solaris	=
 LIB_linux	=	-lefence -L/usr/lib/
-LIB		=	$(LIB_${OSTYPE})
+#LIB		=	$(LIB_${OSTYPE})
 
 $(NAME)		:	$(OBJ_ALL)
 			$(CC) -o $(NAME) $(OBJ_ALL) $(CFLAGS) $(LIB)
