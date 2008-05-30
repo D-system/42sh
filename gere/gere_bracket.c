@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Mon Apr 21 17:55:55 2008 thomas brennetot
-** Last update Mon May 12 14:54:23 2008 thomas brennetot
+** Last update Fri May 30 03:31:48 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -74,7 +74,7 @@ int		copy_info(t_info *info, t_info *info_cp)
     return (EXIT_FAILURE);
   if ((info_cp->path = copy_tab(info->path)) == NULL)
     return (EXIT_FAILURE);
-  info_cp->prompt = my_strdup(info->prompt);
+/*   info_cp->prompt = my_strdup(info->prompt); */
   info_cp->last_status = info->last_status;
   info_cp->history = info->history;
   info_cp->nbr_cmd = info->nbr_cmd;
@@ -88,7 +88,7 @@ void		free_info(t_info *info)
   free_tab(info->env);
   free_tab(info->set);
   free_tab(info->path);
-  xfree(info->prompt);
+/*   xfree(info->prompt); */
   xfree(info->pwd);
   xfree(info->last_pwd);
 }
