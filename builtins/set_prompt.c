@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Sat May  3 16:35:33 2008 aymeric derazey
-** Last update Thu May 29 23:27:42 2008 aymeric derazey
+** Last update Fri May 30 03:30:46 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -19,8 +19,8 @@ int	set_prompt(t_info *info)
   if ((fetched = fetch_env(info->set, "prompt", "\t")) != NULL)
     {
       while (fetched[i++] != '\t');
-      xfree(info->prompt);
-      info->prompt = my_strdup(fetched + i);
+/*       xfree(info->prompt); */
+/*       info->prompt = my_strdup(fetched + i); */
     }
   else
     return (EXIT_FAILURE);

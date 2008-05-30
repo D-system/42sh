@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 **
 ** Started on  Fri Apr  4 17:28:39 2008 laurent lefebvre
-** Last update Thu May 29 23:56:42 2008 thomas brennetot
+** Last update Fri May 30 03:44:39 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -24,6 +24,7 @@ void	prompt(t_info *info)
 
   if (isatty(1) == 0 || isatty(0) == 0)
     return ;
+  info->size_prompt = 2;
   prompt = fetch_env(info->set, "prompt", "\t");
   if (prompt == NULL)
     my_putstr("> ");
@@ -37,7 +38,7 @@ void	prompt(t_info *info)
 	  while (prompt[i + var] != '%' && prompt[i + var] != '\0')
 	    var++;
 	  if (var > 0)
-	    write(1, &prompt[i], var);
+	    xwrite(1, &prompt[i], var);
 	  i += var;
 	  if (prompt[i] == '%')
 	    if (launch_fct(info, ++i, prompt) == EXIT_SUCCESS)

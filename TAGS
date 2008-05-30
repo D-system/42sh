@@ -8,13 +8,6 @@ int	get_env(14,302
 loop.c,18
 void	loop(18,372
 
-gere.c,17
-int	gere(27,523
-
-gere_redirect.c,65
-t_gere	gl_redirect[gl_redirect18,353
-int	gere_redirect(29,560
-
 gere_keyboard.c,296
 #define	BUFF_CHAR	21,492
 int		find_key(23,513
@@ -37,46 +30,6 @@ int		gere_key_left(40,754
 int		gere_key_back(45,818
 int		gere_key_del(57,964
 
-gere_delimitor.c,68
-t_gere	gl_delimitor[gl_delimitor18,366
-int	gere_delimitor(26,480
-
-gere_dotcoma.c,25
-int	gere_dotcoma(18,404
-
-gere_left.c,51
-int		gere_left_next(19,377
-int		gere_left(45,931
-
-gere_pipe.c,51
-int		gere_pipe_next(18,344
-int		gere_pipe(47,912
-
-gere_right.c,53
-int		gere_right_next(17,340
-int		gere_right(42,914
-
-gere_or.c,20
-int	gere_or(14,291
-
-gere_and.c,21
-int	gere_and(14,292
-
-gere_double_left.c,64
-int		gere_double_left_next(15,319
-int	gere_double_left(28,627
-
-gere_double_right.c,67
-int		gere_double_right_next(15,320
-int		gere_double_right(41,929
-
-gere_bracket.c,158
-void		gere_bracket_copy_between_bracket(14,294
-char		**copy_tab(copy_tab41,731
-int		copy_info(69,1223
-void		free_info(86,1787
-int		gere_bracket(96,1960
-
 history.c,380
 #define MAX_HISTORY 14,319
 int		my_cmp(19,399
@@ -87,16 +40,16 @@ void		parse_event(79,1284
 void		save_event(100,1759
 void		add_event(125,2278
 t_event		*read_first_line(read_first_line160,3096
-t_event		*first_event(first_event171,3323
-int		aff_event(185,3709
-void		clear_event(204,4060
-void		give_event(222,4400
+t_event		*first_event(first_event171,3325
+int		aff_event(185,3711
+void		clear_event(204,4062
+void		give_event(222,4402
 
 command.c,20
 int	command(18,405
 
 get_history.c,25
-void	get_history(13,290
+void	get_history(13,289
 
 exec.c,64
 void	exec_direct(19,378
@@ -402,7 +355,7 @@ int	is_here(45,745
 builtins/update_local.c,88
 int	update_local(13,285
 int	update_with_equal(20,458
-int	update_without_equal(34,759
+int	update_without_equal(35,788
 
 builtins/up_check_syntax.c,55
 int	up_check_syntax(17,351
@@ -441,3 +394,50 @@ void	init(19,390
 
 init/get_cfg.c,21
 void	get_cfg(20,426
+
+gere/gere.c,17
+int	gere(27,523
+
+gere/gere_redirect.c,65
+t_gere	gl_redirect[gl_redirect18,353
+int	gere_redirect(29,560
+
+gere/gere_delimitor.c,68
+t_gere	gl_delimitor[gl_delimitor18,366
+int	gere_delimitor(26,480
+
+gere/gere_dotcoma.c,25
+int	gere_dotcoma(18,404
+
+gere/gere_left.c,51
+int		gere_left_next(19,377
+int		gere_left(45,931
+
+gere/gere_pipe.c,51
+int		gere_pipe_next(18,344
+int		gere_pipe(47,912
+
+gere/gere_right.c,53
+int		gere_right_next(17,340
+int		gere_right(42,914
+
+gere/gere_or.c,20
+int	gere_or(14,291
+
+gere/gere_and.c,21
+int	gere_and(14,292
+
+gere/gere_double_left.c,64
+int		gere_double_left_next(15,319
+int	gere_double_left(28,627
+
+gere/gere_double_right.c,67
+int		gere_double_right_next(15,320
+int		gere_double_right(41,929
+
+gere/gere_bracket.c,158
+void		gere_bracket_copy_between_bracket(14,294
+char		**copy_tab(copy_tab41,731
+int		copy_info(69,1223
+void		free_info(86,1787
+int		gere_bracket(96,1960

@@ -4,7 +4,7 @@
 ** Made by aymeric derazey
 ** Login   <deraze_a@epitech.net>
 ** Started on  Tue May 27 19:48:51 2008 aymeric derazey
-** Last update Fri May 30 01:40:43 2008 nicolas mondange
+** Last update Fri May 30 03:43:33 2008 thomas brennetot
 */
 
 
@@ -39,7 +39,8 @@ typedef struct	s_info
   char		**env;
   char		**set;
   char		**path;
-  char		*prompt;
+/*   char		*prompt; */
+  int		size_prompt;
   int		last_status; /* valeur de retour du wait */
   t_event	*history;
   t_event	*history_r;
