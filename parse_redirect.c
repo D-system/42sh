@@ -24,6 +24,6 @@ int	parse_redirect(t_info *info, char *str)
       printf("i:%d - %s\n", i, tab[i]);
       i++;
     }
-  free_tab(tab);
-  return (EXIT_SUCCESS);*/
+    free_tab(tab);*/
+  return (EXIT_SUCCESS);
 }
