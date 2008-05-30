@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ##
 ## Started on  Fri May 30 00:29:56 2008 aymeric derazey
-## Last update Fri May 30 02:18:30 2008 thomas brennetot
+## Last update Fri May 30 17:46:23 2008 laurent lefebvre
 ##
 
 
@@ -87,7 +87,7 @@ SRC_LIB		=	./lib/my_getnbr.c		\
 			./lib/my_memset.c		\
 			./lib/epurstr.c			\
 			./lib/my_str_to_wordtab.c	\
-			./lib/my_str_to_wordtab_mode.c	\
+			./lib/str_to_wordtab.c		\
 			./lib/free_tab.c		\
 			./lib/fetch_env.c		\
 			./lib/fetch_env_int.c		\

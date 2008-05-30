@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Mon Apr 21 17:49:36 2008 thomas brennetot
-** Last update Thu May 15 11:27:20 2008 thomas brennetot
+** Last update Fri May 30 17:51:07 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -18,7 +18,7 @@ int		gere_double_left_next(t_info *info, char *str, int flag)
   char	buff[BUFF_COMPL];
   int	value;
 
-  if ((stop = cut_delim_nextword_and_return_nextword(str, buff, "<<")) == NULL)
+  if ((stop = cdnarn(str, buff, "<<")) == NULL)
     return (status(info, EXIT_FAILURE));
   value = gere(info, buff, flag);
   xfree(stop);

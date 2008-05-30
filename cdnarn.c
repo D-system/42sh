@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 17:09:22 2008 thomas brennetot
-** Last update Tue Apr 29 18:50:19 2008 thomas brennetot
+** Last update Fri May 30 18:01:45 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -15,21 +15,21 @@
 ** Trop dur a expliquer ... . Demandez moi, je vous explquerai :p
 */
 
-char		*cut_delim_nextword_and_return_nextword(char *str, char *str_delim_nextword_less, char *delim)
+char		*cdnarn(char *str, char *str_delim, char *delim)
 {
   int		i;
   char		**wordtab;
   char		*file;
   int		len;
-
-  my_memset(str_delim_nextword_less, 0, BUFF_COMPL);
+  
+  my_memset(str_delim, 0, BUFF_COMPL);
   i = -1;
   len = my_strlen(delim);
   while (my_strncmp(&str[++i], delim, len) != 0)
-    str_delim_nextword_less[i] = str[i];
-  str_delim_nextword_less += i;
+    str_delim[i] = str[i];
+  str_delim += i;
   i += len;
-  if ((wordtab = my_str_to_wordtab(str + i)) == NULL)
+  if ((wordtab = str_to_wordtab(str + i, delim)) == NULL) /* was my_str... */
     return (NULL);
   if ((file = my_strdup(wordtab[0])) == NULL)
     {
@@ -39,7 +39,7 @@ char		*cut_delim_nextword_and_return_nextword(char *str, char *str_delim_nextwor
   len = my_strlen(wordtab[0]);
   while (my_strncmp(&str[i++], wordtab[0], len) != 0);
   i += len;
-  my_strcpy(str_delim_nextword_less, &str[i]);
+  my_strcpy(str_delim, &str[i]);
   free_tab(wordtab);
   return (file);
 }

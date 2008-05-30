@@ -1,5 +1,4 @@
 # I love myself !
-
 # User's binaries
 #set path=($HOME/{sbin,bin})
 # School's (Bocal) binaries
@@ -8,8 +7,7 @@
 #set path=($path /usr/local/{sbin,bin})
 # System's binaries
 #set path=($path /usr/{bin,sbin} /{sbin,bin})
-
-set prompt=prompt_de_ouf   
+#set prompt=prompt_de_ouf   
 #set rprompt="[ %B%~%b ]
 #setenv SHELL "/bin/tcsh"
 #setenv TERM "xterm"
@@ -21,10 +19,10 @@ set prompt=prompt_de_ouf
 set history=200
 #set savehist=10
 #set toto=tata
-
-
 ## shell
-#alias salut "echo coucou"
-#alias 42 "echo 42sh is the best sh"
-
+alias salut "echo coucou"
+alias 42 "echo 42sh is the best sh"
+alias l ls
+alias ll "ls -l"
+alias la "ls -la"
 # EOF

@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:43:44 2008 laurent lefebvre
-** Last update Thu May 15 11:50:04 2008 thomas brennetot
+** Last update Fri May 30 17:50:21 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -23,7 +23,7 @@ int		gere_left_next(t_info *info, char *str, int flag)
   int		fd;
   int		value;
 
-  if ((file = cut_delim_nextword_and_return_nextword(str, buff, "<")) == NULL)
+  if ((file = cdnarn(str, buff, "<")) == NULL)
     return (status(info, EXIT_FAILURE));
   if ((fd = xopen(file, O_RDONLY)) == -1)
     {

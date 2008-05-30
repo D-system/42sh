@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Wed Apr 23 16:27:35 2008 thomas brennetot
-** Last update Thu May 29 19:28:16 2008 laurent lefebvre
+** Last update Fri May 30 18:31:46 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -31,7 +31,7 @@ int	builtins(t_info *info, char *str) /* NORME */
   char	**tab;
   int	value;
 
-  if ((tab = my_str_to_wordtab(str)) == NULL)
+  if ((tab = str_to_wordtab(str, " \t")) == NULL) /* was my... */
     {
       info->last_status = EXIT_FAILURE;
       return (EXIT_FAILURE);

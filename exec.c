@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:49:16 2008 laurent lefebvre
-** Last update Sat May 17 11:37:35 2008 thomas brennetot
+** Last update Fri May 30 18:10:20 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -43,7 +43,7 @@ int	exec(t_info *info, char *str, int flag)
 {
   char	**tab;
 
-  if ((tab = my_str_to_wordtab(str)) == NULL)
+  if ((tab = str_to_wordtab(str, " ")) == NULL) /* was my_str...*/
     return (status(info, EXIT_FAILURE));
   if (tab[0] == NULL)
     return (status(info, EXIT_FAILURE));

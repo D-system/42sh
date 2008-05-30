@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Fri May 30 00:31:26 2008 aymeric derazey
-** Last update Fri May 30 00:31:34 2008 aymeric derazey
+** Last update Fri May 30 17:57:51 2008 laurent lefebvre
 */
 
 
@@ -113,7 +113,7 @@ int		gere_or(t_info *info, char *str, int flag);
 int		gere_and(t_info *info, char *str, int flag);
 int		gere_double_left(t_info *info, char *str, int flag);
 int		gere_double_right(t_info *info, char *str, int flag);
-char		*cut_delim_nextword_and_return_nextword(char *str, char *str_delim_nextword_less, char *delim);
+char		*cdnarn(char *str, char *str_delim, char *delim);
 
 /* BUILTINS */
 int		builtins(t_info *info, char *str);
@@ -170,7 +170,7 @@ int		my_putchar(char c);
 int		my_putstr(char *str);
 char		*my_pwd(void);
 char		**my_str_to_wordtab(char *str);
-char		**my_str_to_wordtab_mode(char *src, char *delim);
+char		**str_to_wordtab(char *src, char *delim);
 int		my_strcmp(char *s1, char *s2);
 char		*my_strcpy(char *dest, char *src);
 char		*my_strncpy(char *dest, char *src, int n);
