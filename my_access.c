@@ -5,12 +5,13 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Wed Apr 23 18:00:20 2008 thomas brennetot
-** Last update Sun Jun  1 02:44:20 2008 laurent lefebvre
+** Last update Sun Jun  1 03:10:21 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 #include "42.h"
 #define CONCAT_SIZE 512
 

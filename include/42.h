@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat May 31 00:36:54 2008 aymeric derazey
-** Last update Sat May 31 00:36:55 2008 aymeric derazey
+** Last update Sun Jun  1 03:14:47 2008 laurent lefebvre
 */
 
 #ifndef __42_H__
@@ -53,6 +53,7 @@ void		loop(t_info *info);
 
 /* PARSEUR */
 int		parse_str(t_info *info, char *str);
+int		parse_redirect(t_info *info, char *str);
 
 /* COMPLETION */
 char		*completion(t_info *info);
@@ -117,6 +118,7 @@ char		*cdnarn(char *str, char *str_delim, char *delim);
 /* BUILTINS */
 int		builtins(t_info *info, char *str);
 int		set_alias(t_info *info, char **tab);
+int		my_alias(t_info *info, char **tab, char *str);
 int		my_cd(t_info *info, char **tab);
 int		my_env(t_info *info, char **tab);
 int		my_exit(t_info *info, char **tab);

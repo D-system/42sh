@@ -5,7 +5,7 @@
 ** Login   <mondan_n@epitech.net>
 ** 
 ** Started on  Wed May 28 19:51:47 2008 nicolas mondange
-** Last update Thu May 29 23:21:05 2008 nicolas mondange
+** Last update Sun Jun  1 03:16:59 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -85,7 +85,7 @@ t_read		tab[] =
     {KEY_LEFT, gere_key_left},
     {KEY_DEL, gere_key_del},
     {KEY_BACK, gere_key_back},
-    {-1, -1}
+    {-1, NULL}
   };
 
 int		do_action(t_info *info, int i, char *buff)
