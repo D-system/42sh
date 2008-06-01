@@ -5,7 +5,7 @@
 ** Login   <mondan_n@epitech.net>
 **
 ** Started on  Sun Jun  1 04:34:13 2008 nicolas mondange
-** Last update Sun Jun  1 04:57:51 2008 aymeric derazey
+** Last update Sun Jun  1 05:15:09 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -42,6 +42,12 @@ int	check_sec_chevr_d(char *buff, int *i)
 {
   while (buff[(*i)] != '\0')
     {
+      if (buff[(*i)] >= '0' && buff[(*i)] <= '9')
+	return (EXIT_FAILURE);
+      if (buff[(*i)] >= 'a' && buff[(*i)] <= 'z')
+	return (EXIT_FAILURE);
+      if (buff[(*i)] >= 'A' && buff[(*i)] <= 'Z')
+	return (EXIT_FAILURE);
       if (buff[(*i)] == '|' || buff[(*i)] == '<'
 	  || buff[(*i)] == '>' || buff[(*i)] == '&')
 	{

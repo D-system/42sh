@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sun Jun  1 04:23:56 2008 aymeric derazey
-** Last update Sun Jun  1 04:57:26 2008 aymeric derazey
+** Last update Sun Jun  1 05:21:45 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -61,6 +61,12 @@ int	chevr_g_end(char *buff)
   while (buff[i] != '\0')
     i++;
   i-- ;
+  if (buff[(i)] >= '0' && buff[(i)] <= '9')
+    return (EXIT_FAILURE);
+  if (buff[(i)] >= 'a' && buff[(i)] <= 'z')
+    return (EXIT_FAILURE);
+  if (buff[(i)] >= 'A' && buff[(i)] <= 'Z')
+    return (EXIT_FAILURE);
   if (buff[i] == '|' || buff[i] == '<'
       || buff[i] == '>' || buff[i] == '&')
     {

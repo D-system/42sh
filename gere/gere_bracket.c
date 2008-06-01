@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Mon Apr 21 17:55:55 2008 thomas brennetot
-** Last update Fri May 30 03:31:48 2008 thomas brennetot
+** Last update Sun Jun  1 06:44:27 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -68,16 +68,13 @@ char		**copy_tab(char **tab)
 
 int		copy_info(t_info *info, t_info *info_cp)
 {
+  my_memcpy(info_cp, info, sizeof(*info));
   if ((info_cp->env = copy_tab(info->env)) == NULL)
     return (EXIT_FAILURE);
   if ((info_cp->set = copy_tab(info->set)) == NULL)
     return (EXIT_FAILURE);
   if ((info_cp->path = copy_tab(info->path)) == NULL)
     return (EXIT_FAILURE);
-/*   info_cp->prompt = my_strdup(info->prompt); */
-  info_cp->last_status = info->last_status;
-  info_cp->history = info->history;
-  info_cp->nbr_cmd = info->nbr_cmd;
   info_cp->pwd = my_strdup(info->pwd);
   info_cp->last_pwd = my_strdup(info->last_pwd);
   return (EXIT_SUCCESS);
@@ -88,7 +85,6 @@ void		free_info(t_info *info)
   free_tab(info->env);
   free_tab(info->set);
   free_tab(info->path);
-/*   xfree(info->prompt); */
   xfree(info->pwd);
   xfree(info->last_pwd);
 }

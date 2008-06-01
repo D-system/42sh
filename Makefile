@@ -1,11 +1,11 @@
 ##
 ## Makefile for 42sh in /u/epitech_2012/deraze_a/cu/rendu/c/42sh/gp2/work
-## 
+##
 ## Made by aymeric derazey
 ## Login   <deraze_a@epitech.net>
-## 
+##
 ## Started on  Sat May 31 00:32:07 2008 aymeric derazey
-## Last update Sun Jun  1 04:50:43 2008 aymeric derazey
+## Last update Sun Jun  1 06:52:25 2008 laurent lefebvre
 ##
 
 NAME		=	42sh
@@ -14,6 +14,7 @@ SRC_SH		=	main.c				\
 			get_env.c			\
 			loop.c				\
 			gere_keyboard.c			\
+			gere_term.c			\
 			gere_key.c			\
 			history.c			\
 			command.c			\
@@ -41,7 +42,6 @@ SRC_GERE	=	./gere/gere.c			\
 			./gere/gere_right.c		\
 			./gere/gere_or.c		\
 			./gere/gere_and.c		\
-			./gere/gere_double_left.c	\
 			./gere/gere_double_right.c	\
 			./gere/gere_bracket.c
 
@@ -152,16 +152,16 @@ INCLUDES	=	./include
 
 OBJ_ALL		=	$(SRC_ALL:.c=.o)
 
-CFLAGS		+=	-W -Wall -pedantic -ansi -D${OSTYPE} -I$(INCLUDES) -ggdb
+CFLAGS		+=	-W -Wall -pedantic -ansi -D${OSTYPE} -I$(INCLUDES)
 
 CC_FreeBSD	=	gcc
 CC_solaris	=	/usr/sfw/bin/gcc
 CC_linux	=	gcc
 CC		=	$(CC_${OSTYPE})
 
-#LIB_FreeBSD	=	-lefence -L/usr/local/lib/
+LIB_FreeBSD	=	-L/usr/local/lib/ -ltermcap
 LIB_solaris	=
-LIB_linux	=	-lefence -L/usr/lib/
+LIB_linux	=
 LIB		=	$(LIB_${OSTYPE})
 
 $(NAME)		:	$(OBJ_ALL)
@@ -175,7 +175,7 @@ etags		:
 			@echo [... DONE]
 
 grep		:
-			grep -H -n -e "str_to_wordtab" $(SRC_ALL)
+			grep -H -n -e "printf" $(SRC_ALL)
 
 clean		:
 			rm -f $(OBJ_ALL)

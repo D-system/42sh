@@ -1,11 +1,11 @@
 /*
 ** gere_redirect.c for 42sh in /u/epitech_2012/lefebv_l/cu/public/42sh/official
-** 
+**
 ** Made by laurent lefebvre
 ** Login   <lefebv_l@epitech.net>
-** 
+**
 ** Started on  Tue Apr  1 12:33:56 2008 laurent lefebvre
-** Last update Fri May 30 18:05:03 2008 laurent lefebvre
+** Last update Sun Jun  1 06:41:20 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -32,12 +32,8 @@ int	gere(t_info *info, char *str, int flag)
     return (value);
   if ((value = gere_redirect(info, str, flag)) != NO_REDIRECTION)
     return (value);
-  /*   debug("***** La ligne apres decoupage ****** %s\n", str); */
   if ((value = builtins(info, str)) == NO_BUILTINS)
     if (exec(info, str, flag) == EXIT_FAILURE)
-      {
-	/* 	debug("\nErreur des exec\n\n\n"); */
-	return (EXIT_FAILURE);
-      }
+      return (EXIT_FAILURE);
   return (value);
 }

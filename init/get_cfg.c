@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Thu May 29 18:55:25 2008 aymeric derazey
-** Last update Fri May 30 20:21:32 2008 aymeric derazey
+** Last update Sun Jun  1 07:00:29 2008 aymeric derazey
 */
 
 /*
@@ -27,7 +27,7 @@ void	get_cfg(t_info *info)
       while ((buff = get_next_line(fd)) != NULL)
 	{
 	  if (buff[0] != '#')
-	    builtins(info, buff);
+	    gere(info, buff, FATHER);
 	  xfree(buff);
 	}
       xclose(fd);

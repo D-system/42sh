@@ -1,11 +1,11 @@
 /*
 ** alias.c for 42 in /u/epitech_2012/lefebv_l/cu/public/42sh/alias
-** 
+**
 ** Made by laurent lefebvre
 ** Login   <lefebv_l@epitech.net>
-** 
+**
 ** Started on  Thu May 29 11:31:19 2008 laurent lefebvre
-** Last update Sat May 31 01:54:18 2008 laurent lefebvre
+** Last update Sun Jun  1 06:50:04 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -68,7 +68,7 @@ int	alias_loop(t_alias *alist, char *alias, char *cmd)
       (!my_strcmp(cmd, "alias") && my_strlen(cmd) == 5) ||
       (!my_strcmp(alias, cmd) && my_strlen(cmd) == my_strlen(alias)))
     {
-      my_printf("alias: Too dangerous to alias that.\n");
+      my_printf("%E", "alias: Too dangerous to alias that.\n");
       return (EXIT_FAILURE);
     }
   while (current != NULL)
@@ -76,7 +76,7 @@ int	alias_loop(t_alias *alist, char *alias, char *cmd)
       if (!my_strcmp(current->alias, cmd) &&
 	  my_strlen(current->alias) == my_strlen(cmd))
 	{
-	  my_printf("'%s' is already used for the aliased string '%s'\n",
+	  my_printf("%E", "'%s' is already used for the aliased string '%s'\n",
 		    cmd, current->alias);
 	  return (EXIT_FAILURE);
 	}
@@ -102,7 +102,7 @@ int	set_alias(t_info *info, char **tab)
   else if (i == 3 && alias_loop(info->alias, tab[1], tab[2]) == EXIT_SUCCESS)
     put_alias(info->alias, tab[1], tab[2]);
   else if (i == 2 || i > 3)
-    printf("To many or to few arguments to alias\n");
+    my_printf("%E", "To many or to few arguments to alias\n");
   return (EXIT_SUCCESS);
 }
 
@@ -110,10 +110,10 @@ void		display_alias(t_alias *alist)
 {
   if (alist->next == NULL)
     return ;
-  printf("alias list:\n");
+  my_printf("alias list:\n");
   while (alist->next != NULL)
     {
-      printf("%s\t<->\t%s\n", alist->next->alias, alist->next->cmd);
+      my_printf("%s\t<->\t%s\n", alist->next->alias, alist->next->cmd);
       alist = alist->next;
     }
 }
@@ -138,22 +138,3 @@ int		my_alias(t_info *info, char **tab, char *str)
   return (NO_BUILTINS);
   str = NULL;
 }
-
-/*
-int		main()
-{
-  char		buffer[1024];
-  t_alias	alist;
-
-  my_memset(&alist, 0, sizeof(alist));
-  alist.next = NULL;
-  my_memset(buffer, 0, 1024);
-  while (read(0, buffer, 1024 - 1) != 0)
-    {
-      buffer[strlen(buffer) - 1] = 0;
-      set_alias(&alist, buffer);
-      my_memset(buffer, 0, 1024);
-    }
-  return (EXIT_SUCCESS);
-}
-*/

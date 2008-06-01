@@ -9,7 +9,6 @@ echo Welcome_on_42sh._Please_report_bug.
 # System's binaries
 #set path=($path /usr/{bin,sbin} /{sbin,bin})
 #set prompt=prompt_de_ouf
-#set prompt=prompt_de_ouf   
 #setenv SHELL "/bin/tcsh"
 #setenv TERM "xterm"
 #setenv PAGER "less"
@@ -22,6 +21,6 @@ set history=200
 #set toto=tata
 ## shell
 alias l ls
-alias ll "ls -l"
-alias la "ls -la"
+alias ll ls
+alias la ls
 # EOF

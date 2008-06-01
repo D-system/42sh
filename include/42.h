@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat May 31 00:36:54 2008 aymeric derazey
-** Last update Sun Jun  1 04:50:14 2008 aymeric derazey
+** Last update Sun Jun  1 06:52:16 2008 nicolas mondange
 */
 
 #ifndef __42_H__
@@ -107,7 +107,11 @@ void		add_to_buff(char *buff, char *new);
 int		my_compare(char *new);
 int		do_action(t_info *info, int i, char *buff);
 void		my_canonical(int i);
-
+void		my_blank(char *str, t_info *info);
+int		find_key(t_info *info, char *new, char *buff);
+int		my_out_c(int c);
+char		*xtgetstr(char *cap, char **area);
+void		my_put_cursor(char *data);
 
 /* GERE_KEY */
 

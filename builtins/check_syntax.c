@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 **
 ** Started on  Thu May  8 17:51:11 2008 aymeric derazey
-** Last update Thu May 29 18:13:24 2008 aymeric derazey
+** Last update Sun Jun  1 06:53:35 2008 thomas brennetot
 */
 
 #include "42.h"
@@ -34,7 +34,7 @@ int	check_begin(t_info *info, char *str)
     return (EXIT_FAILURE);
   if (!((str[0] >= 'A' && str[0] <= 'Z') || (str[0] >= 'a' && str[0] <= 'z')))
     {
-      my_printf("set: Variable name must begin with a letter.\n");
+      my_printf("%E", "set: Variable name must begin with a letter.\n");
       return (status(info, EXIT_FAILURE));
     }
   return (EXIT_SUCCESS);

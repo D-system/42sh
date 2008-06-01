@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Sun Jun  1 04:44:41 2008 aymeric derazey
+** Last update Sun Jun  1 06:56:11 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -32,7 +32,7 @@ int	parser_nb_bracket(char *str)
       else if (str[i] == ')')
 	if (++close1 > open1)
 	  {
-	    my_printf("Too many )'s.\n");
+	    my_printf("%E", "Too many )'s.\n");
 	    return (EXIT_FAILURE);
 	  }
       i++;

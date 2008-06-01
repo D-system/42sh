@@ -8,18 +8,19 @@ int	get_env(14,302
 loop.c,18
 void	loop(18,372
 
-gere_keyboard.c,296
-#define	BUFF_CHAR	21,492
-int		find_key(23,513
-void		add_to_buff(37,732
-int		my_compare(50,935
-typedef struct	s_read73,1644
-}		t_read;77,1717
-t_read		tab[tab79,1729
-int		do_action(91,1985
-void			my_canonical(102,2135
-void		my_blank(125,2573
-char		*gere_keyboard(gere_keyboard147,2847
+gere_keyboard.c,333
+#define	BUFF_CHAR	17,373
+int		find_key(20,395
+void		add_to_buff(34,612
+int		my_compare(47,813
+struct	s_read74,1639
+int		do_action(80,1708
+void			my_canonical(102,2180
+void		my_blank(140,2859
+int		my_out_c(161,3130
+char		*xtgetstr(xtgetstr167,3186
+void		my_put_cursor(181,3422
+char		*gere_keyboard(gere_keyboard202,3784
 
 gere_key.c,189
 int		gere_key_enter(13,294
@@ -86,11 +87,25 @@ parse_redir.c,24
 int	parse_redir(13,284
 
 parse_pipe.c,124
-int	parse_pipe(13,286
-int	pipe_space_pipe(22,496
-int	check_sec_pipe(41,767
-int	pipe_end(56,1065
-int	pipe_begin(73,1355
+int	parse_pipe(13,287
+int	pipe_space_pipe(22,497
+int	check_sec_pipe(41,768
+int	pipe_end(62,1291
+int	pipe_begin(78,1521
+
+parse_chevr_droite.c,142
+int	parse_chevr_d(13,303
+int	chevr_d_space_chevr_d(22,528
+int	check_sec_chevr_d(41,808
+int	chevr_d_end(62,1331
+int	chevr_d_begin(79,1624
+
+parse_chevr_gauche.c,142
+int	parse_chevr_g(13,292
+int	chevr_g_space_chevr_g(22,517
+int	check_sec_chevr_g(41,797
+int	chevr_g_end(56,1103
+int	chevr_g_begin(79,1614
 
 put_zero.c,50
 int	put_zero(17,382
@@ -426,11 +441,11 @@ init/get_cfg.c,21
 void	get_cfg(20,426
 
 gere/gere.c,17
-int	gere(27,524
+int	gere(27,522
 
 gere/gere_redirect.c,65
-t_gere	gl_redirect[gl_redirect18,353
-int	gere_redirect(29,560
+t_gere	gl_redirect[gl_redirect18,351
+int	gere_redirect(28,521
 
 gere/gere_delimitor.c,68
 t_gere	gl_delimitor[gl_delimitor18,366
@@ -457,10 +472,6 @@ int	gere_or(14,291
 gere/gere_and.c,21
 int	gere_and(14,292
 
-gere/gere_double_left.c,64
-int		gere_double_left_next(15,319
-int	gere_double_left(28,595
-
 gere/gere_double_right.c,67
 int		gere_double_right_next(15,320
 int		gere_double_right(41,897
@@ -469,5 +480,5 @@ gere/gere_bracket.c,158
 void		gere_bracket_copy_between_bracket(14,294
 char		**copy_tab(copy_tab41,731
 int		copy_info(69,1223
-void		free_info(86,1793
-int		gere_bracket(96,1972
+void		free_info(83,1669
+int		gere_bracket(92,1819

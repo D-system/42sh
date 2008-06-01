@@ -1,11 +1,11 @@
 /*
 ** gere_redirect.c for  in /u/epitech_2012/brenne_t/cu/42sh/gp2/work
-** 
+**
 ** Made by thomas brennetot
 ** Login   <brenne_t@epitech.net>
-** 
+**
 ** Started on  Wed Apr 30 11:03:44 2008 thomas brennetot
-** Last update Thu May 15 12:45:00 2008 thomas brennetot
+** Last update Sun Jun  1 06:41:12 2008 thomas brennetot
 */
 
 #include <stdlib.h>
@@ -18,7 +18,6 @@
 t_gere	gl_redirect[] =
 {
   {"(", gere_bracket, 1},
-/*   {"<<", gere_double_left, 2}, */
   {">>", gere_double_right, 2},
   {"<", gere_left, 1},
   {">", gere_right, 1},

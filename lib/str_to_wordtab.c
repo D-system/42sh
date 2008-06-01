@@ -5,17 +5,13 @@
 ** Login   <lefebv_l@epitech.net>
 **
 ** Started on  Mon Apr  7 16:19:25 2008 laurent lefebvre
-** Last update Sun Jun  1 02:59:21 2008 laurent lefebvre
+** Last update Sun Jun  1 06:57:41 2008 thomas brennetot
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define xmalloc malloc
-#define my_strlen strlen
-#define my_printf printf
-#define my_strdup strdup
+#include "42.h"
 
 int	my_inhib(char *str, int *i)
 {
@@ -36,7 +32,7 @@ int	my_inhib(char *str, int *i)
 	    (*i)++;
 	  if (str[(*i)] <= 0)
 	    {
-	      my_printf("Unmatched %c.\n", str[f]);
+	      my_printf("%E%e%E", "Unmatched ", str[f], ".\n");
 	      return (EXIT_FAILURE);
 	    }
 	  else if (str[(*i)] > 0)
@@ -141,13 +137,13 @@ typedef	struct	s_vagin
   int		n;
   char		**tab;
   char		*str;
-  char		*save;  
+  char		*save;
 }		t_vagin;
 
 char		**str_to_wordtab(char *src, char *delim)
 {
   t_vagin	vagin;
-  
+
   vagin.i = 0;
   if ((vagin.str = my_strdup(src)) == NULL)
     return (NULL);
@@ -175,34 +171,3 @@ char		**str_to_wordtab(char *src, char *delim)
   free(vagin.save);
   return (vagin.tab);
 }
-
-/*
-int	main(int ac, char **av)
-{
-  int	i = 0;
-  char	**tab;
-  char	buffer[2048];
-
-  while (42)
-    {
-      i = 0;
-      if (read(0, buffer, 2047) == 0)
-	return (0);
-      buffer[strlen(buffer) - 1] = 0;
-      if ((tab = my_str_to_wordtab_mode(buffer, " \t")) == NULL)
-	{
-	  my_printf(">>>>>>>>>EXIT_FAILURE<<<<<<<<");
-	  return (EXIT_FAILURE);
-	}
-      memset(buffer, 0, 2048);
-      while (tab[i] != NULL)
-	{
-	  printf("'%s'\n", tab[i]);
-	  free(tab[i]);
-	  i++;
-	}
-      free(tab);
-    }
-  return (0);
-}
-*/

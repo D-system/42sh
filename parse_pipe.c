@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sun Jun  1 00:48:52 2008 aymeric derazey
-** Last update Sun Jun  1 04:54:47 2008 aymeric derazey
+** Last update Sun Jun  1 05:12:25 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -42,8 +42,14 @@ int	check_sec_pipe(char *buff, int *i)
 {
   while (buff[(*i)] != '\0')
     {
-      if (buff[(*i)] == '|' || buff[(*i)] == '<'
-	  || buff[(*i)] == '>' || buff[(*i)] == '&')
+      if (buff[(*i)] >= '0' && buff[(*i)] <= '9')
+	return (EXIT_FAILURE);
+      if (buff[(*i)] >= 'a' && buff[(*i)] <= 'z')
+	return (EXIT_FAILURE);
+      if (buff[(*i)] >= 'A' && buff[(*i)] <= 'Z')
+	return (EXIT_FAILURE);
+      if ((buff[(*i)] == '|' || buff[(*i)] == '<'
+	   || buff[(*i)] == '>' || buff[(*i)] == '&'))
 	{
 	  my_printf("%E", "Invalid null command.\n");
 	  return (EXIT_SUCCESS);

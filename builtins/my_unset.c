@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Fri May 30 17:08:04 2008 aymeric derazey
-** Last update Fri May 30 20:00:20 2008 aymeric derazey
+** Last update Sun Jun  1 06:49:10 2008 aymeric derazey
 */
 
 #include "42.h"
@@ -16,7 +16,7 @@ int	my_unset(t_info *info, char **tab)
 
   if (tab[1] == NULL)
     {
-      my_printf("unset: Too few arguments.\n");
+      my_printf("%E", "unset: Too few arguments.\n");
       return (EXIT_SUCCESS);
     }
   if (tab[1][0] == '*')
