@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Sat May 31 00:32:07 2008 aymeric derazey
-## Last update Sun Jun  1 02:50:48 2008 laurent lefebvre
+## Last update Sun Jun  1 03:44:51 2008 laurent lefebvre
 ##
 
 NAME		=	42sh
@@ -18,6 +18,8 @@ SRC_SH		=	main.c				\
 			history.c			\
 			command.c			\
 			get_history.c			\
+			history_lib.c			\
+			history_list.c			\
 			exec.c				\
 			my_access.c			\
 			path_to_tab.c			\

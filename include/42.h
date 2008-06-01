@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat May 31 00:36:54 2008 aymeric derazey
-** Last update Sun Jun  1 03:14:47 2008 laurent lefebvre
+** Last update Sun Jun  1 03:41:36 2008 laurent lefebvre
 */
 
 #ifndef __42_H__
@@ -69,6 +69,9 @@ void		clear_event(t_info *params, int nbr_elm, int limit);
 t_event         *read_first_line(t_info *params, char *line);
 void		add_event(t_info *params, char *to_ad);
 void		give_event(t_info *params, char *to_fill, int limit);
+int		my_cmp(char *line, char c);
+void		my_word_str(char *str, char c);
+void		read_line(t_event *new_elem, char *line);
 
 /* PROMPT */
 void		prompt(t_info *info);
