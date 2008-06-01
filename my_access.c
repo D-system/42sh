@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Wed Apr 23 18:00:20 2008 thomas brennetot
-** Last update Wed May 21 10:48:18 2008 aymeric derazey
+** Last update Sun Jun  1 02:44:20 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -52,7 +52,9 @@ int	my_access(t_info *info, char **tab)
   char	concat_path_bin[CONCAT_SIZE];
 
   ipath = 0;
-  if (my_strncmp(tab[0], "./", 2) == 0 || my_strncmp(tab[0], "/", 1) == 0)
+  if (tab == NULL)
+    return (EXIT_FAILURE);
+  if (strncmp(tab[0], "./", 2) == 0 || strncmp(tab[0], "/", 1) == 0)
     return (my_access_wd(tab));
   else
     while (info->path[ipath] != NULL)

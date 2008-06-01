@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Sat May 31 00:32:07 2008 aymeric derazey
-## Last update Sat May 31 00:32:10 2008 aymeric derazey
+## Last update Sun Jun  1 02:50:48 2008 laurent lefebvre
 ##
 
 NAME		=	42sh
@@ -154,7 +154,7 @@ CC_solaris	=	/usr/sfw/bin/gcc
 CC_linux	=	gcc
 CC		=	$(CC_${OSTYPE})
 
-LIB_FreeBSD	=	-lefence -L/usr/local/lib/
+#LIB_FreeBSD	=	-lefence -L/usr/local/lib/
 LIB_solaris	=
 LIB_linux	=	-lefence -L/usr/lib/
 LIB		=	$(LIB_${OSTYPE})

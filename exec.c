@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Tue Apr  1 12:49:16 2008 laurent lefebvre
-** Last update Fri May 30 18:10:20 2008 laurent lefebvre
+** Last update Sun Jun  1 03:03:29 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -42,10 +42,10 @@ int	exec_fork(t_info *info, char **tab)
 int	exec(t_info *info, char *str, int flag)
 {
   char	**tab;
-
-  if ((tab = str_to_wordtab(str, " ")) == NULL) /* was my_str...*/
+  
+  if ((tab = my_str_to_wordtab(str)) == NULL) /* was my_str...*/
     return (status(info, EXIT_FAILURE));
-  if (tab[0] == NULL)
+  if (tab[0] == '\0')
     return (status(info, EXIT_FAILURE));
   if (my_access(info, tab) == EXIT_FAILURE)
     {

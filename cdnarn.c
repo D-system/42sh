@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 ** 
 ** Started on  Tue Apr 29 17:09:22 2008 thomas brennetot
-** Last update Fri May 30 18:01:45 2008 laurent lefebvre
+** Last update Sun Jun  1 03:03:12 2008 laurent lefebvre
 */
 
 #include <stdlib.h>
@@ -29,7 +29,7 @@ char		*cdnarn(char *str, char *str_delim, char *delim)
     str_delim[i] = str[i];
   str_delim += i;
   i += len;
-  if ((wordtab = str_to_wordtab(str + i, delim)) == NULL) /* was my_str... */
+  if ((wordtab = my_str_to_wordtab(str + i)) == NULL) /* was my_str... */
     return (NULL);
   if ((file = my_strdup(wordtab[0])) == NULL)
     {

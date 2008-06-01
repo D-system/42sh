@@ -7,13 +7,8 @@
 #set path=($path /usr/local/{sbin,bin})
 # System's binaries
 #set path=($path /usr/{bin,sbin} /{sbin,bin})
-<<<<<<< .mine
-
 #set prompt=prompt_de_ouf
-=======
 #set prompt=prompt_de_ouf   
->>>>>>> .r65
-#set rprompt="[ %B%~%b ]
 #setenv SHELL "/bin/tcsh"
 #setenv TERM "xterm"
 #setenv PAGER "less"
@@ -25,15 +20,7 @@ set history=200
 #set savehist=10
 #set toto=tata
 ## shell
-<<<<<<< .mine
-alias salut "echo coucou"
-alias 42 "echo 42sh is the best sh"
-
-=======
-alias salut "echo coucou"
-alias 42 "echo 42sh is the best sh"
 alias l ls
 alias ll "ls -l"
 alias la "ls -la"
->>>>>>> .r65
 # EOF

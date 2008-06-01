@@ -5,7 +5,7 @@
 ** Login   <lefebv_l@epitech.net>
 ** 
 ** Started on  Thu May 29 11:31:19 2008 laurent lefebvre
-** Last update Fri May 30 00:01:29 2008 laurent lefebvre
+** Last update Sat May 31 01:54:18 2008 laurent lefebvre
 */
 
 #include "42.h"
@@ -136,6 +136,7 @@ int		my_alias(t_info *info, char **tab, char *str)
       current = current->next;
     }
   return (NO_BUILTINS);
+  str = NULL;
 }
 
 /*
