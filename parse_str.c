@@ -5,7 +5,7 @@
 ** Login   <brenne_t@epitech.net>
 **
 ** Started on  Thu Apr 24 13:45:22 2008 thomas brennetot
-** Last update Fri May 30 19:44:39 2008 laurent lefebvre
+** Last update Sun Jun  1 04:44:41 2008 aymeric derazey
 */
 
 #include <stdlib.h>
@@ -20,7 +20,7 @@ int	parser_nb_bracket(char *str)
   int	open1;
   int	close1;
   int	i;
-  
+
   open1 = 0;
   close1 = 0;
   i = 0;
@@ -95,11 +95,11 @@ int	parser_bracket_valid(char *str)
 
 int	parse_str(t_info *info, char *str)
 {
+  if ((parse_redir(str)) == EXIT_FAILURE)
+    return (EXIT_FAILURE);
   if ((parser_nb_bracket(str) == EXIT_FAILURE) ||
       (parser_bracket_valid(str) == EXIT_FAILURE))
     return (status(info, EXIT_FAILURE));
-  if (parse_redirect(info, str) == EXIT_FAILURE)
-    return (EXIT_FAILURE);
   info->last_status = 0;
   if (info->nbr_cmd == 0xFFFFFFF)
     info->nbr_cmd = 0;

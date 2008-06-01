@@ -16,34 +16,27 @@ int		my_compare(50,935
 typedef struct	s_read73,1644
 }		t_read;77,1717
 t_read		tab[tab79,1729
-int		do_action(91,1983
-void			my_canonical(102,2133
-void		my_blank(125,2571
-char		*gere_keyboard(gere_keyboard147,2845
+int		do_action(91,1985
+void			my_canonical(102,2135
+void		my_blank(125,2573
+char		*gere_keyboard(gere_keyboard147,2847
 
-gere_key.c,188
+gere_key.c,189
 int		gere_key_enter(13,294
-int		gere_key_up(18,359
-int		gere_key_down(26,510
-int		gere_key_right(35,689
-int		gere_key_left(40,754
-int		gere_key_back(45,818
-int		gere_key_del(57,964
+int		gere_key_up(20,389
+int		gere_key_down(28,543
+int		gere_key_right(37,725
+int		gere_key_left(44,820
+int		gere_key_back(51,914
+int		gere_key_del(64,1075
 
-history.c,380
+history.c,170
 #define MAX_HISTORY 14,319
-int		my_cmp(19,399
-void		load_event(35,578
-void		my_word_str(52,857
-void		read_line(65,1006
-void		parse_event(79,1284
-void		save_event(100,1759
-void		add_event(125,2278
-t_event		*read_first_line(read_first_line160,3096
-t_event		*first_event(first_event171,3325
-int		aff_event(185,3711
-void		clear_event(204,4062
-void		give_event(222,4402
+void		load_event(16,344
+void		parse_event(33,623
+void		save_event(54,1098
+t_event		*find_buff(find_buff79,1617
+void		add_event(103,1985
 
 command.c,20
 int	command(18,405
@@ -51,16 +44,30 @@ int	command(18,405
 get_history.c,25
 void	get_history(13,289
 
+history_lib.c,98
+#define MAX_HISTORY 14,333
+int		my_cmp(16,358
+void		my_word_str(32,537
+void		read_line(45,686
+
+history_list.c,196
+#define MAX_HISTORY 14,334
+t_event		*read_first_line(read_first_line16,359
+t_event		*first_event(first_event27,588
+int		aff_event(41,974
+void		clear_event(60,1325
+void		give_event(78,1665
+
 exec.c,64
 void	exec_direct(19,378
 int	exec_fork(25,482
 int	exec(42,833
 
 my_access.c,103
-#define CONCAT_SIZE 15,329
-void	my_strcat_mode(17,354
-int	my_access_wd(35,652
-int	my_access(49,942
+#define CONCAT_SIZE 16,350
+void	my_strcat_mode(18,375
+int	my_access_wd(36,673
+int	my_access(50,963
 
 path_to_tab.c,123
 #define BUFF_PATH 13,293
@@ -69,11 +76,21 @@ void	path_to_tab_cut_cp(31,501
 char	**path_to_tab(path_to_tab54,941
 
 parse_str.c,153
-int	parser_nb_bracket(18,349
-int	bracket_valid_before(48,849
-int	bracket_valid_after(64,1207
-int	parser_bracket_valid(78,1576
-int	parse_str(96,1879
+int	parser_nb_bracket(18,348
+int	bracket_valid_before(48,846
+int	bracket_valid_after(64,1204
+int	parser_bracket_valid(78,1573
+int	parse_str(96,1876
+
+parse_redir.c,24
+int	parse_redir(13,284
+
+parse_pipe.c,124
+int	parse_pipe(13,286
+int	pipe_space_pipe(22,496
+int	check_sec_pipe(41,767
+int	pipe_end(56,1065
+int	pipe_begin(73,1355
 
 put_zero.c,50
 int	put_zero(17,382
@@ -82,8 +99,8 @@ int	put_zero_in_last(42,764
 status.c,19
 int	status(17,368
 
-cdnarn.c,93
-char		*cut_delim_nextword_and_return_nextword(cut_delim_nextword_and_return_nextword18,395
+cdnarn.c,29
+char		*cdnarn(cdnarn18,395
 
 lib/my_getnbr.c,42
 int	get_int(13,280
@@ -147,12 +164,19 @@ void	no_tabulation(36,631
 void	no_space_in_end(49,774
 char	**my_str_to_wordtab(my_str_to_wordtab64,948
 
-lib/my_str_to_wordtab_mode.c,170
-void	my_inhib(15,324
-void	my_delim(41,705
-int	get_word(67,1016
-char	*strdup_inhib(strdup_inhib83,1214
-char	**my_str_to_wordtab_mode(my_str_to_wordtab_mode111,1636
+lib/str_to_wordtab.c,338
+#define xmalloc 15,329
+#define my_strlen 16,352
+#define my_printf 17,377
+#define my_strdup 18,402
+int	my_inhib(20,428
+void	my_delim(51,929
+int	get_word(77,1237
+char	*strdup_inhib(strdup_inhib96,1493
+int	my_strlen_mode(124,1933
+typedef	struct	s_vagin138,2103
+}		t_vagin;145,2194
+char		**str_to_wordtab(str_to_wordtab147,2207
 
 lib/free_tab.c,22
 void	free_tab(14,302
@@ -224,7 +248,7 @@ err/xchdir.c,19
 int	xchdir(13,276
 
 prompt/prompt.c,20
-void	prompt(19,368
+void	prompt(19,367
 
 prompt/launch_fct.c,61
 t_prompt gl_prompt[gl_prompt18,368
@@ -291,8 +315,8 @@ completion/completion.c,36
 char	*completion(completion14,294
 
 builtins/builtins.c,56
-struct s_bui	gl_bui[gl_bui14,291
-int	builtins(28,532
+struct s_bui	gl_bui[gl_bui14,311
+int	builtins(29,575
 
 builtins/my_alias.c,150
 void		push_alias(20,416
@@ -317,9 +341,9 @@ int	my_env(19,336
 builtins/my_exit.c,20
 int	my_exit(13,279
 
-builtins/my_echo.c,42
-int	check_var(18,399
-int	my_echo(40,846
+builtins/my_echo.c,43
+int	check_var(33,786
+int	my_echo(51,1120
 
 builtins/my_setenv.c,113
 char	*add_env_concat(add_env_concat14,301
@@ -336,6 +360,12 @@ int	my_unsetenv(62,1164
 builtins/my_set.c,41
 int	my_set(13,287
 int	aff_local(40,828
+
+builtins/my_unset.c,105
+int	my_unset(13,281
+void	unsetall(39,667
+void	unset_just_that(50,852
+void	unset_free_n_renew(68,1176
 
 builtins/add_local.c,80
 int	add_local(17,369
@@ -362,10 +392,10 @@ int	up_check_syntax(17,351
 int	up_check_equal(31,696
 
 builtins/set_prompt.c,23
-int	set_prompt(13,290
+int	set_prompt(13,291
 
 builtins/set_history.c,24
-int	set_history(13,293
+int	set_history(13,294
 
 builtins/cpy_old_local.c,43
 char	**cpy_old_local(cpy_old_local18,375
@@ -396,7 +426,7 @@ init/get_cfg.c,21
 void	get_cfg(20,426
 
 gere/gere.c,17
-int	gere(27,523
+int	gere(27,524
 
 gere/gere_redirect.c,65
 t_gere	gl_redirect[gl_redirect18,353
@@ -411,7 +441,7 @@ int	gere_dotcoma(18,404
 
 gere/gere_left.c,51
 int		gere_left_next(19,377
-int		gere_left(45,931
+int		gere_left(45,899
 
 gere/gere_pipe.c,51
 int		gere_pipe_next(18,344
@@ -419,7 +449,7 @@ int		gere_pipe(47,912
 
 gere/gere_right.c,53
 int		gere_right_next(17,340
-int		gere_right(42,914
+int		gere_right(42,882
 
 gere/gere_or.c,20
 int	gere_or(14,291
@@ -429,15 +459,15 @@ int	gere_and(14,292
 
 gere/gere_double_left.c,64
 int		gere_double_left_next(15,319
-int	gere_double_left(28,627
+int	gere_double_left(28,595
 
 gere/gere_double_right.c,67
 int		gere_double_right_next(15,320
-int		gere_double_right(41,929
+int		gere_double_right(41,897
 
 gere/gere_bracket.c,158
 void		gere_bracket_copy_between_bracket(14,294
 char		**copy_tab(copy_tab41,731
 int		copy_info(69,1223
-void		free_info(86,1787
-int		gere_bracket(96,1960
+void		free_info(86,1793
+int		gere_bracket(96,1972

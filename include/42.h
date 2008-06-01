@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Sat May 31 00:36:54 2008 aymeric derazey
-** Last update Sun Jun  1 03:41:36 2008 laurent lefebvre
+** Last update Sun Jun  1 04:50:14 2008 aymeric derazey
 */
 
 #ifndef __42_H__
@@ -53,7 +53,23 @@ void		loop(t_info *info);
 
 /* PARSEUR */
 int		parse_str(t_info *info, char *str);
-int		parse_redirect(t_info *info, char *str);
+int		parse_redir(char *str);
+int		parse_pipe(char *buff);
+int		pipe_space_pipe(char *buff);
+int		check_sec_pipe(char *buff, int *i);
+int		pipe_end(char *buff);
+int		pipe_begin(char *buff);
+int		parse_chevr_d(char *buff);
+int		chevr_d_space_chevr_d(char *buff);
+int		check_sec_chevr_d(char *buff, int *i);
+int		chevr_d_end(char *buff);
+int		chevr_d_begin(char *buff);
+int		parse_chevr_g(char *buff);
+int		chevr_g_space_chevr_g(char *buff);
+int		check_sec_chevr_g(char *buff, int *i);
+int		chevr_g_end(char *buff);
+int		chevr_g_end(char *buff);
+int		chevr_g_begin(char *buff);
 
 /* COMPLETION */
 char		*completion(t_info *info);

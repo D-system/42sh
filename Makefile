@@ -5,7 +5,7 @@
 ## Login   <deraze_a@epitech.net>
 ## 
 ## Started on  Sat May 31 00:32:07 2008 aymeric derazey
-## Last update Sun Jun  1 03:44:51 2008 laurent lefebvre
+## Last update Sun Jun  1 04:50:43 2008 aymeric derazey
 ##
 
 NAME		=	42sh
@@ -24,7 +24,10 @@ SRC_SH		=	main.c				\
 			my_access.c			\
 			path_to_tab.c			\
 			parse_str.c			\
-			parse_redirect.c		\
+			parse_redir.c			\
+			parse_pipe.c			\
+			parse_chevr_droite.c		\
+			parse_chevr_gauche.c		\
 			put_zero.c			\
 			status.c			\
 			cdnarn.c

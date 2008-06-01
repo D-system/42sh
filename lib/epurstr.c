@@ -5,7 +5,7 @@
 ** Login   <deraze_a@epitech.net>
 ** 
 ** Started on  Thu Mar 20 18:44:17 2008 aymeric derazey
-** Last update Tue May 27 19:23:41 2008 aymeric derazey
+** Last update Sun Jun  1 04:56:23 2008 aymeric derazey
 */
 
 #include "42.h"
@@ -56,7 +56,7 @@ char		*epurstr(char *str)
 	}
       i++;
     }
-  i -= 2;
+  i -= 1;
   while (str[i] == ' ')
     str[i--] = '\0';
   return (str);
